@@ -37,9 +37,9 @@
 <!--    开启注解-->
     <context:annotation-config></context:annotation-config>
 
-<!--    <bean id="userDaoImpl" class="cn.ynu.dao.impl.UserDaoImpl"></bean>-->
+<!--    <bean id="userDaoImpl" class="cn.ynu.pojoo.impl.UserDaoImpl"></bean>-->
 
-<!--    <bean id="accountDaoImpl" class="cn.ynu.dao.impl.AccountDaoImpl"></bean>-->
+<!--    <bean id="accountDaoImpl" class="cn.ynu.pojoo.impl.AccountDaoImpl"></bean>-->
 
 <!--    <bean id="accountServiceImpl" class="cn.ynu.service.impl.AccountServiceImpl"></bean>-->
 
