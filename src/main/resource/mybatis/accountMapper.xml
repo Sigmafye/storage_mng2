@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.ynu.mapper.AccountMapper">
+
+    <!--id对应方法名，入参对应属性名-->
+    <select id="validateAccount" parameterType="Account" resultType="Account">
+        select * from test_user where ur_name = #{ur_name} and ur_password = #{ur_password}
+    </select>
+
+    <insert id="register" parameterType="Account">
+        insert into test_user (ur_name, ur_password) values (#{ur_name}, #{ur_password})
+    </insert>
+
+</mapper>

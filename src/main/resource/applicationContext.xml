@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- c3p0数据源 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/ssm_study?characterEncoding=utf-8"></property>
+        <property name="user" value="root" />
+        <property name="password" value="javaweb" />
+    </bean>
+
+    <!-- mybatis的SqlSession的工厂 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
+    </bean>
+
+    <!-- mapper扫描器 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.ynu.mapper"></property>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
+
+<!--    开启注解-->
+    <context:annotation-config></context:annotation-config>
+
+<!--    <bean id="userDaoImpl" class="cn.ynu.dao.impl.UserDaoImpl"></bean>-->
+
+<!--    <bean id="accountDaoImpl" class="cn.ynu.dao.impl.AccountDaoImpl"></bean>-->
+
+<!--    <bean id="accountServiceImpl" class="cn.ynu.service.impl.AccountServiceImpl"></bean>-->
+
+<!--    <bean id="userServiceImpl" class="cn.ynu.service.impl.UserServiceImpl"></bean>-->
+
+
+</beans>
