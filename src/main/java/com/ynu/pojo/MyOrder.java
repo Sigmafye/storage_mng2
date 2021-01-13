@@ -14,7 +14,7 @@ public class MyOrder {
     private int u_id;//采购员编号
 
     private  String supportor;//供应商
-    private int ware;//收货仓库
+    private int ware;//收货仓库编号
     private String a_time;//到货时间
     private String relate_peo;//联系人
     private String re_methods;//联系方式

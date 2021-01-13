@@ -29,18 +29,31 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public boolean deleteOrderById(int orderId) {
-        return false;
+        int isDelete=orderMapper.deleteOrderById(orderId);
+        if(isDelete>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
+
     public MyOrder getOrderById(int orderId) {
-        return null;
+        MyOrder myOrder =orderMapper.getOrderById(orderId);
+        return myOrder;
     }
 
     public List<MyOrder> getOrderList() {
-        return null;
+        List<MyOrder> orderList=orderMapper.getOrderList();
+        return orderList;
     }
 
-    public boolean updateOrderById(int orderId) {
-        return false;
+    public boolean updateOrderById(MyOrder order) {
+        int isUpdate=orderMapper.updateOrderById(order);
+        if(isUpdate>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

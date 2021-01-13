@@ -20,7 +20,7 @@ public interface OrderMapper {
      * @param orderId
      * @return
      */
-    public boolean deleteOrderById(int orderId);
+    public int deleteOrderById(int orderId);
 
 
     /**
@@ -37,12 +37,13 @@ public interface OrderMapper {
      */
     public List<MyOrder> getOrderList();
 
+
     /**
      * 根据订单编号更新订单信息
-     * @param orderId
+     * @param order
      * @return
      */
-    public boolean updateOrderById(int orderId);
+    public int updateOrderById(MyOrder order);
 
 
 
