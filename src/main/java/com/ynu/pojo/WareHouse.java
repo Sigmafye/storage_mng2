@@ -1,7 +1,7 @@
 package com.ynu.pojo;
 
 public class WareHouse {
-    private int w_no; //仓库编号
+    private int w_id; //仓库编号
     private int m_id;   //管理员编号
     private String w_name;  //仓库名称
     private String w_addr;  //仓库地址
@@ -11,7 +11,7 @@ public class WareHouse {
     @Override
     public String toString() {
         return "WareHouse{" +
-                "w_no=" + w_no +
+                "w_no=" + w_id +
                 ", m_id=" + m_id +
                 ", w_name='" + w_name + '\'' +
                 ", w_addr='" + w_addr + '\'' +
@@ -20,12 +20,12 @@ public class WareHouse {
                 '}';
     }
 
-    public int getW_no() {
-        return w_no;
+    public int getW_id() {
+        return w_id;
     }
 
-    public void setW_no(int w_no) {
-        this.w_no = w_no;
+    public void setW_id(int w_id) {
+        this.w_id = w_id;
     }
 
     public int getM_id() {
