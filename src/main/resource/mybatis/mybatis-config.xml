@@ -6,14 +6,12 @@
 <configuration>
     <!-- 实体类,简称 -设置别名 -->
     <typeAliases>
-        <typeAlias type="cn.ynu.pojo.Users" alias="Users"></typeAlias>
-        <typeAlias type="cn.ynu.pojo.Account" alias="Account"></typeAlias>
+        <typeAlias type="com.ynu.pojo.MyOrder" alias="MyOrder"></typeAlias>
     </typeAliases>
 
     <!-- 实体接口映射文件 -->
     <mappers>
-        <mapper resource="mybatis/usersMapper.xml" />
-        <mapper resource="mybatis/accountMapper.xml" />
+        <mapper resource="mybatis/orderMapper.xml"/>
     </mappers>
 
 </configuration>

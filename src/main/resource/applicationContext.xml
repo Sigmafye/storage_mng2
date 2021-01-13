@@ -17,9 +17,9 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
         <property name="jdbcUrl"
-                  value="jdbc:mysql://localhost:3306/ssm_study?characterEncoding=utf-8"></property>
+                  value="jdbc:mysql://121.196.147.134:3306/storagemng?characterEncoding=utf-8"></property>
         <property name="user" value="root" />
-        <property name="password" value="javaweb" />
+        <property name="password" value="123456" />
     </bean>
 
     <!-- mybatis的SqlSession的工厂 -->
@@ -30,7 +30,7 @@
 
     <!-- mapper扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.ynu.mapper"></property>
+        <property name="basePackage" value="com.ynu.mapper"></property>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
 
@@ -45,5 +45,6 @@
 
 <!--    <bean id="userServiceImpl" class="cn.ynu.service.impl.UserServiceImpl"></bean>-->
 
-
+<!--测试类-->
+    <bean id="orderServiceImpl" class="com.ynu.service.impl.OrderServiceImpl"></bean>
 </beans>

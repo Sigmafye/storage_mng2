@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ynu.mapper.OrderMapper">
+    <insert id="addOrder" parameterType="MyOrder">
+        insert into buy_list values(#{bl_id},#{s_id},#{u_id},#{supportor},#{ware},#{a_time},#{relate_peo},
+                                    #{re_methods},#{p_id},#{processor})
+    </insert>
+
+
+    <delete id="deleteOrderById" parameterType="java.lang.Integer">
+        delete from buy_list where bl_id=#{bl_id}
+    </delete>
+</mapper>

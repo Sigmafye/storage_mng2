@@ -1,4 +1,4 @@
-package cn.ynu.util;
+package com.ynu.util;
 
 import java.sql.*;
 import java.util.UUID;

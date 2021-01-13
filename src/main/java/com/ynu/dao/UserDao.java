@@ -1,4 +1,4 @@
-package cn.ynu.dao;
+package com.ynu.dao;
 
 public class UserDao {
 }
