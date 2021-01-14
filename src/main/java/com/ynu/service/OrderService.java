@@ -43,6 +43,6 @@ public interface OrderService {
      * @param orderId
      * @return
      */
-    public boolean updateOrderById(int orderId);
+    public boolean updateOrderById(MyOrder order);
 
 }
