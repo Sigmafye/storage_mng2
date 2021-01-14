@@ -1,5 +1,8 @@
 package com.ynu.pojo;
 
+/**
+ * 商品
+ */
 public class Goods {
     private int gs_id;  //商品编号
     private int ex_id;  //出库编号

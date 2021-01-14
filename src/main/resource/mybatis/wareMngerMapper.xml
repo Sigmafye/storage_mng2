@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.WareMngerMapper">
+
+    <!--id对应方法名，入参对应属性名-->
+    <select id="getWareMngerList" resultType="WareMnger">
+        select * from ware_mnger
+    </select>
+
+    <select id="search" parameterType="WareMnger" resultType="WareMnger">
+        select * from ware_mnger where m_id = #{m_id}
+    </select>
+
+    <insert id="add" parameterType="WareMnger">
+        insert into ware_mnger (m_name, m_password, m_tel, m_addr, m_wnum)
+        values (#{m_name}, #{m_password}, #{m_tel}, #{m_addr}, #{m_wnum})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from ware_mnger where m_id = #{m_id}
+    </delete>
+
+    <update id="update" parameterType="WareMnger">
+        update ware_mnger set m_name = #{m_name}, m_password = #{m_password},
+                              m_tel = #{m_tel}, m_addr = #{m_addr}, m_wnum = #{m_wnum}
+        where  m_id = #{m_id}
+    </update>
+
+</mapper>

@@ -7,11 +7,19 @@
     <!-- 实体类,简称 -设置别名 -->
     <typeAliases>
         <typeAlias type="com.ynu.pojo.MyOrder" alias="MyOrder"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Goods" alias="Goods"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Product" alias="Product"></typeAlias>
+        <typeAlias type="com.ynu.pojo.WareMnger" alias="WareMnger"></typeAlias>
+        <typeAlias type="com.ynu.pojo.WareHouse" alias="WareHouse"></typeAlias>
     </typeAliases>
 
     <!-- 实体接口映射文件 -->
     <mappers>
         <mapper resource="mybatis/orderMapper.xml"/>
+        <mapper resource="mybatis/goodsMapper.xml"/>
+        <mapper resource="mybatis/productMapper.xml"/>
+        <mapper resource="mybats/wareMngerMapper.xml"/>
+        <mapper resource="mybatis/wareHouseMapper.xml"/>
     </mappers>
 
 </configuration>

@@ -1,5 +1,8 @@
 package com.ynu.pojo;
 
+/*
+仓库
+ */
 public class WareHouse {
     private int w_id; //仓库编号
     private int m_id;   //管理员编号

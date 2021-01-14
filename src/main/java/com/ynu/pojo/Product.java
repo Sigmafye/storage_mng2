@@ -1,5 +1,8 @@
 package com.ynu.pojo;
 
+/***
+ * 产品
+ */
 public class Product {
     private int p_idd;  //产品编号
     private int w_id;   //仓库编号
