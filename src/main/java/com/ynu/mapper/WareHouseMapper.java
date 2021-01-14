@@ -2,9 +2,11 @@ package com.ynu.mapper;
 
 import com.ynu.pojo.WareHouse;
 
+import java.util.List;
+
 public interface WareHouseMapper {
 
-    public WareHouse getWareHouseList();
+    public List<WareHouse> getWareHouseList();
 
     public WareHouse search(WareHouse wareHouse);
 

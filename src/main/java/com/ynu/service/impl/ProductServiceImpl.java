@@ -6,13 +6,15 @@ import com.ynu.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductMapper productMapper;
 
-    public Product getProductList() {
+    public List<Product> getProductList() {
         return productMapper.getProductList();
     }
 

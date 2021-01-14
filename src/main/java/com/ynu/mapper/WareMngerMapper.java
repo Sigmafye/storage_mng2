@@ -1,9 +1,12 @@
 package com.ynu.mapper;
 
 import com.ynu.pojo.WareMnger;
+
+import java.util.List;
+
 public interface WareMngerMapper {
 
-    public WareMnger getWareMngerList();
+    public List<WareMnger> getWareMngerList();
 
     public WareMnger search(WareMnger wareMnger);
 

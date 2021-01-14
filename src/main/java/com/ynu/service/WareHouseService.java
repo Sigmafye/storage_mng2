@@ -2,9 +2,11 @@ package com.ynu.service;
 
 import com.ynu.pojo.WareHouse;
 
+import java.util.List;
+
 public interface WareHouseService {
 
-    public WareHouse getWareHouseList();
+    public List<WareHouse> getWareHouseList();
 
     public WareHouse search(WareHouse wareHouse);
 

@@ -2,9 +2,11 @@ package com.ynu.service;
 
 import com.ynu.pojo.WareMnger;
 
+import java.util.List;
+
 public interface WareMngerService {
 
-    public WareMnger getWareMngerList();
+    public List<WareMnger> getWareMngerList();
 
     public WareMnger search(WareMnger wareMnger);
 

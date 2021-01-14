@@ -6,6 +6,8 @@ import com.ynu.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GoodsServiceImpl implements GoodsService {
 
@@ -16,7 +18,7 @@ public class GoodsServiceImpl implements GoodsService {
      * 获得商品列表
      * @return 列表
      */
-    public Goods getGoodsList() {
+    public List<Goods> getGoodsList() {
         return goodsMapper.getGoodsList();
     }
 

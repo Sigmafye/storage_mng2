@@ -2,9 +2,11 @@ package com.ynu.mapper;
 
 import com.ynu.pojo.Product;
 
+import java.util.List;
+
 public interface ProductMapper {
 
-    public Product getProductList();
+    public List<Product> getProductList();
 
     public Product search(Product product);
 

@@ -6,6 +6,8 @@ import com.ynu.service.WareHouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class WareHouseServiceImpl implements WareHouseService {
 
@@ -16,7 +18,7 @@ public class WareHouseServiceImpl implements WareHouseService {
      * 获得仓库列表
      * @return
      */
-    public WareHouse getWareHouseList() {
+    public List<WareHouse> getWareHouseList() {
         return wareHouseMapper.getWareHouseList();
     }
 

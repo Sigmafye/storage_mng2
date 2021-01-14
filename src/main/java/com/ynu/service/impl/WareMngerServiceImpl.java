@@ -6,6 +6,8 @@ import com.ynu.service.WareMngerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class WareMngerServiceImpl implements WareMngerService {
 
@@ -16,7 +18,7 @@ public class WareMngerServiceImpl implements WareMngerService {
      * 获得库存管理员列表
      * @return
      */
-    public WareMnger getWareMngerList() {
+    public List<WareMnger> getWareMngerList() {
         return wareMngerMapper.getWareMngerList();
     }
 

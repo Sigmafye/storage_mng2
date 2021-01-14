@@ -11,6 +11,30 @@ public class WareHouse {
     private int w_capacity;  //仓库容量
     private int w_surplus;  //仓库余量
 
+    public WareHouse() {
+    }
+
+    public WareHouse(int w_id, int m_id, String w_name, String w_addr, int w_capacity, int w_surplus) {
+        this.w_id = w_id;
+        this.m_id = m_id;
+        this.w_name = w_name;
+        this.w_addr = w_addr;
+        this.w_capacity = w_capacity;
+        this.w_surplus = w_surplus;
+    }
+
+    public WareHouse(int m_id, String w_name, String w_addr, int w_capacity, int w_surplus) {
+        this.m_id = m_id;
+        this.w_name = w_name;
+        this.w_addr = w_addr;
+        this.w_capacity = w_capacity;
+        this.w_surplus = w_surplus;
+    }
+
+    public WareHouse(int w_id) {
+        this.w_id = w_id;
+    }
+
     @Override
     public String toString() {
         return "WareHouse{" +

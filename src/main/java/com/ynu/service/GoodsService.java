@@ -2,9 +2,11 @@ package com.ynu.service;
 
 import com.ynu.pojo.Goods;
 
+import java.util.List;
+
 public interface GoodsService {
 
-    public Goods getGoodsList();
+    public List<Goods> getGoodsList();
 
     public Goods search(Goods goods);
 

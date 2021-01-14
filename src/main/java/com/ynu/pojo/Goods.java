@@ -15,6 +15,38 @@ public class Goods {
     private int gs_ware;    //所在仓库
     private int gs_shelf;   //所在货架
 
+    public Goods() {
+    }
+
+    public Goods(int gs_id) {
+        this.gs_id = gs_id;
+    }
+
+    public Goods(int ex_id, int w_id, int im_id, String gs_name, float gs_price, String gs_class, int gs_num, int gs_ware, int gs_shelf) {
+        this.ex_id = ex_id;
+        this.w_id = w_id;
+        this.im_id = im_id;
+        this.gs_name = gs_name;
+        this.gs_price = gs_price;
+        this.gs_class = gs_class;
+        this.gs_num = gs_num;
+        this.gs_ware = gs_ware;
+        this.gs_shelf = gs_shelf;
+    }
+
+    public Goods(int gs_id, int ex_id, int w_id, int im_id, String gs_name, float gs_price, String gs_class, int gs_num, int gs_ware, int gs_shelf) {
+        this.gs_id = gs_id;
+        this.ex_id = ex_id;
+        this.w_id = w_id;
+        this.im_id = im_id;
+        this.gs_name = gs_name;
+        this.gs_price = gs_price;
+        this.gs_class = gs_class;
+        this.gs_num = gs_num;
+        this.gs_ware = gs_ware;
+        this.gs_shelf = gs_shelf;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +
