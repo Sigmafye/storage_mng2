@@ -22,6 +22,27 @@ public class SupportorServiceImpl implements SupportorService {
         }
     }
 
+    public boolean deleteSupportor(int s_id){
+        int isDelete= supportorMapper.deleteSupportor(s_id);
+        if(isDelete>0){
+            return true;
+        }else{
+            return false;
+        }
 
+    }
 
+    public Supportor getSupportor(int s_id) {
+        Supportor supportor=supportorMapper.getSupportor(s_id);
+        return supportor;
+    }
+
+    public boolean updateSupportor(Supportor supportor) {
+        int isUpdate=supportorMapper.updateSupportor(supportor);
+        if(isUpdate>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

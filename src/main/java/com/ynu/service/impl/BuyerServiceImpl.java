@@ -20,4 +20,29 @@ public class BuyerServiceImpl implements BuyerService {
             return false;
         }
     }
+
+    public boolean deleteBuyerById(int u_id) {
+        int isDelete= buyerMapper.deleteBuyerById(u_id);
+        if (isDelete>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    public Buyer getBuyerInfo(int u_id) {
+        Buyer buyer=buyerMapper.getBuyerInfo(u_id);
+        return buyer;
+    }
+
+    public boolean updateBuyerInfo(Buyer buyer) {
+        int isUpdate=buyerMapper.updateBuyerInfo(buyer);
+        if (isUpdate>0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }

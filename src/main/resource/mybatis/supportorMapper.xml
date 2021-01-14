@@ -5,7 +5,16 @@
 
 
 <mapper namespace="com.ynu.mapper.SupportorMapper">
+
+<!--    增加供应商-->
     <insert id="addSupportor" parameterType="Supportor">
         insert into supportor values (#{s_id},#{s_name},#{s_address},#{s_phone})
     </insert>
+
+
+<!--删除供应商-->
+    <delete id="deleteSupportor" parameterType="java.lang.Integer">
+        delete from supportor where s_id=#{s_id}
+    </delete>
+
 </mapper>
