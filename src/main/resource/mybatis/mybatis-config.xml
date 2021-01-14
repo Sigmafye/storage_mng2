@@ -11,14 +11,20 @@
         <typeAlias type="com.ynu.pojo.Product" alias="Product"></typeAlias>
         <typeAlias type="com.ynu.pojo.WareMnger" alias="WareMnger"></typeAlias>
         <typeAlias type="com.ynu.pojo.WareHouse" alias="WareHouse"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Buyer" alias="Buyer"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Supportor" alias="Supportor"></typeAlias>
+        <typeAlias type="com.ynu.pojo.OrderGoods" alias="OrderGoods"></typeAlias>
     </typeAliases>
 
     <!-- 实体接口映射文件 -->
     <mappers>
+        <mapper resource="mybatis/buyerMapper.xml"></mapper>
+        <mapper resource="mybatis/orderGoodsMapper.xml"></mapper>
+        <mapper resource="mybatis/supportorMapper.xml"></mapper>
         <mapper resource="mybatis/orderMapper.xml"/>
         <mapper resource="mybatis/goodsMapper.xml"/>
         <mapper resource="mybatis/productMapper.xml"/>
-        <mapper resource="mybats/wareMngerMapper.xml"/>
+        <mapper resource="mybatis/wareMngerMapper.xml"/>
         <mapper resource="mybatis/wareHouseMapper.xml"/>
     </mappers>
 
