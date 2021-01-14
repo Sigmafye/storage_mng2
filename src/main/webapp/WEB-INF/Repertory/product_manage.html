@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/Css/style.css" />
     <script type="text/javascript" src="../../resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="../../resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="../../resources/Js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
     <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
     <script type="text/javascript" src="../../resources/Js/common.js"></script>
@@ -90,6 +90,20 @@
     <a href='#' >下5页</a>
     <a href='#' >最后一页</a>
 </div>
+<script  src="../../resources/Js/jquery-3.2.1.min.js"></script>
+<script>
+    $('thead input').change(function (){
+        var isChecked = $(this).prop('checked');
+        $('tbody input').prop('checked',isChecked);
+    })
+    $('tbody input').change(function (){
+        var allCount = $('tbody input').length;
+        var checkCount = $('tbody input:checked').length;
+        var isAllChecked = allCount === checkCount;
+        $('thead input').prop('checked',isAllChecked);
+    })
+
+</script>
 </body>
 </html>
 <script>
