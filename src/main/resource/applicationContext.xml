@@ -46,5 +46,8 @@
 <!--    <bean id="userServiceImpl" class="cn.ynu.service.impl.UserServiceImpl"></bean>-->
 
 <!--测试类-->
+    <bean id="buyerServiceImpl" class="com.ynu.service.impl.BuyerServiceImpl"></bean>
+    <bean id="orderGoodsServiceImpl" class="com.ynu.service.impl.OrderGoodsServiceImpl"></bean>
+    <bean id="supportorServiceImpl" class="com.ynu.service.impl.SupportorServiceImpl"></bean>
     <bean id="orderServiceImpl" class="com.ynu.service.impl.OrderServiceImpl"></bean>
 </beans>

@@ -2,11 +2,15 @@ package com.ynu.service.impl;
 
 import com.ynu.mapper.OrderGoodsMapper;
 import com.ynu.pojo.OrderGoods;
+import com.ynu.service.OrderGoodsService;
+import com.ynu.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class OrderGoodsImpl {
+public class OrderGoodsServiceImpl implements OrderGoodsService {
 
 
     @Autowired
@@ -20,6 +24,13 @@ public class OrderGoodsImpl {
         }else{
             return false;
         }
+    }
+
+
+    public List<OrderGoods> getGoodsList(int orderId){
+        List<OrderGoods> goodsList=orderGoodsMapper.getGoodsList(orderId);
+        return goodsList;
+
     }
 
 

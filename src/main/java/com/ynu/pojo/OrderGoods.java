@@ -2,7 +2,7 @@ package com.ynu.pojo;
 
 
 /**
- * 订单商品实体
+ * 订单商品实体,gds_tobuy
  */
 public class OrderGoods {
     private int g_id;
