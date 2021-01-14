@@ -16,4 +16,11 @@
         <select id="getGoodsList" parameterType="java.lang.Integer">
             select * from gds_tobuy where bl_id=#{bl_id}
         </select>
+
+
+<!--    根据订单编号删除订单中的商品-->
+    <delete id="deleteOrderGoods" parameterType="java.lang.Integer">
+        delete from gds_tobuy where bl_id=#{bl_id}
+    </delete>
+
 </mapper>

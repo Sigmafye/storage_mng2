@@ -83,26 +83,98 @@ public class OrderController {
      */
     @RequestMapping("/addOrderGoods/{bl_id}")
     public String addOrderGoods(@PathVariable int bl_id,//订单编号不能为空
-                                OrderGoods orderGoods){
+                                OrderGoods orderGoods){//商品类
 
-
-        orderGoods.setBl_id(bl_id);//向对应订单中添加商品
-
-        boolean isAddGoods=orderGoodsService.addGoodsById(orderGoods);
-        if(isAddGoods ){
-            return "success";//创建订单成功
+        MyOrder myOrder=orderService.getOrderById(bl_id);
+        if(myOrder==null){
+            //无该订单信息，需要先添加订单信息。
+            return "failure";
         }else{
-            return "fuilure";//创建订单失败
+            //存在该订单
+            orderGoods.setBl_id(bl_id);//向对应订单中添加商品
+            boolean isAddGoods=orderGoodsService.addGoodsById(orderGoods);
+            if(isAddGoods ){
+                //创建订单成功
+                return "success";
+            }else{
+                //创建订单失败
+                return "fuilure";
+            }
         }
+    }
 
+
+    /**
+     * 根据订单编号删除订单，
+     * 先删除订单中的商品
+     * 再删除订单信息
+     * @return
+     */
+    @RequestMapping("/deleteOrder/{bl_id}")
+    public String deleteOrder(@PathVariable int bl_id){
+        boolean isDeleteGoods=orderGoodsService.deleteOrderGoods(bl_id);
+        if (isDeleteGoods){
+            //成功将商品删除
+            boolean isDeleteOrder=orderService.deleteOrderById(bl_id);
+            if (isDeleteOrder){
+                //成功将订单删除
+                return "success";
+            }else {
+                //订单删除失败
+                return "false";
+            }
+        }else {
+            //商品删除失败
+            return "false";
+        }
     }
 
 
 
+    /**
+     * 根据订单编号查找订单信息
+     * 根据订单编号查找订单中的商品信息
+     * @param bl_id
+     * @param model
+     * @return
+     */
+    @RequestMapping("/getOrder/{bl_id}")
+    public String getOrder(@PathVariable int bl_id,
+                           Model model){
+        //查找订单信息
+        MyOrder myOrder=orderService.getOrderById(bl_id);
+        //查找对应订单中的商品信息
+        List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(bl_id);
+        if (myOrder!=null&&orderGoodsList!=null){
+            //如果查找成功
+            //        向页面返回订单信息
+            model.addAttribute("myOrder",myOrder);
+            //        向页面返回订单商品信息
+            model.addAttribute("orderGoodsList",orderGoodsList);
+            return "success";
+        }else{
+            return "false";
+        }
+    }
 
-    @RequestMapping("/deleteOrder")
-    public String deleteOrder(){
-        return "pass";
+
+    /**
+     * 根据订单编号更新订单信息
+     * @param order
+     * @param buyer
+     * @param supportor
+     * @param model
+     * @return
+     */
+    @RequestMapping("/updateOrder")
+    public String updateOrder(MyOrder order,//订单
+                              Buyer buyer,//采购员
+                              Supportor supportor,//供应商
+                              Model model){
+
+
+        return "false";
+
     }
 
 
