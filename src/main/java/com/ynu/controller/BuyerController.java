@@ -82,6 +82,11 @@ public class BuyerController {
     }
 
 
+    /**
+     * 判断采购员登录是否成功
+     * @param buyer
+     * @return
+     */
     @RequestMapping("/validate")
     public String isValidateBuyer(Buyer buyer){
         boolean isValidate=buyerService.isValidBuyer(buyer);
