@@ -4,7 +4,9 @@ import com.ynu.mapper.SupportorMapper;
 import com.ynu.pojo.Supportor;
 import com.ynu.service.SupportorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SupportorServiceImpl implements SupportorService {
 
 
