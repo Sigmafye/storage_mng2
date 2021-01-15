@@ -37,44 +37,52 @@
     <input type="hidden" name="id" value="" />
     <table class="table table-bordered table-hover ">
         <tr>
-            <td width="10%" class="tableleft">产品编号</td>
-            <td><input type="text" name="p_idd" value=""/></td>
+            <td width="10%" class="tableleft">订单编号</td>
+            <td><input type="text" name="grouptitle" value=""/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">仓库编号</td>
-            <td><input type="text" name="w_id" value=""/></td>
+            <td class="tableleft">供应商编号</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">入库编号</td>
-            <td><input type="text" name="im_id" value=""/></td>
+            <td class="tableleft">采购员编号</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">出库编号</td>
-            <td><input type="text" name="ex_id" value=""/></td>
+            <td class="tableleft">供应商</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td class="tableleft">产品名称</td>
-            <td ><input type="text" name="p_name" value=""/></td>
+            <td class="tableleft">收货仓库</td>
+            <td >
+                <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">
+                    <option value ="A-01">A-01</option>
+                    <option value ="B-02">B-02</option>
+                    <option value="C-03">C-03</option>
+                    <option value="D-04">D-04</option>
+                </select>
+<!--                <input type="text" name="moduletitle" value=""/>-->
+            </td>
         </tr>
         <tr>
-            <td class="tableleft">产品单价/元</td>
-            <td ><input type="text" name="p_price" value=""/></td>
+            <td class="tableleft">到货时间</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td class="tableleft">库存数量</td>
-            <td ><input type="text" name="p_quantity" value=""/></td>
+            <td class="tableleft">联系人</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td class="tableleft">产品类别</td>
-            <td ><input type="text" name="p_type" value=""/></td>
+            <td class="tableleft">联系方式</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">所在仓库</td>
-            <td><input type="text" name="p_warehouse" value=""/></td>
+            <td class="tableleft">经手人编号</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">货架号</td>
-            <td><input type="text" name="p_shelf_number" value=""/></td>
+            <td class="tableleft">经手人</td>
+            <td ><input type="text" name="moduletitle" value=""/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
@@ -89,7 +97,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="product_manage.html";
+            window.location.href="commodity_manage.html";
         });
 
     });

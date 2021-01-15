@@ -11,7 +11,6 @@
     <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
     <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
     <script type="text/javascript" src="../../resources/Js/common.js"></script>
-
     <style type="text/css">
         body {
             padding-bottom: 40px;
@@ -37,30 +36,45 @@
     关键字：
     <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
     类别：
-    <select></select>
-    <button type="submit" class="btn btn-primary" id="#">查询</button>&nbsp;&nbsp;
+    <select>
+        <option value ="volvo">Volvo</option>
+        <option value ="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    <button type="submit" class="btn btn-primary" id="#">查询</button>
     <button type="button" class="btn btn-success" id="addnew">新增产品信息</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
         <th><input type="checkbox">全选</th>
-        <th>编号</th>
+        <th>产品编号</th>
+        <th>仓库编号</th>
+        <th>入库编号</th>
+        <th>出库编号</th>
         <th>产品名称</th>
         <th>产品单价/元</th>
         <th>库存数量</th>
         <th>产品类别</th>
+        <th>所在仓库</th>
+        <th>贷架号</th>
         <th>操作</th>
     </tr>
     </thead>
     <tbody>
     <tr>
         <td><input type="checkbox"></td>
-        <td>001</td>
-        <td>xx笔记本电脑</td>
-        <td>4322</td>
-        <td>65</td>
-        <td>电脑</td>
+        <td>024859</td>
+        <td>A-01</td>
+        <td>a423425</td>
+        <td>-</td>
+        <td>xx薯片</td>
+        <td>6</td>
+        <td>500</td>
+        <td>食品</td>
+        <td>A-01</td>
+        <td>AB-003</td>
         <td>
             <button type="submit" class="btn btn-warning"><a href="editproduct.html">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
@@ -69,11 +83,16 @@
     </tbody>
     <tr>
         <td><input type="checkbox"></td>
-        <td>002</td>
-        <td>xx键盘</td>
-        <td>105</td>
-        <td>65</td>
-        <td>键盘</td>
+        <td>867564</td>
+        <td>B-12</td>
+        <td>b756444</td>
+        <td>b3545</td>
+        <td>xx饮料</td>
+        <td>8</td>
+        <td>1233</td>
+        <td>饮品</td>
+        <td>B-12</td>
+        <td>BF-353</td>
         <td>
             <button type="submit" class="btn btn-warning"><a href="editproduct.html">修改</a></button>&nbsp;
             <button type="submit" class="btn btn-danger">删除</button>&nbsp;
