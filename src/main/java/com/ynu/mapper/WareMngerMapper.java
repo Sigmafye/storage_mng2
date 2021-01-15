@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface WareMngerMapper {
 
+    public WareMnger validate(WareMnger wareMnger);
+
     public List<WareMnger> getWareMngerList();
 
     public WareMnger search(WareMnger wareMnger);
