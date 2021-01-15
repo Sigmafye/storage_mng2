@@ -14,6 +14,10 @@ public class WareMngerServiceImpl implements WareMngerService {
     @Autowired
     WareMngerMapper wareMngerMapper;
 
+    public WareMnger validate(WareMnger wareMnger) {
+        return wareMngerMapper.validate(wareMnger);
+    }
+
     /**
      * 获得库存管理员列表
      * @return

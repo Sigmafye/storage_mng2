@@ -1,4 +1,4 @@
 /.idea/
-*.imls
+*.iml
 /target/
 /storage_mng.iml
