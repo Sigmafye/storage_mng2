@@ -2,11 +2,16 @@ package com.ynu.service.impl;
 
 import com.ynu.mapper.BuyerMapper;
 import com.ynu.pojo.Buyer;
+import com.ynu.pojo.MyOrder;
 import com.ynu.service.BuyerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.util.List;
+
 @Service
+
 public class BuyerServiceImpl implements BuyerService {
 
 
@@ -46,5 +51,19 @@ public class BuyerServiceImpl implements BuyerService {
             return false;
         }
 
+    }
+
+
+    public List<Integer> getBuyerIdList() {
+        List<Integer> buyerIdList=buyerMapper.getBuyerIdList();
+
+        return buyerIdList;
+
+
+    }
+
+    public List<MyOrder> getBuyerOrderList(int u_id) {
+        List<MyOrder> buyerOrderList=buyerMapper.getBuyerOrderList(u_id);
+        return buyerOrderList;
     }
 }
