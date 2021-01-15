@@ -8,6 +8,8 @@ public interface ProductService {
 
     public List<Product> getProductList();
 
+    public List<Integer> getIdList();
+
     public Product search(Product goods);
 
     public boolean add(Product goods);

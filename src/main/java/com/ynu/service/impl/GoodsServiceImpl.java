@@ -23,6 +23,13 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     /**
+     * 获得商品id列表
+     * @return
+     */
+    public List<Integer> getIdList(){
+        return goodsMapper.getIdList();
+    }
+    /**
      * 查找某商品
      * @param goods 商品
      * @return 返回该商品

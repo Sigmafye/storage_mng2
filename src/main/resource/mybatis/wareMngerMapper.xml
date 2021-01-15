@@ -13,6 +13,10 @@
         select * from ware_mnger
     </select>
 
+    <select id="getIdList" resultType="java.lang.Integer">
+        select m_id from ware_mnger
+    </select>
+
     <select id="search" parameterType="WareMnger" resultType="WareMnger">
         select * from ware_mnger where m_id = #{m_id}
     </select>

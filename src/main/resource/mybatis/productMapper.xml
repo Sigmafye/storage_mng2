@@ -9,6 +9,10 @@
         select * from product
     </select>
 
+    <select id="getIdList" resultType="java.lang.Integer">
+        select p_idd from product
+    </select>
+
     <select id="search" parameterType="Product" resultType="Product">
         select * from product where p_idd = #{p_idd}
     </select>

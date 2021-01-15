@@ -8,6 +8,8 @@ public interface WareHouseMapper {
 
     public List<WareHouse> getWareHouseList();
 
+    public List<Integer> getIdList();
+
     public WareHouse search(WareHouse wareHouse);
 
     public boolean add(WareHouse wareHouse);
