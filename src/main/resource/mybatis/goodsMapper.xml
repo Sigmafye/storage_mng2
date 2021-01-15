@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.GoodsMapper">
+
+    <!--id对应方法名，入参对应属性名-->
+    <select id="getGoodsList" resultType="Goods">
+        select * from goods
+    </select>
+
+    <select id="search" parameterType="Goods" resultType="Goods">
+        select * from goods where gs_id = #{gs_id}
+    </select>
+
+    <insert id="add" parameterType="Goods">
+        insert into goods (ex_id, w_id, im_id, gs_name, gs_price,
+                           gs_class, gs_num, gs_ware, gs_shelf)
+                           values (#{ex_id}, #{w_id}, #{im_id}, #{gs_name}, #{gs_price},
+                                   #{gs_class}, #{gs_num}, #{gs_ware}, #{gs_shelf})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from goods where gs_id = #{gs_id}
+    </delete>
+
+    <update id="update" parameterType="Goods">
+        update goods set ex_id = #{ex_id}, w_id = #{w_id}, im_id = #{im_id}, gs_name = #{gs_name}, gs_price = #{gs_price},
+                         gs_class = #{gs_class}, gs_num = #{gs_num}, gs_ware = #{gs_ware}, gs_shelf = #{gs_shelf}
+        where  gs_id = #{gs_id}
+    </update>
+
+</mapper>

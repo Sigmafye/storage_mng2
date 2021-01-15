@@ -4,13 +4,37 @@
 
 
 <mapper namespace="com.ynu.mapper.OrderMapper">
+
+<!--    增加订单-->
     <insert id="addOrder" parameterType="MyOrder">
         insert into buy_list values(#{bl_id},#{s_id},#{u_id},#{supportor},#{ware},#{a_time},#{relate_peo},
                                     #{re_methods},#{p_id},#{processor})
     </insert>
 
 
+<!--    根据订单编号删除订单-->
     <delete id="deleteOrderById" parameterType="java.lang.Integer">
         delete from buy_list where bl_id=#{bl_id}
     </delete>
+
+
+<!--    根据订单编号查找订单-->
+    <select id="getOrderById" parameterType="java.lang.Integer" resultType="MyOrder">
+        select * from buy_list where bl_id=#{bl_id}
+    </select>
+
+<!--    返回订单列表-->
+    <select id="getOrderList" resultType="MyOrder">
+        select * from buy_list
+    </select>
+
+
+<!--    根据订单编号更新订单信息-->
+
+    <update id="updateOrderById" parameterType="MyOrder">
+        update buy_list set s_id=#{s_id},u_id=#{u_id},supportor=#{supportor},
+                            ware=#{ware},a_time=#{a_time},relate_peo=#{relate_peo},
+                            re_methods=#{re_methods},p_id=#{p_id},processor=#{processor} where bl_id=#{bl_id}
+    </update>
+
 </mapper>

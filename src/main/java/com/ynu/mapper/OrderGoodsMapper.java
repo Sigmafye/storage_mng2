@@ -22,4 +22,10 @@ public interface OrderGoodsMapper {
     public List<OrderGoods> getGoodsList(int orderId);
 
 
+    /**
+     * 根据订单编号删除订单中的商品
+     * @param orderId
+     * @return
+     */
+    public int deleteOrderGoods(int orderId);
 }

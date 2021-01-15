@@ -11,6 +11,47 @@ public class WareMnger {
     private String m_addr;
     private int m_wnum; //管理仓库编号
 
+    public WareMnger() {
+    }
+
+    /**
+     * 构造器
+     * @param m_id
+     * @param m_password
+     * @param m_name
+     * @param m_tel
+     * @param m_addr
+     * @param m_wnum
+     */
+    public WareMnger(int m_id, String m_password, String m_name, String m_tel, String m_addr, int m_wnum) {
+        this.m_id = m_id;
+        this.m_password = m_password;
+        this.m_name = m_name;
+        this.m_tel = m_tel;
+        this.m_addr = m_addr;
+        this.m_wnum = m_wnum;
+    }
+
+    /**
+     * 自动加入主键
+     * @param m_password
+     * @param m_name
+     * @param m_tel
+     * @param m_addr
+     * @param m_wnum
+     */
+    public WareMnger(String m_password, String m_name, String m_tel, String m_addr, int m_wnum) {
+        this.m_password = m_password;
+        this.m_name = m_name;
+        this.m_tel = m_tel;
+        this.m_addr = m_addr;
+        this.m_wnum = m_wnum;
+    }
+
+    public WareMnger(int m_id) {
+        this.m_id = m_id;
+    }
+
     public int getM_id() {
         return m_id;
     }

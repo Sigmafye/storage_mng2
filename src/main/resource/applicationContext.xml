@@ -36,15 +36,6 @@
 
 <!--    开启注解-->
     <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="com.ynu.service.impl"></context:component-scan>
 
-<!--    <bean id="userDaoImpl" class="cn.ynu.pojoo.impl.UserDaoImpl"></bean>-->
-
-<!--    <bean id="accountDaoImpl" class="cn.ynu.pojoo.impl.AccountDaoImpl"></bean>-->
-
-<!--    <bean id="accountServiceImpl" class="cn.ynu.service.impl.AccountServiceImpl"></bean>-->
-
-<!--    <bean id="userServiceImpl" class="cn.ynu.service.impl.UserServiceImpl"></bean>-->
-
-<!--测试类-->
-    <bean id="orderServiceImpl" class="com.ynu.service.impl.OrderServiceImpl"></bean>
 </beans>

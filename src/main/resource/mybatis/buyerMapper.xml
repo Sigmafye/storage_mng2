@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.ynu.mapper.BuyerMapper">
+<!--    插入采购员-->
+    <insert id="addBuyerById" parameterType="Buyer">
+        insert into buyer values (#{u_id},#{u_name},#{u_sex},#{u_age})
+    </insert>
+
+<!--    删除采购员-->
+    <delete id="deleteBuyerById" parameterType="java.lang.Integer">
+        delete from buyer where u_id=#{u_id}
+    </delete>
+
+<!--    查找采购员-->
+    <select id="getBuyerInfo" parameterType="java.lang.Integer">
+        select * from buyer where u_id=#{u_id}
+    </select>
+
+<!--    更新采购员-->
+    <update id="updateBuyerInfo" parameterType="Buyer">
+        update buyer set u_name=#{u_name},u_sex=#{u_sex},u_age=#{u_age} where u_id=#{u_id}
+    </update>
+</mapper>
