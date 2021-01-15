@@ -12,6 +12,8 @@
     <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
     <script type="text/javascript" src="../../resources/Js/common.js"></script>
 
+
+
     <style type="text/css">
         body {
             padding-bottom: 40px;
@@ -33,36 +35,29 @@
     </style>
 </head>
 <body>
-<form action="index.html" method="post" class="definewidth m20">
-    <table class="table table-bordered table-hover m10">
+<form action="{:U('User/edit_buyer')}" method="post" class="definewidth m20">
+    <input type="hidden" name="id" value="{$user.id}" />
+    <table class="table table-bordered table-hover definewidth m10">
         <tr>
-            <td class="tableleft">入库编号</td>
-            <td><input type="text" name="name"/></td>
+            <td width="10%" class="tableleft">用户名</td>
+            <td><input type="text" name="username" ></td>
         </tr>
         <tr>
-            <td class="tableleft">产品编号</td>
-            <td><input type="text" name="class"/></td>
+            <td class="tableleft">密码</td>
+            <td><input type="password" name="password"/></td>
         </tr>
         <tr>
-            <td class="tableleft">管理员编号</td>
-            <td><input type="text" name="class"/></td>
+            <td class="tableleft">年龄</td>
+            <td><input type="text" name="age" ></td>
         </tr>
         <tr>
-            <td class="tableleft">货物名称</td>
-            <td><input type="text" name="class"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">入库时间</td>
-            <td><input type="text" name="time"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">状态</td>
-            <td><input type="text" name="price"/></td>
+            <td class="tableleft">性别</td>
+            <td><input type="text" name="sex"></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">提交</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button>				 &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -72,7 +67,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="export.html";
+            window.location.href="manager.html";
         });
 
     });

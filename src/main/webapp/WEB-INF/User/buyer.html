@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>入库管理</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
@@ -11,7 +11,6 @@
     <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
     <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
     <script type="text/javascript" src="../../resources/Js/common.js"></script>
- 
 
     <style type="text/css">
         body {
@@ -34,61 +33,45 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="index.html" method="get">    
-    用户名称：
-    <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>
+<form class="form-inline definewidth m20" action="buyer.html" method="get">
+    <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入编号" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>
-<table class="table table-bordered table-hover definewidth m10">
+<table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
-        <th>用户id</th>
-        <th>用户名称</th>
-        <th>真实姓名</th>
-        <th>最后登录时间</th>
+        <th>采购员编号</th>
+        <th>用户名</th>
+        <th>性别</th>
+        <th>年龄</th>
         <th>操作</th>
+
     </tr>
     </thead>
-	     <tr>
-            <td>2</td>
-            <td>admin</td>
-            <td>管理员</td>
-            <td></td>
-             <td>
-                 <button type="submit" class="btn btn-warning"><a href="edit_user.html">修改</a></button>&nbsp;
-                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-             </td>
-        </tr>	
+    <tr>
+        <td>001</td>
+        <td>小李</td>
+        <td>男</td>
+        <td>28</td>
+        <td>
+            <button type="submit" class="btn btn-warning"><a href="edit_buyer.html">修改</a></button>&nbsp;
+            <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
+        </td>
+    </tr>
 </table>
+<div class="inline pull-right page" align="center">
+    10122 条记录 1/507 页  <a href='#'>下一页</a>     <span class='current'>1</span><a href='#'>2</a><a href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a>  <a href='#' >下5页</a> <a href='#' >最后一页</a>    </div>
 </body>
 </html>
 <script>
     $(function () {
-        
 
-		$('#addnew').click(function(){
+        $('#addnew').click(function(){
 
-				window.location.href="add_user.html";
-		 });
+            window.location.href="add_buyer.html";
+        });
 
 
     });
 
-	function del(id)
-	{
-		
-		
-		if(confirm("确定要删除吗？"))
-		{
-		
-			var url = "index.html";
-			
-			window.location.href=url;		
-		
-		}
-	
-	
-	
-	
-	}
 </script>

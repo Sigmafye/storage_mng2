@@ -33,37 +33,28 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="index.html" method="get">
-    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
-    <select>
-        <option>-请选择-</option>
-        <option>按编号排序</option>
-        <option>按状态排序</option>
-    </select>
+<form class="form-inline definewidth m20" action="manager.html" method="get">
+    <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入编号" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
-        <th>入库编号</th>
-        <th>产品编号</th>
         <th>管理员编号</th>
-        <th>货物名称</th>
-        <th>入库时间</th>
-        <th>状态</th>
+        <th>用户名</th>
+        <th>性别</th>
+        <th>年龄</th>
         <th>操作</th>
 
     </tr>
     </thead>
     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>001</td>
-        <td>dell笔记本</td>
-        <td>2020-01-01</td>
-        <td>出库</td>
+        <td>021</td>
+        <td>小四</td>
+        <td>男</td>
+        <td>25</td>
         <td>
-            <button type="submit" class="btn btn-warning"><a href="edit_list.html">修改</a></button>&nbsp;
+            <button type="submit" class="btn btn-warning"><a href="edit_manager.html">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
@@ -77,7 +68,7 @@
 
         $('#addnew').click(function(){
 
-            window.location.href="addGoods_import.html";
+            window.location.href="add_manager.html";
         });
 
 
