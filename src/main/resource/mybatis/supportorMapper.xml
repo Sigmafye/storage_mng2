@@ -41,4 +41,10 @@
         select * from buy_list where s_id=#{s_id}
     </select>
 
+
+<!--    返回所有供应商编号列表-->
+    <select id="getSupportorIdList" resultType="java.lang.Integer">
+        select u_id from supportor
+    </select>
+
 </mapper>

@@ -52,4 +52,12 @@ public interface BuyerService {
      * @return
      */
     public List<MyOrder> getBuyerOrderList(int u_id);
+
+
+    /**
+     * 采购员登录验证
+     * @param buyer
+     * @return
+     */
+    public boolean isValidBuyer(Buyer buyer);
 }

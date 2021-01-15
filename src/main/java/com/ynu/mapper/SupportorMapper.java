@@ -53,4 +53,10 @@ public interface SupportorMapper {
      */
     public List<MyOrder> getSupportorOrderList(int s_id);
 
+    /**
+     * 获取所有供应商编号列表
+     * @return
+     */
+    public List<Integer> getSupportorIdList();
+
 }

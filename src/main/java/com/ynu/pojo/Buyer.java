@@ -10,6 +10,7 @@ public class Buyer {
     private String u_name;//采购员姓名
     private String u_sex;//采购员性别
     private int u_age;//采购员年龄
+    private String u_password;//采购员密码
 
     public int getU_id() {
         return u_id;
@@ -43,13 +44,22 @@ public class Buyer {
         this.u_age = u_age;
     }
 
+    public String getU_password() {
+        return u_password;
+    }
+
+    public void setU_password(String u_password) {
+        this.u_password = u_password;
+    }
+
     @Override
     public String toString() {
-        return "buyer{" +
+        return "Buyer{" +
                 "u_id=" + u_id +
                 ", u_name='" + u_name + '\'' +
                 ", u_sex='" + u_sex + '\'' +
                 ", u_age=" + u_age +
+                ", u_password='" + u_password + '\'' +
                 '}';
     }
 }
