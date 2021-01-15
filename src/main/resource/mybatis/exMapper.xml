@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ynu.mapper.EXMapper">
-    <select id="getEX" parameterType="int" resultType="Export">
+    <select id="getEX" parameterType="java.lang.Integer" resultType="Export">
         select * from export_list where ex_id=#{ex_id}
     </select>
 
@@ -15,11 +15,11 @@
         insert into export_list value(#{ex_id},#{m_id},#{c_id},#{ex_quantity},#{ex_time},#{ex_principal},#{ex_remarks})
     </insert>
 
-    <update id="updateEX" parameterType="int">
+    <update id="updateEX" parameterType="java.lang.Integer">
         update export_list set ex_id=#{ex_id},m_id=#{m_id},c_id=#{c_id},ex_quantity=#{ex_quantity},ex_time=#{ex_time},ex_principal=#{ex_peincipal},ex_remarks=#{ex_remarks}where im_id=#{im_id}
     </update>
 
-    <delete id="deleteEX" parameterType="int">
+    <delete id="deleteEX" parameterType="java.lang.Integer">
         delete from export_list where ex_id = #{ex_id}
     </delete>
 </mapper>
