@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.IRMapper">
+    <select id="getIR" parameterType="int" resultType="ImportRecord">
+        select * from import_list where im_id=#{im_id}
+    </select>
+    <select id="getIRList" resultType="ImportRecord">
+        select * from import_list
+    </select>
+    <insert id="insertIR" parameterType="ImportRecord">
+        insert into import_list value(#{im_id},#{m_id},#{c_id},#{im_quantity},#{im_time},#{im_principal},#{im_remarks})
+    </insert>
+    <update id="updateIR" parameterType="java.lang.Integer">
+        update import_list set im_id=#{im_id},m_id=#{m_id},c_id=#{c_id},im_quantity=#{im_quantity},im_time=#{im_time},im_principal=#{im_peincipal},im_remarks=#{im_remarks}where im_id=#{im_id}
+    </update>
+    <delete id="deleteIR" parameterType="java.lang.Integer">
+        delete from import_list where im_id = #{im_id}
+    </delete>
+</mapper>

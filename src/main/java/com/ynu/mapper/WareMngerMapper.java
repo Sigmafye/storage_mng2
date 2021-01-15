@@ -10,6 +10,8 @@ public interface WareMngerMapper {
 
     public List<WareMnger> getWareMngerList();
 
+    public List<Integer> getIdList();
+
     public WareMnger search(WareMnger wareMnger);
 
     public boolean add(WareMnger wareMnger);

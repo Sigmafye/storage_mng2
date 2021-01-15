@@ -9,6 +9,10 @@
         select * from warehouse
     </select>
 
+    <select id="getIdList" resultType="java.lang.Integer">
+        select w_id from warehouse
+    </select>
+
     <select id="search" parameterType="WareHouse" resultType="WareHouse">
         select * from warehouse where w_id = #{w_id}
     </select>

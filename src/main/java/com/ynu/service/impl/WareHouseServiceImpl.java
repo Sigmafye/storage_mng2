@@ -23,6 +23,14 @@ public class WareHouseServiceImpl implements WareHouseService {
     }
 
     /**
+     * 获得仓库编号列表
+     * @return
+     */
+    public List<Integer> getIdList(){
+        return wareHouseMapper.getIdList();
+    }
+
+    /**
      * 搜索某个仓库
      * @param wareHouse
      * @return

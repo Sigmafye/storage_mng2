@@ -27,6 +27,14 @@ public class WareMngerServiceImpl implements WareMngerService {
     }
 
     /**
+     * 返回所有的管理员id
+     * @return
+     */
+    public List<Integer> getIdList() {
+        return wareMngerMapper.getIdList();
+    }
+
+    /**
      * 搜索某个管理员
      * @param wareMnger
      * @return

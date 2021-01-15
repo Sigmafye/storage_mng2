@@ -22,7 +22,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/Order")
+@RequestMapping("/order")
 public class OrderController {
 
 
@@ -112,7 +112,7 @@ public class OrderController {
      * @return
      */
     @RequestMapping("/deleteOrder/{bl_id}")
-    public String deleteOrder(@PathVariable int bl_id){
+    public String deleteOrderById(@PathVariable int bl_id){
         boolean isDeleteGoods=orderGoodsService.deleteOrderGoods(bl_id);
         if (isDeleteGoods){
             //成功将商品删除
@@ -140,7 +140,7 @@ public class OrderController {
      * @return
      */
     @RequestMapping("/getOrder/{bl_id}")
-    public String getOrder(@PathVariable int bl_id,
+    public String getOrderById(@PathVariable int bl_id,
                            Model model){
         //查找订单信息
         MyOrder myOrder=orderService.getOrderById(bl_id);
@@ -172,11 +172,44 @@ public class OrderController {
                               Buyer buyer,//采购员
                               Supportor supportor,//供应商
                               Model model){
+        /*
+        按顺序更新
+         */
+        boolean isUpdateBuyer=buyerService.updateBuyerInfo(buyer);
+        boolean isUpdateSupportor=supportorService.updateSupportor(supportor);
+        boolean isUpdateOrder=orderService.updateOrderById(order);
 
-
-        return "false";
+        if(isUpdateBuyer && isUpdateSupportor &&isUpdateOrder){
+            return "success";
+        }else{
+            return "failure";
+        }
 
     }
+
+
+    /**
+     * 返回订单列表--orderList
+     * @param model
+     * @return orderList
+     */
+    @RequestMapping("/orderList")
+    public String getOrderList(Model model){
+
+
+        List<MyOrder> orderList=orderService.getOrderList();
+
+        if (orderList!=null){
+            //订单不为空
+            model.addAttribute("orderList",orderList);
+            return "notNull";
+        }else{
+            //订单为空
+            return "null";
+        }
+    }
+
+
 
 
 }

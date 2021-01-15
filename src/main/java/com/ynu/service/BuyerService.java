@@ -1,6 +1,9 @@
 package com.ynu.service;
 
 import com.ynu.pojo.Buyer;
+import com.ynu.pojo.MyOrder;
+
+import java.util.List;
 
 public interface BuyerService {
 
@@ -35,4 +38,26 @@ public interface BuyerService {
      * @return Buyer
      */
     public Buyer getBuyerInfo(int u_id);
+
+
+    /**
+     * 返回采购员的编号列表
+     * @return
+     */
+    public List<Integer> getBuyerIdList();
+
+
+    /**
+     * 根据采购员编号查找对应的订单
+     * @return
+     */
+    public List<MyOrder> getBuyerOrderList(int u_id);
+
+
+    /**
+     * 采购员登录验证
+     * @param buyer
+     * @return
+     */
+    public boolean isValidBuyer(Buyer buyer);
 }

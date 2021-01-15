@@ -8,6 +8,8 @@ public interface GoodsMapper {
 
     public List<Goods> getGoodsList();
 
+    public List<Integer> getIdList();
+
     public Goods search(Goods goods);
 
     public boolean add(Goods goods);

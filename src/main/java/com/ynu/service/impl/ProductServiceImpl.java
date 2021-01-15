@@ -18,6 +18,14 @@ public class ProductServiceImpl implements ProductService {
         return productMapper.getProductList();
     }
 
+    /**
+     * 获得产品id列表
+     * @return
+     */
+    public List<Integer> getIdList(){
+        return productMapper.getIdList();
+    }
+
     public Product search(Product product) {
         return productMapper.search(product);
     }

@@ -24,4 +24,23 @@
     <update id="updateBuyerInfo" parameterType="Buyer">
         update buyer set u_name=#{u_name},u_sex=#{u_sex},u_age=#{u_age} where u_id=#{u_id}
     </update>
+
+
+
+<!--    获取采购员编号列表-->
+    <select id="getBuyerIdList" resultType="java.lang.Integer">
+        select u_id from buyer
+    </select>
+
+
+<!--    根据采购员编号查找对应的订单信息-->
+    <select id="getBuyerOrderList" parameterType="java.lang.Integer" resultType="MyOrder">
+        select * from buy_list where u_id=#{u_id}
+    </select>
+
+<!--    采购员登录验证-->
+
+    <select id="isValidBuyer" parameterType="Buyer" resultType="Buyer">
+        select * from buyer where u_name=#{u_name} and u_password=#{u_password}
+    </select>
 </mapper>

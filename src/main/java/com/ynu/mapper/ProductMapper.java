@@ -8,6 +8,8 @@ public interface ProductMapper {
 
     public List<Product> getProductList();
 
+    public List<Integer> getIdList();
+
     public Product search(Product product);
 
     public boolean add(Product product);
