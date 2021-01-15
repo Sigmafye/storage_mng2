@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.EXMapper">
+    <select id="getEX" parameterType="int" resultType="Export">
+        select * from export_list where ex_id=#{ex_id}
+    </select>
+
+    <select id="getEXList" resultType="Export">
+        select * from export_list
+    </select>
+
+    <insert id="insertEX" parameterType="Export">
+        insert into export_list value(#{ex_id},#{m_id},#{c_id},#{ex_quantity},#{ex_time},#{ex_principal},#{ex_remarks})
+    </insert>
+
+    <update id="updateEX" parameterType="int">
+        update export_list set ex_id=#{ex_id},m_id=#{m_id},c_id=#{c_id},ex_quantity=#{ex_quantity},ex_time=#{ex_time},ex_principal=#{ex_peincipal},ex_remarks=#{ex_remarks}where im_id=#{im_id}
+    </update>
+
+    <delete id="deleteEX" parameterType="int">
+        delete from export_list where ex_id = #{ex_id}
+    </delete>
+</mapper>

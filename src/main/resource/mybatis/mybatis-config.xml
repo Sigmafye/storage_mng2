@@ -14,6 +14,8 @@
         <typeAlias type="com.ynu.pojo.Buyer" alias="Buyer"></typeAlias>
         <typeAlias type="com.ynu.pojo.Supportor" alias="Supportor"></typeAlias>
         <typeAlias type="com.ynu.pojo.OrderGoods" alias="OrderGoods"></typeAlias>
+        <typeAlias type="com.ynu.pojo.ImportRecord" alias="ImportRecord"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Export" alias="Export"></typeAlias>
     </typeAliases>
 
     <!-- 实体接口映射文件 -->
@@ -26,6 +28,8 @@
         <mapper resource="mybatis/productMapper.xml"/>
         <mapper resource="mybatis/wareMngerMapper.xml"/>
         <mapper resource="mybatis/wareHouseMapper.xml"/>
+        <mapper resource="mybatis/exMapper.xml" />
+        <mapper resource="mybatis/irMapper.xml" />
     </mappers>
 
 </configuration>
