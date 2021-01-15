@@ -16,6 +16,10 @@ public class WareMngerController {
     @Autowired
     WareMngerService wareMngerService;
 
+    /**
+     * 登录验证
+     * @return
+     */
     @RequestMapping("/validate")
     public String validate(){
 
@@ -28,6 +32,12 @@ public class WareMngerController {
         }
     }
 
+    /**
+     * 添加仓储管理员
+     * @param wareMnger
+     * @param model
+     * @return
+     */
     @RequestMapping("/add")
     public String add(WareMnger wareMnger, Model model){
 //        WareMnger wareMnger = new WareMnger();
@@ -41,12 +51,23 @@ public class WareMngerController {
         }
     }
 
+    /**
+     * 删除库存管理员
+     * @param id
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable int id){
         wareMngerService.delete(id);
         return "";
     }
 
+    /**
+     * 更新仓库管理员
+     * @param wareMnger
+     * @param model
+     * @return
+     */
     @RequestMapping("/update")
     public String delete(WareMnger wareMnger, Model model){
         if (wareMngerService.update(wareMnger)){
@@ -59,6 +80,11 @@ public class WareMngerController {
         }
     }
 
+    /**
+     * 获得管理员列表
+     * @param model
+     * @return
+     */
     @RequestMapping("/getMngerList")
     public String getMngerList(Model model){
         List<WareMnger> wareMngerList = wareMngerService.getWareMngerList();

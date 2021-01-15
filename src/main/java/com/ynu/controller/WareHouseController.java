@@ -19,6 +19,12 @@ public class WareHouseController {
     @Autowired
     WareHouseService wareHouseService;
 
+    /**
+     * 添加仓库
+     * @param wareHouse
+     * @param model
+     * @return
+     */
     @RequestMapping("/add")
     public String add(WareHouse wareHouse, Model model){
 //        WareMnger wareMnger = new WareMnger();
@@ -32,6 +38,12 @@ public class WareHouseController {
         }
     }
 
+    /**
+     * 删除仓库
+     * @param id
+     * @param model
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable int id, Model model){
         if (wareHouseService.delete(id)){
@@ -45,6 +57,12 @@ public class WareHouseController {
 
     }
 
+    /**
+     * 更新仓库
+     * @param wareHouse
+     * @param model
+     * @return
+     */
     @RequestMapping("/update")
     public String delete(WareHouse wareHouse, Model model){
         if (wareHouseService.update(wareHouse)){
@@ -57,6 +75,11 @@ public class WareHouseController {
         }
     }
 
+    /**
+     * 获得仓库列表
+     * @param model
+     * @return
+     */
     @RequestMapping("/getHouseList")
     public String getHouseList(Model model){
         List<WareHouse> wareHouseList = wareHouseService.getWareHouseList();

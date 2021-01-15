@@ -19,6 +19,12 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    /**
+     * 添加产品
+     * @param product
+     * @param model
+     * @return
+     */
     @RequestMapping("/add")
     public String add(Product product, Model model){
 //        WareMnger wareMnger = new WareMnger();
@@ -32,6 +38,12 @@ public class ProductController {
         }
     }
 
+    /**
+     * 删除产品
+     * @param id
+     * @param model
+     * @return
+     */
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable int id, Model model){
         if (productService.delete(id)){
@@ -45,6 +57,12 @@ public class ProductController {
 
     }
 
+    /**
+     * 更新产品
+     * @param product
+     * @param model
+     * @return
+     */
     @RequestMapping("/update")
     public String delete(Product product, Model model){
         if (productService.update(product)){
@@ -57,6 +75,11 @@ public class ProductController {
         }
     }
 
+    /**
+     * 获得产品列表
+     * @param model
+     * @return
+     */
     @RequestMapping("/getList")
     public String getList(Model model){
         List<Product> productList = productService.getProductList();
