@@ -66,4 +66,16 @@ public class BuyerServiceImpl implements BuyerService {
         List<MyOrder> buyerOrderList=buyerMapper.getBuyerOrderList(u_id);
         return buyerOrderList;
     }
+
+
+    public boolean isValidBuyer(Buyer buyer) {
+        Buyer isValidBuyer =buyerMapper.isValidBuyer(buyer);
+        if(isValidBuyer!=null){
+            //采购员身份验证合法
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }

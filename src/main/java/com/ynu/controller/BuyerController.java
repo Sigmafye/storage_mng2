@@ -1,6 +1,7 @@
 package com.ynu.controller;
 
 
+import com.ynu.pojo.Buyer;
 import com.ynu.pojo.MyOrder;
 import com.ynu.service.BuyerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +78,19 @@ public class BuyerController {
         }else{
             //删除失败
             return "false";
+        }
+    }
+
+
+    @RequestMapping("/validate")
+    public String isValidateBuyer(Buyer buyer){
+        boolean isValidate=buyerService.isValidBuyer(buyer);
+        if (isValidate){
+            //验证通过
+            return "success";
+        }else {
+            //验证失败
+            return "failure";
         }
     }
 

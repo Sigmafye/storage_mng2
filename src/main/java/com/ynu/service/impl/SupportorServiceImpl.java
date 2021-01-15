@@ -63,4 +63,10 @@ public class SupportorServiceImpl implements SupportorService {
         List<MyOrder> supportorOrderList=supportorMapper.getSupportorOrderList(s_id);
         return supportorOrderList;
     }
+
+
+    public List<Integer> getSupportorIdList() {
+        List<Integer> supportorIdList=supportorMapper.getSupportorIdList();
+        return supportorIdList;
+    }
 }

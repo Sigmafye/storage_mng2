@@ -38,4 +38,9 @@
         select * from buy_list where u_id=#{u_id}
     </select>
 
+<!--    采购员登录验证-->
+
+    <select id="isValidBuyer" parameterType="Buyer" resultType="Buyer">
+        select * from buyer where u_name=#{u_name} and u_password=#{u_password}
+    </select>
 </mapper>
