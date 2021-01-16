@@ -48,16 +48,16 @@
             <td><input type="text" name="username" ></td>
         </tr>
         <tr>
-            <td class="tableleft">密码</td>
-            <td><input type="password" name="password"/></td>
+            <td class="tableleft">性别</td>
+            <td><input type="password" name="sex"/></td>
         </tr>
         <tr>
             <td class="tableleft">年龄</td>
             <td><input type="text" name="age" ></td>
         </tr>
         <tr>
-            <td class="tableleft">性别</td>
-            <td><input type="text" name="sex"></td>
+            <td class="tableleft">密码</td>
+            <td><input type="text" name="password"></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

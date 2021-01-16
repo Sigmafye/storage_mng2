@@ -20,7 +20,7 @@ public class NavigateController {
      */
     @RequestMapping("/buyStatis")
     public String gotoBuyStatis(){
-        return "/WEB-INF//index.jsp";
+        return "/WEB-INF/User/index.jsp";
     }
 
     /*
@@ -99,7 +99,7 @@ public class NavigateController {
      */
     @RequestMapping("/manager")
     public String gotomanager(){
-        return "/WEB-INF/User/manager.jsp";
+        return "redirect:/wareMnger/getMngerList";
     }
 
 

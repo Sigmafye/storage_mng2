@@ -40,29 +40,39 @@
     </style>
 </head>
 <body>
-<form action="edit_manager.jsp" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="{$user.id}" />
+<form action="<%=request.getContextPath()%>/wareMnger/doUpdate" method="post" class="definewidth m20">
+<%--    <input type="hidden" name="id" value="{$user.id}" />--%>
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
+            <td width="10%" class="tableleft">编号</td>
+            <td><input type="text" name="m_id" value="${mnger.m_id}" readonly></td>
+        </tr>
+
+        <tr>
             <td width="10%" class="tableleft">用户名</td>
-            <td><input type="text" name="username" ></td>
+            <td><input type="text" name="m_name" value="${mnger.m_name}"></td>
         </tr>
         <tr>
             <td class="tableleft">密码</td>
-            <td><input type="password" name="password"/></td>
+            <td><input type="text" name="m_password" value="${mnger.m_password}"/></td>
         </tr>
         <tr>
-            <td class="tableleft">年龄</td>
-            <td><input type="text" name="age" ></td>
+            <td class="tableleft">电话</td>
+            <td><input type="text" name="m_tel" value="${mnger.m_tel}" ></td>
         </tr>
         <tr>
-            <td class="tableleft">性别</td>
-            <td><input type="text" name="sex"></td>
+            <td class="tableleft">地址</td>
+            <td><input type="text" name="m_addr" value="${mnger.m_addr}"></td>
+        </tr>
+        <tr>
+            <td class="tableleft">管理仓库编号</td>
+            <td><input type="text" name="m_wnum" value="${mnger.m_wnum}"></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button>				 &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button>
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -72,7 +82,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="manager.jsp";
+            window.history.go(-1);
         });
 
     });
