@@ -1,8 +1,11 @@
 package com.ynu.pojo;
 
+import org.springframework.stereotype.Component;
+
 /*
 这是仓库管理员
  */
+@Component
 public class WareMnger {
     private int m_id;   //管理员编号
     private String m_password;  //密码

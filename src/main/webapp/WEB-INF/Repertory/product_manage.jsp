@@ -5,7 +5,7 @@
   Time: 15:48
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -62,53 +62,39 @@
         <th><input type="checkbox">全选</th>
         <th>产品编号</th>
         <th>仓库编号</th>
+        <th>所在仓库</th>
         <th>入库编号</th>
         <th>出库编号</th>
         <th>产品名称</th>
         <th>产品单价/元</th>
         <th>库存数量</th>
         <th>产品类别</th>
-        <th>所在仓库</th>
         <th>贷架号</th>
         <th>操作</th>
     </tr>
     </thead>
     <tbody>
+     <c:forEach var="product" items="${productList}">
     <tr>
         <td><input type="checkbox"></td>
-        <td>024859</td>
-        <td>A-01</td>
-        <td>a423425</td>
-        <td>-</td>
-        <td>xx薯片</td>
-        <td>6</td>
-        <td>500</td>
-        <td>食品</td>
-        <td>A-01</td>
-        <td>AB-003</td>
+        <td>${product.p_idd}</td>
+        <td>${product.w_id}</td>
+        <td>${product.p_warehouse}</td>
+        <td>${product.im_id}</td>
+        <td>${product.ex_id}</td>
+        <td>${product.p_name}</td>
+        <td>${product.p_price}</td>
+        <td>${product.p_quantity}</td>
+        <td>${product.p_type}</td>
+        <td>${product.p_shelf_number}</td>
         <td>
             <button type="submit" class="btn btn-warning"><a href="editproduct.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
+     </c:forEach>
     </tbody>
-    <tr>
-        <td><input type="checkbox"></td>
-        <td>867564</td>
-        <td>B-12</td>
-        <td>b756444</td>
-        <td>b3545</td>
-        <td>xx饮料</td>
-        <td>8</td>
-        <td>1233</td>
-        <td>饮品</td>
-        <td>B-12</td>
-        <td>BF-353</td>
-        <td>
-            <button type="submit" class="btn btn-warning"><a href="editproduct.jsp">修改</a></button>&nbsp;
-            <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-        </td>
-    </tr>
+
 </table>
 <div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
@@ -134,34 +120,33 @@
     })
 
 </script>
-</body>
+         </body>
 </html>
-<script>
-    $(function () {
 
-        $('#addnew').click(function(){
+         <script>
+         $(function () {
 
-            window.location.href="addproduct.jsp";
-        });
+         $('#addnew').click(function(){
 
-
-    });
-
-    function del(id)
-    {
+         window.location.href="addproduct.jsp";
+         });
 
 
-        if(confirm("确定要删除吗？"))
-        {
+         });
 
+         function del(id)
+         {
+
+
+         if(confirm("确定要删除吗？"))
+         {
+
+         var url = "index.html";
             var url = "";
 
-            window.location.href=url;
+         window.location.href=url;
 
-        }
+         }
 
-
-
-
-    }
-</script>
+         }
+         </script>

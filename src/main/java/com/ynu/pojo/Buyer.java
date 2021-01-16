@@ -1,9 +1,12 @@
 package com.ynu.pojo;
 
 
+import org.springframework.stereotype.Component;
+
 /**
  * 采购人员实体类，buyer
  */
+@Component
 public class Buyer {
 
     private int u_id;//采购员编号

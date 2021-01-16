@@ -126,9 +126,9 @@
                                 text:'仓库管理员',
                                 href:'<%=request.getContextPath()%>/goto/manager'
                             }
-                        ]
+                            ]
                     }
-                ]
+                    ]
             }
         ];
 
