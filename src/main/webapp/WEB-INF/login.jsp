@@ -10,14 +10,14 @@
 <head>
     <title>后台管理系统</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../resources/Css/style.css" />
-    <script type="text/javascript" src="../resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="../resources/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../resources/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../resources/Js/ckform.js"></script>
-    <script type="text/javascript" src="../resources/Js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
 
     <style type="text/css">
         body {
@@ -61,9 +61,26 @@
 
     <form class="form-signin" method="post" action="/WEB-INF/index.jsp">
         <h2 class="form-signin-heading">登录系统</h2>
-        <input type="text" name="username" class="input-block-level" placeholder="账号">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1"
+                       value="option1" checked>库存管理员
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2"
+                       value="option2">采购管理员
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3"
+                       value="option2">超级管理员
+            </label>
+        </div>
+            <input type="text" name="username" class="input-block-level" placeholder="账号">
         <input type="password" name="password" class="input-block-level" placeholder="密码">
-        <input type="text" name="verify" class="input-medium" placeholder="验证码">
         <tr class="accordion-group">
             <td>
                 <button class="btn btn-large btn-primary" type="submit"  onclick="doLogin()">登录</button>
