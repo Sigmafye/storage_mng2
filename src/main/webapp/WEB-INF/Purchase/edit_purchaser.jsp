@@ -41,38 +41,70 @@
     </style>
 </head>
 <body>
-<form action="index.html" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="" />
-    <table class="table table-bordered table-hover ">
-        <tr>
-            <td width="10%" class="tableleft">采购商品编号</td>
-            <td><input type="text" name="grouptitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">订单编号</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购商品名称</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购商品分类</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购数量</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购单价</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
+<form action="<%=request.getContextPath()%>/order/updateOrder" class="definewidth m20">
 
+    <table class="table table-bordered table-hover ">
+                <tr>
+                    <td width="10%" class="tableleft">订单编号</td>
+                    <td><input type="text" name="bl_id" value="${order.bl_id}" readonly/></td>
+                </tr>
+        <tr>
+            <td>供应商编号：</td>
+            <td><select type="text" name="s_id" id="supportor" class="abc input-default" >
+                <c:forEach var="supportor" items="${supportorList}">
+                    <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>
+                </c:forEach>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>采购员编号：</td>
+            <td><select type="text" name="u_id" id="buyer" class="abc input-default" >
+                <c:forEach var="buyer" items="${buyerList}">
+                    <option value ="${buyer.u_id}">${buyer.u_id},${buyer.u_name}</option>
+                </c:forEach>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft">供应商</td>
+            <td ><input type="text" name="supportor" value="${order.supportor}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">收货仓库</td>
+            <td >
+                <select type="text" name="ware" id="ware"class="abc input-default" >
+                    <option value =1>1</option>
+                    <option value =2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft">到货时间</td>
+            <td ><input type="text" name="a_time" value="${order.a_time}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">联系人</td>
+            <td ><input type="text" name="relate_peo" value="${order.relate_peo}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">联系方式</td>
+            <td ><input type="text" name="re_methods" value="${order.re_methods}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">经手人编号</td>
+            <td ><input type="text" name="p_id" value="${order.p_id}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">经手人</td>
+            <td ><input type="text" name="processor" value="${order.processor}"/></td>
+        </tr>
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;
+                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
                 <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
