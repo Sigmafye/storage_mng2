@@ -1,17 +1,31 @@
 package com.ynu.controller;
 
+import com.ynu.pojo.MyOrder;
+import com.ynu.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/goto")
 public class NavigateController {
 
+
+    @Autowired
+    private OrderService orderService;
+
+
     /*
     采购管理
      */
     @RequestMapping("/purchaseMng")
-    public String gotoPurchaseMng(){
+    public String gotoPurchaseMng(Model model){
+        List<MyOrder> orderList=orderService.getOrderList();
+        model.addAttribute("orderList",orderList);
+        System.out.println(orderList);
         return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
     }
 
@@ -20,7 +34,7 @@ public class NavigateController {
      */
     @RequestMapping("/buyStatis")
     public String gotoBuyStatis(){
-        return "/WEB-INF/User/index.jsp";
+        return "/WEB-INF/Purchase/Purchase_statistics_inquiry.jsp";
     }
 
     /*
@@ -45,7 +59,7 @@ public class NavigateController {
      */
     @RequestMapping("/goodsMng")
     public String gotoGoodsMng(){
-        return "/WEB-INF/Repertory/commodity_manage.jsp";
+        return "redirect:/goods/getList";
     }
 
     /*
@@ -77,7 +91,7 @@ public class NavigateController {
      */
     @RequestMapping("/wareStatis")
     public String gotoWareStatis(){
-        return "/WEB-INF/role/index.jsp";
+        return "/WEB-INF/Repertory/Inventory_statistics_query.jsp";
     }
     /*
     超级管理员
@@ -85,6 +99,15 @@ public class NavigateController {
     @RequestMapping("/userMng")
     public String gotouserMng(){
         return "/WEB-INF/User/index.jsp";
+    }
+
+
+    /*
+    跳转添加采购单
+     */
+    @RequestMapping("/addPurchaseOrder")
+    public String gotoAddPurchaseOrder(){
+        return "/WEB-INF/Purchase/add_purchaser_order.jsp";
     }
 
     /*

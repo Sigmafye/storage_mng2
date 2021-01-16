@@ -3,14 +3,18 @@ package com.ynu.controller;
 
 
 import com.ynu.pojo.Buyer;
+import com.ynu.pojo.MyOrder;
 import com.ynu.pojo.WareMnger;
 import com.ynu.service.BuyerService;
+import com.ynu.service.OrderService;
 import com.ynu.service.WareMngerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/account")
@@ -22,6 +26,8 @@ public class AccountController {
     @Autowired
     private BuyerService buyerService;//采购管理员服务
 
+    @Autowired
+    private OrderService orderService;//订单服务
 
     @Autowired
     private WareMnger wareMnger;
@@ -98,8 +104,11 @@ public class AccountController {
      */
     @RequestMapping("/wareMnger")
     public String wareMnger(){
+
+
+
         System.out.println("wareMnger,success");
-        return "pass";
+        return "/WEB-INF/index.jsp";
     }
 
 
@@ -108,9 +117,13 @@ public class AccountController {
      * @return
      */
     @RequestMapping("/buyerMnger")
-    public String buyerMnger(){
+    public String buyerMnger(Model model){
         System.out.println("buyerMnger,success");
-        return "pass";
+        //获取所有订单
+//        List<MyOrder> orderList=orderService.getOrderList();
+//        model.addAttribute("orderList",orderList);
+        //System.out.println(orderList);
+        return "/WEB-INF/index.jsp";
     }
 
     /**

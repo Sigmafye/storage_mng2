@@ -98,7 +98,7 @@
                             {
                                 id:'25',
                                 text:'库存统计查询',
-                                href:'<%=request.getContextPath()%>/Role/index.html'
+                                href:'<%=request.getContextPath()%>/goto/wareStatis'
                             }
                         ]
                     }

@@ -40,48 +40,48 @@
     </style>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>goods/update" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>goods/doUpdate" method="post" class="definewidth m20">
     <input type="hidden" name="id" value="" />
     <table class="table table-bordered table-hover ">
         <tr>
             <td width="10%" class="tableleft">商品编号</td>
-            <td><input type="text" name="gs_id" value=""  readonly/></td>
+            <td><input type="text" name="gs_id" value="${goods.gs_id}"  readonly/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">出库编号</td>
-            <td><input type="text" name="ex_id" value=""/></td>
+            <td><input type="text" name="ex_id" value="${goods.ex_id}" readonly/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">仓库编号</td>
-            <td><input type="text" name="w_id" value=""/></td>
+            <td><input type="text" name="w_id" value="${goods.w_id}" /></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">入库编号</td>
-            <td><input type="text" name="im_id" value=""/></td>
+            <td><input type="text" name="im_id" value="${goods.im_id}" readonly/></td>
         </tr>
         <tr>
             <td class="tableleft">商品名称</td>
-            <td ><input type="text" name="gs_name" value=""/></td>
+            <td ><input type="text" name="gs_name" value="${goods.gs_name}"/></td>
         </tr>
         <tr>
             <td class="tableleft">价格</td>
-            <td ><input type="text" name="gs_price" value=""/></td>
+            <td ><input type="text" name="gs_price" value="${goods.gs_price}"/></td>
         </tr>
         <tr>
             <td class="tableleft">商品分类</td>
-            <td ><input type="text" name="gs_class" value=""/></td>
+            <td ><input type="text" name="gs_class" value="${goods.gs_class}"/></td>
         </tr>
         <tr>
             <td class="tableleft">数量</td>
-            <td ><input type="text" name="gs_num" value=""/></td>
+            <td ><input type="text" name="gs_num" value="${goods.gs_num}"/></td>
         </tr>
         <tr>
             <td class="tableleft">所在仓库</td>
-            <td ><input type="text" name="gs_ware" value=""/></td>
+            <td ><input type="text" name="gs_ware" value="${goods.gs_ware}"/></td>
         </tr>
         <tr>
             <td class="tableleft">商品货架</td>
-            <td ><input type="text" name="gs_shelf" value=""/></td>
+            <td ><input type="text" name="gs_shelf" value="${goods.gs_shelf}"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

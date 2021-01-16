@@ -57,13 +57,31 @@ public class GoodsController {
     }
 
     /**
-     * 更新商品
+     * 准备跳转更新商品页面
+     * @param id
+     * @return
+     */
+    @RequestMapping("/update/{gs_id}")
+    public String update(@PathVariable("gs_id") int id, Model model){
+        Goods goods = goodsService.search(new Goods(id));
+        if (goods != null){
+            model.addAttribute("goods", goods);
+            return "/WEB-INF/Repertory/editcommodity.jsp";
+        }
+        else {
+            model.addAttribute("result", "查找失败");
+            return "";
+        }
+    }
+
+    /**
+     * 更新商品页面
      * @param goods
      * @param model
      * @return
      */
-    @RequestMapping("/update")
-    public String delete(Goods goods, Model model){
+    @RequestMapping("/doUpdate")
+    public String doUpdate(Goods goods, Model model){
         if (goodsService.update(goods)){
             model.addAttribute("result", "更新成功");
             return "";
@@ -83,6 +101,6 @@ public class GoodsController {
     public String getList(Model model){
         List<Goods> goodsList = goodsService.getGoodsList();
         model.addAttribute("goodsList", goodsList);
-        return "";
+        return "/WEB-INF/Repertory/commodity_manage.jsp";
     }
 }
