@@ -96,7 +96,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="product_manage.html";
+            window.location.href="product_manage.jsp";
         });
 
     });

@@ -7,19 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% %>
 <html>
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/Css/style.css" />
-    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/Js/ckform.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/Js/common.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
     <style type="text/css">
         body {
             padding-bottom: 40px;
@@ -81,7 +81,7 @@
         <td>A-32</td>
         <td>AE-213</td>
         <td>
-            <button type="submit" class="btn btn-warning"><a href="editcommodity.html">修改</a></button>&nbsp;
+            <button type="submit" class="btn btn-warning"><a href="editcommodity.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
@@ -98,7 +98,7 @@
         <td>A-32</td>
         <td>AE-213</td>
         <td>
-            <button type="submit" class="btn btn-warning"><a href="editcommodity.html">修改</a></button>&nbsp;
+            <button type="submit" class="btn btn-warning"><a href="editcommodity.jsp">修改</a></button>&nbsp;
             <button type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
@@ -135,7 +135,7 @@
 
         $('#addnew').click(function(){
 
-            window.location.href="addcommodity.html";
+            window.location.href="addcommodity.jsp";
         });
 
 

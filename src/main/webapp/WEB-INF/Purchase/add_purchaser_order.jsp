@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: DELL
+  Date: 2021/1/15
+  Time: 17:10
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/style.css" />
-    <script type="text/javascript" src="../../resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="../../resources/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
-    <script type="text/javascript" src="../../resources/Js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
 
     <style type="text/css">
         body {
@@ -101,8 +109,8 @@
 </ul>-->
 <h5 class="page-header"></h5>
 <div>
-    <button type="submit" class="btn" id="addnew"><a href="add_commodity.html">添加商品</a></button>&nbsp;&nbsp;
-    <button type="button" class="btn" id=""><a href="add_commodity.html">批量导入</a></button>
+    <button type="submit" class="btn" id="addnew"><a href="add_commodity.jsp">添加商品</a></button>&nbsp;&nbsp;
+    <button type="button" class="btn" id=""><a href="add_commodity.jsp">批量导入</a></button>
     <form class="form-inline definewidth m20" action="index.html" method="get">
         分类：
         <select>
@@ -138,7 +146,7 @@
             <td>100</td>
             <td>12元</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.html">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.jsp">修改</a></button>&nbsp;
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
@@ -151,7 +159,7 @@
             <td>100</td>
             <td>12元</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.html">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.jsp">修改</a></button>&nbsp;
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>

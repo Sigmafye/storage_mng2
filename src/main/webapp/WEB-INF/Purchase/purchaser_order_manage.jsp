@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: DELL
+  Date: 2021/1/15
+  Time: 17:18
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/style.css" />
-    <script type="text/javascript" src="../../resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="../../resources/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
-    <script type="text/javascript" src="../../resources/Js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
 
     <style type="text/css">
         body {
@@ -65,7 +73,7 @@
             <td>j232</td>
             <td>李二牛</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.html">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
                 <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
@@ -81,7 +89,7 @@
             <td>j232</td>
             <td>李二牛</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.html">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
                 <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
@@ -97,7 +105,7 @@
             <td>j232</td>
             <td>李二牛</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.html">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
                 <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
@@ -113,14 +121,14 @@
             <td>j232</td>
             <td>李二牛</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.html">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
                 <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
         </tbody>
     </table>
 </div>
-<button type="submit" class="btn"><a href="add_purchaser_order.html">添加采购单</a></button>&nbsp;
+<button type="submit" class="btn"><a href="add_purchaser_order.jsp">添加采购单</a></button>&nbsp;
 <div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
     <span class='current'>1</span>

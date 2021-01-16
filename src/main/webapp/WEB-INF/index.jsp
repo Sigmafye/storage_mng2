@@ -47,15 +47,15 @@
 <script>
     BUI.use('common/main',function(){
         var config = [{ id: '1', menu: [{ text: '采购管理',homePage: '12',
-                items: [{ id: '12', text: '采购单管理', href: '<%=request.getContextPath()%>/Purchase/purchaser_order_manage.jsp' },
-                    { id: '3', text: '采购统计查询', href: '<%=request.getContextPath()%>/Role/index.jsp' }] }] },
+                items: [{ id: '12', text: '采购单管理', href: '<%=request.getContextPath()%>/goto/purchaseMng'},
+                    { id: '3', text: '采购统计查询', href: '<%=request.getContextPath()%>/goto/buyStatis' }] }] },
             { id: '7', homePage: '10', menu: [{ text: '库存管理',
-                    items: [{ id: '10', text: '商品库存管理', href: '<%=request.getContextPath()%>/Repertory/commodity_manage.jsp' },
-                        { id: '11', text: '产品库存管理', href: '<%=request.getContextPath()%>/Repertory/product_manage.jsp' },
-                        { id: '12', text: '入库管理', href: '<%=request.getContextPath()%>/wareManagement/import.jsp' },
-                        { id: '13', text: '出库管理', href: '<%=request.getContextPath()%>/wareManagement/export.jsp' },
+                    items: [{ id: '10', text: '商品库存管理', href: '<%=request.getContextPath()%>/goto/goodsMng' },
+                        { id: '11', text: '产品库存管理', href: '<%=request.getContextPath()%>/goto/proMng' },
+                        { id: '12', text: '入库管理', href: '<%=request.getContextPath()%>/goto/importMng' },
+                        { id: '13', text: '出库管理', href: '<%=request.getContextPath()%>/goto/exportMng' },
                         { id: '14', text: '库存统计查询', href: '<%=request.getContextPath()%>/Role/index.html' }] }]},
-            {id:'2',homePage: '21',menu: [{text:'角色管理',items: [{id:'21',text:'管理用户',href: '<%=request.getContextPath()%>/User/index.jsp'}]}]}];
+            {id:'2',homePage: '21',menu: [{text:'角色管理',items: [{id:'21',text:'管理用户',href: '<%=request.getContextPath()%>/goto/roleMng'}]}]}];
 
         new PageUtil.MainPage({
             modulesConfig : config

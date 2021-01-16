@@ -87,7 +87,8 @@
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -97,7 +98,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="product_manage.html";
+            window.location.href="product_manage.jsp";
         });
 
     });
