@@ -21,6 +21,12 @@ public interface OrderGoodsMapper {
      */
     public List<OrderGoods> getGoodsList(int orderId);
 
+    /**
+     * 获取当前订单商品中的所有商品
+     * @return
+     */
+    public List<OrderGoods> getOrderGoodsList();
+
 
     /**
      * 根据订单编号删除订单中的商品

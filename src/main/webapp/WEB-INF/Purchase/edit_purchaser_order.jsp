@@ -41,20 +41,30 @@
     </style>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>order/updateOrder" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="" />
+<form action="<%=request.getContextPath()%>/order/addOrder" class="definewidth m20">
+
     <table class="table table-bordered table-hover ">
         <tr>
             <td width="10%" class="tableleft">订单编号</td>
-            <td><input type="text" name="bl_id" value="" readonly/></td>
+            <td><input type="text" name="bl_id" value="" /></td>
         </tr>
         <tr>
-            <td class="tableleft">供应商编号</td>
-            <td ><input type="text" name="s_id" value=""/></td>
+                <td>供应商编号：</td>
+                <td><select type="text" name="s_id" id="supportor" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="supportor" items="${supportorList}">
+                        <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>
+                    </c:forEach>
+                </select>
+                </td>
         </tr>
         <tr>
-            <td class="tableleft">采购员编号</td>
-            <td ><input type="text" name="u_id" value=""/></td>
+                <td>采购员编号：</td>
+                <td><select type="text" name="u_id" id="buyer" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="buyer" items="${buyerList}">
+                        <option value ="${buyer.u_id}">${buyer.u_id},${buyer.u_name}</option>
+                    </c:forEach>
+                </select>
+                </td>
         </tr>
         <tr>
             <td class="tableleft">供应商</td>
@@ -94,7 +104,8 @@
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>

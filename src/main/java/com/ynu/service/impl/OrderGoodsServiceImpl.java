@@ -43,4 +43,10 @@ public class OrderGoodsServiceImpl implements OrderGoodsService {
             return false;
         }
     }
+
+
+    public List<OrderGoods> getOrderGoodsList() {
+        List<OrderGoods> orderGoodsList=orderGoodsMapper.getOrderGoodsList();
+        return orderGoodsList;
+    }
 }

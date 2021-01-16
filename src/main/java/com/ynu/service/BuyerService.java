@@ -39,6 +39,12 @@ public interface BuyerService {
      */
     public Buyer getBuyerInfo(int u_id);
 
+    /**
+     * 返回采购员列表
+     * @return
+     */
+    public List<Buyer> getBuyerList();
+
 
     /**
      * 返回采购员的编号列表

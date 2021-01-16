@@ -51,27 +51,31 @@
     <table class="table table-bordered table-hover m10">
         <tr>
             <td class="tableleft">入库编号</td>
-            <td><input type="text" name="name"/></td>
+            <td><input type="text" name="im_id"/></td>
         </tr>
         <tr>
-            <td class="tableleft">产品编号</td>
-            <td><input type="text" name="class"/></td>
+            <td class="tableleft">货物编号</td>
+            <td><input type="text" name="m_id"/></td>
         </tr>
         <tr>
-            <td class="tableleft">管理员编号</td>
-            <td><input type="text" name="class"/></td>
+            <td class="tableleft">客户编号</td>
+            <td><input type="text" name="c_id"/></td>
         </tr>
         <tr>
-            <td class="tableleft">货物名称</td>
-            <td><input type="text" name="class"/></td>
+            <td class="tableleft">入库数量</td>
+            <td><input type="text" name="im_quantity"/></td>
         </tr>
         <tr>
             <td class="tableleft">入库时间</td>
-            <td><input type="text" name="time"/></td>
+            <td><input type="text" name="im_time"/></td>
         </tr>
         <tr>
-            <td class="tableleft">状态</td>
-            <td><input type="text" name="price"/></td>
+            <td class="tableleft">负责人</td>
+            <td><input type="text" name="im_principal"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">备注</td>
+            <td><input type="text" name="im_remarks"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

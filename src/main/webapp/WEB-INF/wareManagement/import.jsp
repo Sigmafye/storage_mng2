@@ -11,10 +11,9 @@
 <head>
     <title>入库管理</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
@@ -57,17 +56,36 @@
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
-        <th>入库编号</th>
-        <th>产品编号</th>
-        <th>管理员编号</th>
-        <th>货物名称</th>
-        <th>数量</th>
-        <th>入库时间</th>
+        <th>入库单编号</th>
+        <th>货物编号</th>
+        <th>客户编号</th>
+        <th>入库数量</th>
+        <th>入库时间/th>
+        <th>负责人</th>
         <th>备注</th>
         <th>操作</th>
 
+
     </tr>
     </thead>
+<tbody>
+<c:forEach var="import" items="${IRList}">
+    <tr>
+    <td><input type="checkbox"></td>
+    <td>${import.im_id}</td>
+    <td>${import.m_id}</td>
+    <td>${import.c_id}</td>
+    <td>${import.im_quantity}</td>
+    <td>${import.im_time}</td>
+    <td>${import.im_principal}</td>
+    <td>${import.im_remarks}</td>
+    <td>
+            <button type="submit" class="btn btn-warning"><a href="edit_list.jsp">修改</a></button>&nbsp;
+            <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
+        </td>
+    </tr>
+</c:forEach>
+</tbody>
     <tbody>
     <c:forEach var="import" items="${EXList}">
         <tr>

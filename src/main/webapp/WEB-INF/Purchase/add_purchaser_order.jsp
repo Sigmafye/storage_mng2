@@ -50,18 +50,18 @@
             <th>
                 供应商编号：
 <%--                <input type="text" name="s_id" id="s_id" class="abc input-default" placeholder="" value="">--%>
-                <select type="text" name="ware" id="supportor" class="abc input-default" placeholder="" value="">
+                <select type="text" name="s_id" id="supportor" class="abc input-default" placeholder="" value="">
                     <c:forEach var="supportor" items="${supportorList}">
-                        <option value ="${supportor.s_name}">A-01</option>
+                        <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>
                     </c:forEach>
                 </select>
             </th>
             <th>
                 采购员编号：
 <%--                <input type="text" name="u_id" id="u_id"class="abc input-default" placeholder="" value="">--%>
-                <select type="text" name="ware" id="buyer" class="abc input-default" placeholder="" value="">
-                    <c:forEach var="buyer" items="${buyerIdList}">
-                        <option value ="${buyer.u_id}">A-01</option>
+                <select type="text" name="u_id" id="buyer" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="buyer" items="${buyerList}">
+                        <option value ="${buyer.u_id}">${buyer.u_id},${buyer.u_name}</option>
                     </c:forEach>
                 </select>
             </th>
@@ -69,6 +69,10 @@
                 供应商：
                 <input type="text" name="suppotor" id="suppotor"class="abc input-default" placeholder="" value="">
             </th>
+
+
+        </tr>
+        <tr>
             <th>
                 收货仓库：
                 <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">
@@ -78,9 +82,6 @@
                     <option value="D-04">D-04</option>
                 </select>
             </th>
-
-        </tr>
-        <tr>
             <th>
                 到货时间：
                 <input type="text" name="a_time" id="a_time" class="abc input-default" placeholder="" value="">
@@ -89,6 +90,10 @@
                 联系人:
                 <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" placeholder="" value="">
             </th>
+
+
+        </tr>
+        <tr>
             <th>
                 联系方式：
                 <input type="text" name="re_methods" id="re_methods"class="abc input-default" placeholder="" value="">
@@ -97,17 +102,13 @@
                 经手人编号：
                 <input type="text" name="p_id" id="p_id"class="abc input-default" placeholder="" value="">
             </th>
-
-        </tr>
-        <tr>
             <th>
                 经手人：
                 <input type="text" name="processor" id="processor"class="abc input-default" placeholder="" value="">
             </th>
         </tr>
         </tbody>
-        <tbody>
-        <tr>
+
     </table>
     <div align="center">
         <input type="submit" class="btn btn-primary" value="提交采购单" >
