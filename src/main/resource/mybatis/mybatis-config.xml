@@ -7,17 +7,29 @@
     <!-- 实体类,简称 -设置别名 -->
     <typeAliases>
         <typeAlias type="com.ynu.pojo.MyOrder" alias="MyOrder"></typeAlias>
-        <typeAlias type="com.ynu.pojo.OrderGoods" alias="OrderGoods"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Goods" alias="Goods"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Product" alias="Product"></typeAlias>
+        <typeAlias type="com.ynu.pojo.WareMnger" alias="WareMnger"></typeAlias>
+        <typeAlias type="com.ynu.pojo.WareHouse" alias="WareHouse"></typeAlias>
         <typeAlias type="com.ynu.pojo.Buyer" alias="Buyer"></typeAlias>
         <typeAlias type="com.ynu.pojo.Supportor" alias="Supportor"></typeAlias>
+        <typeAlias type="com.ynu.pojo.OrderGoods" alias="OrderGoods"></typeAlias>
+        <typeAlias type="com.ynu.pojo.ImportRecord" alias="ImportRecord"></typeAlias>
+        <typeAlias type="com.ynu.pojo.Export" alias="Export"></typeAlias>
     </typeAliases>
 
     <!-- 实体接口映射文件 -->
     <mappers>
-        <mapper resource="mybatis/orderMapper.xml"/>
-        <mapper resource="mybatis/orderGoodsMapper.xml"></mapper>
         <mapper resource="mybatis/buyerMapper.xml"></mapper>
+        <mapper resource="mybatis/orderGoodsMapper.xml"></mapper>
         <mapper resource="mybatis/supportorMapper.xml"></mapper>
+        <mapper resource="mybatis/orderMapper.xml"/>
+        <mapper resource="mybatis/goodsMapper.xml"/>
+        <mapper resource="mybatis/productMapper.xml"/>
+        <mapper resource="mybatis/wareMngerMapper.xml"/>
+        <mapper resource="mybatis/wareHouseMapper.xml"/>
+        <mapper resource="mybatis/exMapper.xml" />
+        <mapper resource="mybatis/irMapper.xml" />
     </mappers>
 
 </configuration>

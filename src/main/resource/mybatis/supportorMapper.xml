@@ -17,4 +17,34 @@
         delete from supportor where s_id=#{s_id}
     </delete>
 
+<!--    查找供应商-->
+    <select id="getSupportor" parameterType="java.lang.Integer" resultType="Supportor">
+        select * from supportor where s_id=#{s_id}
+    </select>
+
+
+<!--    更新供应商信息-->
+    <update id="updateSupportor" parameterType="Supportor">
+        update supportor set s_id=#{s_id},s_name=#{s_name},s_address=#{s_address},
+                             s_phone=#{s_phone}
+    </update>
+
+<!--    返回所有供应商信息-->
+
+    <select id="getSupportorList" resultType="Supportor">
+        select * from supportor
+    </select>
+
+
+<!--    根据供应商编号返回所有供应商的订单信息-->
+    <select id="getSupportorOrderList">
+        select * from buy_list where s_id=#{s_id}
+    </select>
+
+
+<!--    返回所有供应商编号列表-->
+    <select id="getSupportorIdList" resultType="java.lang.Integer">
+        select u_id from supportor
+    </select>
+
 </mapper>

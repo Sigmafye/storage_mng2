@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.ProductMapper">
+
+    <!--id对应方法名，入参对应属性名-->
+    <select id="getProductList" resultType="Product">
+        select * from product
+    </select>
+
+    <select id="getIdList" resultType="java.lang.Integer">
+        select p_idd from product
+    </select>
+
+    <select id="search" parameterType="Product" resultType="Product">
+        select * from product where p_idd = #{p_idd}
+    </select>
+
+    <insert id="add" parameterType="Product">
+        insert into product (w_id, im_id, ex_id, p_name, p_price,
+                           p_quantity, p_type, p_warehouse, p_shelf_number)
+        values (#{w_id}, #{im_id}, #{ex_id}, #{p_name}, #{p_price},
+                #{p_quantity}, #{p_type}, #{p_warehouse}, #{p_shelf_number})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from product where p_idd = #{p_idd}
+    </delete>
+
+    <update id="update" parameterType="Product">
+        update product set w_id = #{w_id}, im_id = #{im_id}, ex_id = #{ex_id}, p_name = #{p_name}, p_price = #{p_price},
+                           p_quantity = #{p_quantity}, p_type = #{p_type}, p_warehouse = #{p_warehouse}, p_shelf_number = #{p_shelf_number}
+        where  p_idd = #{p_idd}
+    </update>
+
+</mapper>

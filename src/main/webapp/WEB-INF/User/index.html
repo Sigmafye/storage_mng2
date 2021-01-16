@@ -36,7 +36,7 @@
 <body>
 <form class="form-inline definewidth m20" action="index.html" method="get">    
     用户名称：
-    <input type="text" name="username" id="username"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;  
+    <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10">
@@ -54,9 +54,10 @@
             <td>admin</td>
             <td>管理员</td>
             <td></td>
-            <td>
-                <a href="edit.html">编辑</a>                
-            </td>
+             <td>
+                 <button type="submit" class="btn btn-warning"><a href="edit_user.html">修改</a></button>&nbsp;
+                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
+             </td>
         </tr>	
 </table>
 </body>
@@ -67,7 +68,7 @@
 
 		$('#addnew').click(function(){
 
-				window.location.href="add.html";
+				window.location.href="add_user.html";
 		 });
 
 

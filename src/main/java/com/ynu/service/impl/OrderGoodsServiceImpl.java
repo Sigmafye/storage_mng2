@@ -34,6 +34,13 @@ public class OrderGoodsServiceImpl implements OrderGoodsService {
     }
 
 
+    public boolean deleteOrderGoods(int orderId) {
 
-
+        int isDelete=orderGoodsMapper.deleteOrderGoods(orderId);
+        if(isDelete>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -5,12 +5,12 @@ package com.ynu.pojo;
  * 订单商品实体,gds_tobuy
  */
 public class OrderGoods {
-    private int g_id;
-    private int bl_id;
-    private String g_name;
-    private String g_clacc;
-    private int g_num;
-    private double g_price;
+    private int g_id;//采购商品编号
+    private int bl_id;//订单编号
+    private String g_name;//采购商品名称
+    private String g_clacc;//采购商品分类
+    private int g_num;//采购商品数量
+    private double g_price;//采购单价
 
     public int getG_id() {
         return g_id;

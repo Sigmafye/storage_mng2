@@ -3,14 +3,14 @@
 <head>
     <title>出库管理</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
-    <script type="text/javascript" src="../Js/jquery.js"></script>
-    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../Js/ckform.js"></script>
-    <script type="text/javascript" src="../Js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/Css/style.css" />
+    <script type="text/javascript" src="../../resources/Js/jquery.js"></script>
+    <script type="text/javascript" src="../../resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
+    <script type="text/javascript" src="../../resources/Js/common.js"></script>
 
     <style type="text/css">
         body {
@@ -45,29 +45,29 @@
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
-        <th>编号</th>
+        <th>入库编号</th>
+        <th>产品编号</th>
+        <th>管理员编号</th>
         <th>货物名称</th>
-        <th>类型</th>
-        <th>出库时间</th>
-        <th>单价/元</th>
-        <th>库存数量</th>
-        <th>出库数量</th>
+        <th>入库时间</th>
+        <th>状态</th>
+        <th>操作</th>
+
     </tr>
     </thead>
     <tr>
         <td>1</td>
+        <td>2</td>
+        <td>001</td>
         <td>dell笔记本</td>
-        <td>商品</td>
         <td>2020-01-01</td>
-        <td>4500</td>
-        <td>21</td>
+        <td>出库</td>
         <td>
-            <input type="text" name="goodsname" id="goodsname"class="abc input-default" placeholder="" value="">&nbsp;
-            <button id="modify"  name="modify" onclick="" >出库</button>
-
+            <button type="submit" class="btn btn-warning"><a href="edit_list.html">修改</a></button>&nbsp;
+            <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr></table>
-<div class="inline pull-right page">
+<div class="inline pull-right page" align="center">
     10122 条记录 1/507 页  <a href='#'>下一页</a>     <span class='current'>1</span><a href='#'>2</a><a href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a>  <a href='#' >下5页</a> <a href='#' >最后一页</a>    </div>
 </body>
 </html>

@@ -5,13 +5,13 @@ import java.util.UUID;
 
 public class DBUtil {
 
-    private static String URL = "jdbc:mysql://localhost:3306/storage_mng?characterEncoding=UTF-8";
+    private static String URL = "jdbc:mysql://121.196.147.134:3306/testforeignKey?characterEncoding=UTF-8";
 
     private static String DriverName = "com.mysql.jdbc.Driver";
 
     private static String UserName = "root";
 
-    private static String PassWord = "javaweb";
+    private static String PassWord = "123456";
 
     private static Connection con = null;
 
@@ -66,28 +66,30 @@ public class DBUtil {
         }
     }
 
-    public static void add() throws ClassNotFoundException{//新增数据
+    public static int add() throws ClassNotFoundException{//新增数据
         con= DBUtil.getConnection();
         try{
 
-            PreparedStatement ps=con.prepareStatement("insert into buyer values (005,'王二','男', 20)");
-            boolean re=ps.execute();
+            PreparedStatement ps=con.prepareStatement("insert into student values (6,'王二', 3)");
+            int re=ps.executeUpdate();
 //            System.out.println(re);
+            return re;
         }catch (SQLException e){
             e.printStackTrace();
+            return 0;
         }
-
     }
-    public static void delete() throws ClassNotFoundException{//删除数据
+    public static int delete() throws ClassNotFoundException{//删除数据
         con= DBUtil.getConnection();
         try{
-            PreparedStatement ps=con.prepareStatement("delete from buyer where u_id2=005");
-            boolean re=ps.execute();
+            PreparedStatement ps=con.prepareStatement("delete from class where classId=1");
+            int re=ps.executeUpdate();
 //            System.out.println(re);
+            return re;
         }catch (SQLException e){
             e.printStackTrace();
+            return 0;
         }
-
     }
 
     public static void update() throws ClassNotFoundException{//更新数据
@@ -123,24 +125,19 @@ public class DBUtil {
         return id;
     }
 
-//    public static void main(String[] args) throws ClassNotFoundException {
-//        System.out.println("查询：");
-//        DBUtil.search();
-//        System.out.println("\n更新为女后：");
-//        DBUtil.update();
-//        DBUtil.search();
-//        System.out.println("\n新增数据后：");
-//        DBUtil.add();
-//        DBUtil.search();
-//        System.out.println("\n删除后：");
-//        DBUtil.delete();
-//        DBUtil.search();
-////        if(con != null){
-////            System.out.println("连接成功!");
-////        }
-////        else {
-////            System.out.println("连接失败!");
-////        }
-//
-//    }
+    public static void main(String[] args) throws ClassNotFoundException {
+//        con=getConnection();
+//        if(con != null){
+//            System.out.println("连接成功!");
+//        }
+//        else {
+//            System.out.println("连接失败!");
+//        }
+
+        int isAdd=add();
+
+        System.out.println(isAdd);
+
+
+    }
 }

@@ -1,5 +1,8 @@
 package com.ynu.pojo;
 
+/***
+ * 产品
+ */
 public class Product {
     private int p_idd;  //产品编号
     private int w_id;   //仓库编号
@@ -11,6 +14,38 @@ public class Product {
     private int p_quantity; //库存数量
     private String p_type;  //产品类别
     private int p_shelf_number;   //货架号
+
+    public Product() {
+    }
+
+    public Product(int p_idd) {
+        this.p_idd = p_idd;
+    }
+
+    public Product(int w_id, String p_warehouse, int im_id, int ex_id, String p_name, float p_price, int p_quantity, String p_type, int p_shelf_number) {
+        this.w_id = w_id;
+        this.p_warehouse = p_warehouse;
+        this.im_id = im_id;
+        this.ex_id = ex_id;
+        this.p_name = p_name;
+        this.p_price = p_price;
+        this.p_quantity = p_quantity;
+        this.p_type = p_type;
+        this.p_shelf_number = p_shelf_number;
+    }
+
+    public Product(int p_idd, int w_id, String p_warehouse, int im_id, int ex_id, String p_name, float p_price, int p_quantity, String p_type, int p_shelf_number) {
+        this.p_idd = p_idd;
+        this.w_id = w_id;
+        this.p_warehouse = p_warehouse;
+        this.im_id = im_id;
+        this.ex_id = ex_id;
+        this.p_name = p_name;
+        this.p_price = p_price;
+        this.p_quantity = p_quantity;
+        this.p_type = p_type;
+        this.p_shelf_number = p_shelf_number;
+    }
 
     @Override
     public String toString() {

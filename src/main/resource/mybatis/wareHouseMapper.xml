@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.WareHouseMapper">
+
+    <!--id对应方法名，入参对应属性名-->
+    <select id="getWareHouseList" resultType="WareHouse">
+        select * from warehouse
+    </select>
+
+    <select id="getIdList" resultType="java.lang.Integer">
+        select w_id from warehouse
+    </select>
+
+    <select id="search" parameterType="WareHouse" resultType="WareHouse">
+        select * from warehouse where w_id = #{w_id}
+    </select>
+
+    <insert id="add" parameterType="WareHouse">
+        insert into warehouse (m_id, w_name, w_addr, w_capacity, w_surplus)
+        values (#{m_id}, #{w_name}, #{w_addr}, #{w_capacity}, #{w_surplus})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from warehouse where w_id = #{w_id}
+    </delete>
+
+    <update id="update" parameterType="WareHouse">
+        update warehouse set m_id = #{m_id}, w_name = #{w_name},
+                             w_addr = #{w_addr}, w_capacity = #{w_capacity}, w_surplus = #{w_surplus}
+        where  w_id = #{w_id}
+    </update>
+
+</mapper>
