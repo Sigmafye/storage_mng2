@@ -63,7 +63,7 @@
     });
 </script>
 <div style="text-align:center">
-    <p>来源：<a href="#"">第二实习小组</a></p>
+    <p>来源：<a href="#">第二实习小组</a></p>
 </div>
 </body>
 </html>
