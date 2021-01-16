@@ -91,6 +91,13 @@ public class NavigateController {
      */
     @RequestMapping("/wareStatis")
     public String gotoWareStatis(){
+        return "/WEB-INF/role/index.jsp";
+    }
+    /*
+    超级管理员
+     */
+    @RequestMapping("/userMng")
+    public String gotouserMng(){
         return "/WEB-INF/User/index.jsp";
     }
 
@@ -102,5 +109,21 @@ public class NavigateController {
     public String gotoAddPurchaseOrder(){
         return "/WEB-INF/Purchase/add_purchaser_order.jsp";
     }
+
+    /*
+    采购员
+     */
+    @RequestMapping("/buyer")
+    public String gotobuyer(){
+        return "/WEB-INF/User/buyer.jsp";
+    }
+    /*
+    仓库管理员
+     */
+    @RequestMapping("/manager")
+    public String gotomanager(){
+        return "/WEB-INF/User/manager.jsp";
+    }
+
 
 }
