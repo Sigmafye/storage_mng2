@@ -11,9 +11,9 @@
 <head>
     <title>仓库管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../resource/assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
-    <link href="../resource/assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
-    <link href="../resource/assets/css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/resources/assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/resources/assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/resources/assets/css/main-min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
@@ -40,83 +40,30 @@
 
     </ul>
 </div>
-<script type="text/javascript" src="/resources/assets/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="/resources/assets/js/bui-min.js"></script>
-<script type="text/javascript" src="/resources/assets/js/common/main-min.js"></script>
-<script type="text/javascript" src="/resources/assets/js/config-min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/assets/js/common/main-min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config =[
-            {
-                id:'1',
-                homePage:'11',
-                menu:[
-                    {
-                        text:'采购管理',
-                        items:[
-                            {
-                                id:'11',
-                                text:'采购单管理',
-                                href:'Purchase/purchaser_order_manage.html'
-                            },
-                            {
-                                id:'12',
-                                text:'采购统计查询',
-                                href:'Role/index.html'
-                            },
-                            {
-                                id:'13',
-                                text:'添加商品',
-                                href:'Purchaser/add_purchaser_order'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                id:'2',
-                homePage:'20',
-                menu:[
-                    {
-                        text:'库存管理',
-                        items:[
-                            {
-                                id:'21',
-                                text:'商品库存管理',
-                                href:'Repertory/commodity_manage.html'
-                            },
-                            {
-                                id:'22',
-                                text:'产品库存管理',
-                                href:'Repertory/product_manage.html'
-                            },
-                            {
-                                id:'23',
-                                text:'入库管理',
-                                href:'Menu/index.html'
-                            },
-                            {
-                                id:'24',
-                                text:'出库管理',
-                                href:'Node/index.html'
-                            },
-                            {
-                                id:'25',
-                                text:'库存统计查询',
-                                href:'Role/index.html'
-                            }
-                        ]
-                    }
-                ]
-            }
-        ];
+        var config = [{ id: '1', menu: [{ text: '采购管理',homePage: '12',
+                items: [{ id: '12', text: '采购单管理', href: '<%=request.getContextPath()%>/goto/purchaseMng'},
+                    { id: '3', text: '采购统计查询', href: '<%=request.getContextPath()%>/goto/buyStatis' }] }] },
+            { id: '7', homePage: '10', menu: [{ text: '库存管理',
+                    items: [{ id: '10', text: '商品库存管理', href: '<%=request.getContextPath()%>/goto/goodsMng' },
+                        { id: '11', text: '产品库存管理', href: '<%=request.getContextPath()%>/goto/proMng' },
+                        { id: '12', text: '入库管理', href: '<%=request.getContextPath()%>/goto/importMng' },
+                        { id: '13', text: '出库管理', href: '<%=request.getContextPath()%>/goto/exportMng' },
+                        { id: '14', text: '库存统计查询', href: '<%=request.getContextPath()%>/Role/index.html' }] }]},
+            {id:'2',homePage: '21',menu: [{text:'角色管理',items: [{id:'21',text:'管理用户',href: '<%=request.getContextPath()%>/goto/roleMng'}]}]}];
+
         new PageUtil.MainPage({
             modulesConfig : config
         });
     });
 </script>
-<div style="text-align:center;">
-    <p>来源：<a href=#" target="_blank">第二实习小组</a></p>
+<div style="text-align:center">
+    <p>来源：<a href="#"">第二实习小组</a></p>
 </div>
 </body>
 </html>

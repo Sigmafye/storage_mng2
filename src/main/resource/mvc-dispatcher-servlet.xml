@@ -27,8 +27,8 @@
         <property name="viewClass"
                   value="org.springframework.web.servlet.view.JstlView"></property>
         <!-- 配置jsp文件前缀及后缀 -->
-        <property name="prefix" value="/WEB-INF/jsps/"></property>
-        <property name="suffix" value=".jsp"></property>
+<!--        <property name="prefix" value="/WEB-INF/jsps/"></property>-->
+<!--        <property name="suffix" value=".jsp"></property>-->
     </bean>
 
     <!--文件上传解析器, resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常 -->
