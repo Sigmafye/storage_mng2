@@ -40,25 +40,76 @@
 
     </ul>
 </div>
-<script type="text/javascript" src="../resource/assets/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="../resource/assets/js/bui-min.js"></script>
-<script type="text/javascript" src="../resource/assets/js/common/main-min.js"></script>
-<script type="text/javascript" src="../resource/assets/js/config-min.js"></script>
+<script type="text/javascript" src="/resources/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/resources/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="/resources/assets/js/common/main-min.js"></script>
+<script type="text/javascript" src="/resources/assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [
-            { id: '1',homePage: '11',
-                menu: [{ text: '采购管理',
-                    items: [{ id: '11', text: '采购单管理', href: 'Purchase/purchaser_order_manage.html' },
-                        { id: '12', text: '采购统计查询', href: 'Role/index.html' },
-                        { id: '13', text: '添加商品', href: 'Purchaser/add_purchaser_order'}] }] },
-            { id: '2', homePage: '20',
-                menu: [{ text: '库存管理',
-                    items: [{ id: '21', text: '商品库存管理', href: 'Repertory/commodity_manage.html' },
-                        { id: '22', text: '产品库存管理', href: 'Repertory/product_manage.html' },
-                        { id: '23', text: '入库管理', href: 'Menu/index.html' },
-                        { id: '24', text: '出库管理', href: 'Node/index.html' },
-                        { id: '25', text: '库存统计查询', href: 'Role/index.html' }] }] }];
+        var config =[
+            {
+                id:'1',
+                homePage:'11',
+                menu:[
+                    {
+                        text:'采购管理',
+                        items:[
+                            {
+                                id:'11',
+                                text:'采购单管理',
+                                href:'Purchase/purchaser_order_manage.html'
+                            },
+                            {
+                                id:'12',
+                                text:'采购统计查询',
+                                href:'Role/index.html'
+                            },
+                            {
+                                id:'13',
+                                text:'添加商品',
+                                href:'Purchaser/add_purchaser_order'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id:'2',
+                homePage:'20',
+                menu:[
+                    {
+                        text:'库存管理',
+                        items:[
+                            {
+                                id:'21',
+                                text:'商品库存管理',
+                                href:'Repertory/commodity_manage.html'
+                            },
+                            {
+                                id:'22',
+                                text:'产品库存管理',
+                                href:'Repertory/product_manage.html'
+                            },
+                            {
+                                id:'23',
+                                text:'入库管理',
+                                href:'Menu/index.html'
+                            },
+                            {
+                                id:'24',
+                                text:'出库管理',
+                                href:'Node/index.html'
+                            },
+                            {
+                                id:'25',
+                                text:'库存统计查询',
+                                href:'Role/index.html'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
         new PageUtil.MainPage({
             modulesConfig : config
         });
