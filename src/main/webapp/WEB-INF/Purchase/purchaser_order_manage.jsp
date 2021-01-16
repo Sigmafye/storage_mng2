@@ -5,7 +5,7 @@
   Time: 17:18
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -61,70 +61,24 @@
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="order" items="${orderList}">
         <tr>
-            <td>0x00001</td>
-            <td>ac22211</td>
-            <td>qaz</td>
-            <td>xx有限公司</td>
-            <td>A-12</td>
-            <td>2020-12-12</td>
-            <td>张三</td>
-            <td>123434322</td>
-            <td>j232</td>
-            <td>李二牛</td>
+            <td>${order.bl_id}</td>
+            <td>${order.s_id}</td>
+            <td>${order.u_id}</td>
+            <td>${order.supportor}</td>
+            <td>${order.ware}</td>
+            <td>${order.a_time}</td>
+            <td>${order.relate_peo}</td>
+            <td>${order.re_methods}</td>
+            <td>${order.p_id}</td>
+            <td>${order.processor}</td>
             <td>
                 <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
                 <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
-        <tr>
-            <td>0x00001</td>
-            <td>ac22211</td>
-            <td>qaz</td>
-            <td>xx有限公司</td>
-            <td>A-12</td>
-            <td>2020-12-12</td>
-            <td>张三</td>
-            <td>123434322</td>
-            <td>j232</td>
-            <td>李二牛</td>
-            <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
-                <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>0x00001</td>
-            <td>ac22211</td>
-            <td>qaz</td>
-            <td>xx有限公司</td>
-            <td>A-12</td>
-            <td>2020-12-12</td>
-            <td>张三</td>
-            <td>123434322</td>
-            <td>j232</td>
-            <td>李二牛</td>
-            <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
-                <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>0x00001</td>
-            <td>ac22211</td>
-            <td>qaz</td>
-            <td>xx有限公司</td>
-            <td>A-12</td>
-            <td>2020-12-12</td>
-            <td>张三</td>
-            <td>123434322</td>
-            <td>j232</td>
-            <td>李二牛</td>
-            <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
-                <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
-            </td>
-        </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>

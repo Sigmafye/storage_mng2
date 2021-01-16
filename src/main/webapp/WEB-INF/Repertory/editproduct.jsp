@@ -5,7 +5,7 @@
   Time: 15:48
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -41,48 +41,49 @@
     </style>
 </head>
 <body>
-<form action="index.html" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>product/update" method="post" class="definewidth m20">
     <input type="hidden" name="id" value="" />
     <table class="table table-bordered table-hover ">
         <tr>
             <td width="10%" class="tableleft">产品编号</td>
-            <td><input type="text" name="p_idd" value=""/></td>
+            <td><input type="text" name="p_idd" value="${product.p_idd}"  readonly/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">仓库编号</td>
-            <td><input type="text" name="w_id" value=""/></td>
-        </tr>
-        <tr>
-            <td width="10%" class="tableleft">入库编号</td>
-            <td><input type="text" name="im_id" value=""/></td>
-        </tr>
-        <tr>
-            <td width="10%" class="tableleft">出库编号</td>
-            <td><input type="text" name="ex_id" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">产品名称</td>
-            <td ><input type="text" name="p_name" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">产品单价/元</td>
-            <td ><input type="text" name="p_price" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">库存数量</td>
-            <td ><input type="text" name="p_quantity" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">产品类别</td>
-            <td ><input type="text" name="p_type" value=""/></td>
+            <td><input type="text" name="w_id" value="${product.w_id}"/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">所在仓库</td>
-            <td><input type="text" name="p_warehouse" value=""/></td>
+            <td><input type="text" name="p_warehouse" value="${product.p_warehouse}"/></td>
         </tr>
         <tr>
+            <td width="10%" class="tableleft">入库编号</td>
+            <td><input type="text" name="im_id" value="${product.im_id}"/></td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">出库编号</td>
+            <td><input type="text" name="ex_id" value="${product.ex_id}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">产品名称</td>
+            <td ><input type="text" name="p_name" value="${product.p_name}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">产品单价/元</td>
+            <td ><input type="text" name="p_price" value="${product.p_price}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">库存数量</td>
+            <td ><input type="text" name="p_quantity" value="${product.p_quantity}"/></td>
+        </tr>
+        <tr>
+            <td class="tableleft">产品类别</td>
+            <td ><input type="text" name="p_type" value="${product.p_type}"/></td>
+        </tr>
+
+        <tr>
             <td width="10%" class="tableleft">货架号</td>
-            <td><input type="text" name="p_shelf_number" value=""/></td>
+            <td><input type="text" name="p_shelf_number" value="${product.p_shelf_number}"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

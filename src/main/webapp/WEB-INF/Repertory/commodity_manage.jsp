@@ -5,7 +5,7 @@
   Time: 15:47
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% %>
 <html>
@@ -69,39 +69,26 @@
     </tr>
     </thead>
     <tbody>
+    <c:forEach var="goods" items="${goodsList}">
     <tr>
-        <td>5878675</td>
-        <td>c356753</td>
-        <td>A-32</td>
-        <td>a566778</td>
-        <td>xx电源</td>
-        <td>260</td>
-        <td>电脑</td>
-        <td>453</td>
-        <td>A-32</td>
-        <td>AE-213</td>
+        <td>${goods.gs_id}</td>
+        <td>${goods.ex_id}</td>
+        <td>${goods.w_id}</td>
+        <td>${goods.im_id}</td>
+        <td>${goods.gs_name}</td>
+        <td>${goods.gs_price}</td>
+        <td>${goods.gs_class}</td>
+        <td>${goods.gs_num}</td>
+        <td>${goods.gs_ware}</td>
+        <td>${goods.gs_shelf}</td>
         <td>
             <button type="submit" class="btn btn-warning"><a href="editcommodity.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
+    </c:forEach>
     </tbody>
-    <tr>
-        <td>5878675</td>
-        <td>c356753</td>
-        <td>A-32</td>
-        <td>a566778</td>
-        <td>xx电源</td>
-        <td>260</td>
-        <td>电脑</td>
-        <td>453</td>
-        <td>A-32</td>
-        <td>AE-213</td>
-        <td>
-            <button type="submit" class="btn btn-warning"><a href="editcommodity.jsp">修改</a></button>&nbsp;
-            <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-        </td>
-    </tr>
+
 </table>
 <div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>

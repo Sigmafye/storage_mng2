@@ -5,7 +5,7 @@
   Time: 17:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -43,7 +43,7 @@
 <body>
 <h3>采购开单</h3>
 <h4 align="center">基本信息</h4>
-<form class="form-inline definewidth m20" action="index.html" method="get">
+<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>order/addOrder" method="post">
     <table>
         <tbody>
         <tr>
@@ -138,31 +138,20 @@
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="ordergoods" items="${goodsList}">
         <tr>
-            <td>0x00001</td>
-            <td>a3423668987</td>
-            <td>云大海苔</td>
-            <td>食物</td>
-            <td>100</td>
-            <td>12元</td>
+            <td>${ordergoods.g_id}</td>
+            <td>${ordergoods.bl_id}</td>
+            <td>${ordergoods.g_name}</td>
+            <td>${ordergoods.g_clacc}</td>
+            <td>${ordergoods.g_num}</td>
+            <td>${ordergoods.g_price}</td>
             <td>
                 <button type="submit" class="btn btn-warning"><a href="edit_purchaser.jsp">修改</a></button>&nbsp;
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
         </tbody>
-        <tr>
-            <td>0x00001</td>
-            <td>a3423668987</td>
-            <td>云大海苔</td>
-            <td>食物</td>
-            <td>100</td>
-            <td>12元</td>
-            <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.jsp">修改</a></button>&nbsp;
-                <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-            </td>
-        </tr>
     </table>
     <div class="inline pull-right page">
         10122 条记录 1/507 页  <a href='#'>下一页</a>

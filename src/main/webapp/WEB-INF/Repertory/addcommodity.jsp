@@ -5,7 +5,7 @@
   Time: 15:47
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -43,12 +43,14 @@
     </head>
 </head>
 <body>
-<form action="index.html" method="post">
+
+<form action="<%=request.getContextPath()%>goods/add" method="post">
     <table class="table table-bordered table-hover definewidth m10">
-        <tr>
+        <%--编号自动生成--%>
+        <%--        <tr>
             <td width="10%" class="tableleft">商品编号</td>
             <td><input type="text" name="gs_id" value=""/></td>
-        </tr>
+        </tr>--%>
         <tr>
             <td width="10%" class="tableleft">出库编号</td>
             <td><input type="text" name="ex_id" value=""/></td>
