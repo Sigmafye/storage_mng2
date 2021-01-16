@@ -122,7 +122,7 @@ public class NavigateController {
      */
     @RequestMapping("/manager")
     public String gotomanager(){
-        return "/WEB-INF/User/manager.jsp";
+        return "redirect:/wareMnger/getMngerList";
     }
 
 

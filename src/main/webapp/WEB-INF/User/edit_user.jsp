@@ -53,11 +53,11 @@
         </tr>
         <tr>
             <td class="tableleft">年龄</td>
-            <td><input type="text" name="age" ></td>
+            <td><input type="text" name="age"/></td>
         </tr>
         <tr>
-            <td class="tableleft">性别</td>
-            <td><input type="text" name="sex"></td>
+            <td class="tableleft">地址</td>
+            <td><input type="text" name="addr"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

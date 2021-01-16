@@ -40,23 +40,27 @@
     </style>
 </head>
 <body>
-<form action="add_manager.jsp" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>/wareMnger/add" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
-            <td width="10%" class="tableleft">姓名</td>
-            <td><input type="text" name="username"/></td>
+            <td width="10%" class="tableleft">用户名</td>
+            <td><input type="text" name="m_name"></td>
         </tr>
         <tr>
-            <td class="tableleft">性别</td>
-            <td><input type="password" name="password"/></td>
+            <td class="tableleft">密码</td>
+            <td><input type="text" name="m_password"/></td>
         </tr>
         <tr>
-            <td class="tableleft">年龄</td>
-            <td><input type="text" name="realname"/></td>
+            <td class="tableleft">电话</td>
+            <td><input type="text" name="m_tel" ></td>
         </tr>
         <tr>
-            <td class="tableleft">角色</td>
-            <td>{$role_checkbox}</td>
+            <td class="tableleft">地址</td>
+            <td><input type="text" name="m_addr"></td>
+        </tr>
+        <tr>
+            <td class="tableleft">管理仓库编号</td>
+            <td><input type="text" name="m_wnum"></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
@@ -71,7 +75,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="manager.jsp";
+            window.history.go(-1);
         });
 
     });
