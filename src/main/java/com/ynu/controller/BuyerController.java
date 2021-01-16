@@ -99,7 +99,13 @@ public class BuyerController {
         }
     }
 
+    @RequestMapping("/getBuyerList")
+    public String getBuyerList (){
 
+//        buyerService.getBuyerOrderList();
+
+        return "";
+    }
 
 
 
