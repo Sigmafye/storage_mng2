@@ -54,17 +54,22 @@ public class OrderController {
           添加采购商品表--gds_tobuy
          */
 
+
+        System.out.println("OrderController:"+order);
+
         boolean isAddOrder=orderService.addOrder(order);
         /*
         检查是否添加成功
          */
-        if(isAddOrder ){
+        if(isAddOrder){
             //创建订单成功
             //返回当前订单中已有的商品
             List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(order.getBl_id());
             model.addAttribute("orderGoodsList",orderGoodsList);
 
-            return "success";
+
+            //返回
+            return "add_purchaser_order.jsp";
 
         }else{
             //创建订单失败

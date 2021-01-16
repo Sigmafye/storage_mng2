@@ -1,9 +1,13 @@
 package com.ynu.controller;
 
+import com.ynu.pojo.Buyer;
 import com.ynu.pojo.MyOrder;
 import com.ynu.pojo.OrderGoods;
+import com.ynu.pojo.Supportor;
+import com.ynu.service.BuyerService;
 import com.ynu.service.OrderGoodsService;
 import com.ynu.service.OrderService;
+import com.ynu.service.SupportorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +25,12 @@ public class NavigateController {
 
     @Autowired
     private OrderGoodsService orderGoodsService;
+
+    @Autowired
+    private SupportorService supportorService;
+
+    @Autowired
+    private BuyerService buyerService;
 
 
     /*
@@ -112,10 +122,21 @@ public class NavigateController {
      */
     @RequestMapping("/addPurchaseOrder")
     public String gotoAddPurchaseOrder(Model model){
+        //所有商品
         List<OrderGoods> orderGoodsList=orderGoodsService.getOrderGoodsList();
-        System.out.println(orderGoodsList);
+        //System.out.println(orderGoodsList);
         model.addAttribute("goodsList",orderGoodsList);
-        return "/WEB-INF/Purchase/add_purchaser_order.jsp";
+
+        //供应商列表
+        List<Supportor> supportorList=supportorService.getSupportorList();
+        //System.out.println(supportorList);
+        model.addAttribute("supportorList",supportorList);
+
+        //采购员
+        List<Buyer> buyerList=buyerService.getBuyerList();
+        //System.out.println(buyerList);
+        model.addAttribute("buyerList",buyerList);
+        return "/WEB-INF/Purchase/edit_purchaser_order.jsp";
     }
 
     /*
