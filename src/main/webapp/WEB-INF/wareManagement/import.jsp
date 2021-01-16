@@ -54,36 +54,35 @@
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
-        <th>入库编号</th>
-        <th>产品编号</th>
-        <th>管理员编号</th>
-        <th>货物名称</th>
-        <th>数量</th>
-        <th>入库时间</th>
+        <th>出库单编号</th>
+        <th>货物编号</th>
+        <th>客户编号</th>
+        <th>出库数量</th>
+        <th>出库时间/th>
+        <th>负责人</th>
         <th>备注</th>
         <th>操作</th>
 
     </tr>
     </thead>
 <tbody>
-<c:forEach var="import" items="${EXList}">
+<c:forEach var="import" items="${IRList}">
     <tr>
     <td><input type="checkbox"></td>
-    <td>${EX.ex_id}</td>
-    <td>${product.w_id}</td>
-    <td>${product.p_warehouse}</td>
-    <td>${product.im_id}</td>
-    <td>${product.ex_id}</td>
-    <td>${product.p_name}</td>
-    <td>${product.p_price}</td>
-    <td>${product.p_quantity}</td>
-    <td>${product.p_type}</td>
-    <td>${product.p_shelf_number}</td>
+    <td>${import.im_id}</td>
+    <td>${import.m_id}</td>
+    <td>${import.c_id}</td>
+    <td>${import.im_quantity}</td>
+    <td>${import.im_time}</td>
+    <td>${import.im_principal}</td>
+    <td>${import.im_remarks}</td>
     <td>
             <button type="submit" class="btn btn-warning"><a href="edit_list.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
+</c:forEach>
+</tbody>
 </table>
 <div class="inline pull-right page" >
     10122 条记录 1/507 页  <a href='#'>下一页</a>     <span class='current'>1</span><a href='#'>2</a><a href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a>  <a href='#' >下5页</a> <a href='#' >最后一页</a>    </div>
