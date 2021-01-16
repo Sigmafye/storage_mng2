@@ -113,7 +113,7 @@ public class NavigateController {
      */
     @RequestMapping("/userMng")
     public String gotouserMng(){
-        return "/WEB-INF/User/index.jsp";
+        return "redirect:/super/getList";
     }
 
 
