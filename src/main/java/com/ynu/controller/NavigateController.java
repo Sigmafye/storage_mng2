@@ -23,6 +23,9 @@ public class NavigateController {
         return "/WEB-INF/User/index.jsp";
     }
 
+    /*
+    修改产品
+     */
     @RequestMapping("editProduct")
     public String gotoeditProduct() {
         return "/WEB-INF/Repertory/editproduct.jsp";
@@ -42,7 +45,7 @@ public class NavigateController {
      */
     @RequestMapping("/goodsMng")
     public String gotoGoodsMng(){
-        return "/WEB-INF/Repertory/commodity_manage.html";
+        return "/WEB-INF/Repertory/commodity_manage.jsp";
     }
 
     /*
