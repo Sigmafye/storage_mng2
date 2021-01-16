@@ -41,12 +41,13 @@
 </head>
 <body>
 <form class="form-inline definewidth m20" action="export.jsp" method="get">
-    编号：
-    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入编号" value="">&nbsp;&nbsp;
+    关键字：
+    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;
     <select>
         <option>-请选择-</option>
-        <option>按编号排序</option>
-        <option>按状态排序</option>
+<%--        <option>按编号排序</option>--%>
+<%--        <option>按状态排序</option>--%>
     </select>
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>

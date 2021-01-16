@@ -41,12 +41,13 @@
 </head>
 <body>
 <form class="form-inline definewidth m20" action="import.jsp" method="get">
-    编号：
-    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入编号" value="">&nbsp;&nbsp;
+    关键字：
+    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;
     <select>
         <option>-请选择-</option>
-        <option>按编号排序</option>
-        <option>按状态排序</option>
+<%--        <option>按编号排序</option>--%>
+<%--        <option>按状态排序</option>--%>
     </select>
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>
@@ -64,15 +65,21 @@
 
     </tr>
     </thead>
+<tbody>
+<c:forEach var="import" items="${EXList}">
     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>001</td>
-        <td>dell笔记本</td>
-        <td>23</td>
-        <td>2020-01-01</td>
-        <td>出库</td>
-        <td>
+    <td><input type="checkbox"></td>
+    <td>${EX.ex_id}</td>
+    <td>${product.w_id}</td>
+    <td>${product.p_warehouse}</td>
+    <td>${product.im_id}</td>
+    <td>${product.ex_id}</td>
+    <td>${product.p_name}</td>
+    <td>${product.p_price}</td>
+    <td>${product.p_quantity}</td>
+    <td>${product.p_type}</td>
+    <td>${product.p_shelf_number}</td>
+    <td>
             <button type="submit" class="btn btn-warning"><a href="edit_list.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>

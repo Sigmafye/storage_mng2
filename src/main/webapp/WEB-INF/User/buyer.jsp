@@ -5,7 +5,7 @@
   Time: 上午 9:36
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -41,25 +41,42 @@
 </head>
 <body>
 <form class="form-inline definewidth m20" action="buyer.jsp" method="get">
-    <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入编号" value="">&nbsp;&nbsp;
+    关键字：
+    <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
         <th>采购员编号</th>
-        <th>用户名</th>
+        <th>姓名</th>
         <th>性别</th>
         <th>年龄</th>
+        <th>密码</th>
         <th>操作</th>
 
     </tr>
     </thead>
+    <c:forEach var="buyer" items="buyerList">
+        <tr>
+            <td>${buyer.u_id}</td>
+            <td>${buyer.u_name}</td>
+            <td>${buyer.u_sex}</td>
+            <td>${buyer.u_age}</td>
+            <td>${buyer.u_password}</td>
+            <td>
+                <button type="submit" class="btn btn-warning"><a href="edit_buyer.jsp">修改</a></button>&nbsp;
+                <button id="delete" type="submit" class="btn btn-danger">删除</button>&nbsp;
+            </td>
+        </tr>
+
+    </c:forEach>
     <tr>
-        <td>001</td>
-        <td>小李</td>
-        <td>男</td>
-        <td>28</td>
+        <td>1</td>
+        <td>qqq</td>
+        <td>qw</td>
+        <td>78</td>
+        <td>1233</td>
         <td>
             <button type="submit" class="btn btn-warning"><a href="edit_buyer.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;

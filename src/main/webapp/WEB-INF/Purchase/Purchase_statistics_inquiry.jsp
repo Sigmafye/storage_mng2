@@ -1,37 +1,44 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: xxdn
+  Date: 2021/1/16
+  Time: 15:06
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/style.css" />
-    <script type="text/javascript" src="../../resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="../../resources/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
-    <script type="text/javascript" src="../../resources/Js/common.js"></script>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
 
-    <style type="text/css">
-        body {
-            padding-bottom: 40px;
-        }
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-
-        @media (max-width: 980px) {
-            /* Enable use of floated navbar text */
-            .navbar-text.pull-right {
-                float: none;
-                padding-left: 5px;
-                padding-right: 5px;
+        <style type="text/css">
+            body {
+                padding-bottom: 40px;
             }
-        }
+            .sidebar-nav {
+                padding: 9px 0;
+            }
+
+            @media (max-width: 980px) {
+                /* Enable use of floated navbar text */
+                .navbar-text.pull-right {
+                    float: none;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+            }
 
 
-    </style>
-</head>
+        </style>
+    </head>
 <body>
 <form action="index.html" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover definewidth m10">
@@ -47,9 +54,9 @@
         <tr>
             <td class="tableleft">采购日期(x/x/x)</td>
             <td>
-            <input type="text" name="title"/>
+                <input type="text" name="title"/>
             </td>
-            <td </td>
+            <td></td>
             <td></td>
         </tr>
         <tr>
@@ -70,9 +77,9 @@
     </table>
 </form>
 <form class="form-inline definewidth m20" action="index.html" method="get">
-<div align="center">
-    <button type="submit" class="btn btn-primary">检索</button>
-</div>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">检索</button>
+    </div>
 
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
@@ -92,17 +99,17 @@
         <th>采购管理员工号</th>
     </tr>
     </thead>
-	     <tr>
-            <td>dell电脑</td>
-            <td>华迪公司</td>
-            <td>2020/1/14</td>
-            <td>1</td>
-             <td>1</td>
-             <td>1</td>
-             <td>1</td>
-             <td>1</td>
-             <td>1<a href="edit.html">查看</a></td>
-        </tr>
+    <tr>
+        <td>dell电脑</td>
+        <td>华迪公司</td>
+        <td>2020/1/14</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1<a href="edit.html">查看</a></td>
+    </tr>
     <tr>
         <td>dell电脑</td>
         <td>华迪公司</td>
@@ -128,38 +135,8 @@
 </table>
 <form class="form-inline definewidth m20" action="index.html" method="get">
     <div align="center">
-    <button type="submit" class="btn btn-primary">导出</button>
-        </div>
+        <button type="submit" class="btn btn-primary">导出</button>
+    </div>
 </form>
-		</body>
-		</html>
-
-<script>
-    $(function () {
-        
-		$('#addnew').click(function(){
-
-				window.location.href="add.html";
-		 });
-
-
-    });
-
-	function del(id)
-	{
-		
-		
-		if(confirm("确定要删除吗？"))
-		{
-		
-			var url = "index.html";
-			
-			window.location.href=url;		
-		
-		}
-	
-	
-	
-	
-	}
-</script>
+</body>
+</html>
