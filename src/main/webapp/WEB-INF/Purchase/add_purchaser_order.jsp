@@ -49,11 +49,21 @@
         <tr>
             <th>
                 供应商编号：
-                <input type="text" name="s_id" id="s_id"class="abc input-default" placeholder="" value="">
+<%--                <input type="text" name="s_id" id="s_id" class="abc input-default" placeholder="" value="">--%>
+                <select type="text" name="ware" id="supportor" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="supportor" items="${supportorList}">
+                        <option value ="${supportor.s_name}">A-01</option>
+                    </c:forEach>
+                </select>
             </th>
             <th>
                 采购员编号：
-                <input type="text" name="u_id" id="u_id"class="abc input-default" placeholder="" value="">
+<%--                <input type="text" name="u_id" id="u_id"class="abc input-default" placeholder="" value="">--%>
+                <select type="text" name="ware" id="buyer" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="buyer" items="${buyerIdList}">
+                        <option value ="${buyer.u_id}">A-01</option>
+                    </c:forEach>
+                </select>
             </th>
             <th>
                 供应商：
@@ -151,6 +161,7 @@
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
+        </c:forEach>
         </tbody>
     </table>
     <div class="inline pull-right page">
@@ -171,33 +182,22 @@
     <button type="submit" class="btn btn-success" id="">提交审核</button>
 </div>
 </body>
-</html>
 <script>
     $(function () {
 
         $('#addnew').click(function(){
-
             window.location.href="add_commodity.html";
         });
-
-
     });
 
     function del(id)
     {
-
-
         if(confirm("确定要删除吗？"))
         {
-
             var url = "";
-
             window.location.href=url;
-
         }
-
-
-
 
     }
 </script>
+</html>
