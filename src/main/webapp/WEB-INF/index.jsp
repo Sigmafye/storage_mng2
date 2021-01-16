@@ -43,7 +43,7 @@
 <script type="text/javascript" src="../resources/assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{ id: '1', menu: [{ text: '采购管理', items: [{ id: '12', text: '采购单管理', href: 'Node/index.html' }, { id: '3', text: '采购统计查询', href: 'Role/index.html' }] }] }, { id: '7', homePage: '9', menu: [{ text: '库存管理', items: [{ id: '10', text: '商品库存管理', href: 'Node/index.html' },{ id: '11', text: '产品库存管理', href: 'Commodity/commodity_manage.jsp' },{ id: '12', text: '入库管理', href: 'Node/index.html' },{ id: '13', text: '出库管理', href: 'Node/index.html' },{ id: '14', text: '库存统计查询', href: 'Node/index.html' }] }] }];
+        var config = [{ id: '1', menu: [{ text: '采购管理', items: [{ id: '12', text: '采购单管理', href: 'Node/index.jsp' }, { id: '3', text: '采购统计查询', href: 'Role/index.jsp' }] }] }, { id: '7', homePage: '9', menu: [{ text: '库存管理', items: [{ id: '10', text: '商品库存管理', href: 'Node/index.jsp' },{ id: '11', text: '产品库存管理', href: 'Commodity/commodity_manage.jsp' },{ id: '12', text: '入库管理', href: 'Node/index.jsp' },{ id: '13', text: '出库管理', href: 'Node/index.jsp' },{ id: '14', text: '库存统计查询', href: 'Node/index.jsp' }] }] }];
         new PageUtil.MainPage({
             modulesConfig : config
         });

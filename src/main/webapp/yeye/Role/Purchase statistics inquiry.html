@@ -36,89 +36,100 @@
 <form action="index.html" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
-            <td width="10%" class="table-condensed">基本信息</td>
+            <h4 align="center">商品基本信息</h4>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">仓库</td>
+            <td width="10%" class="tableleft">物品名称</td>
             <td><input type="text" name="title"/></td>
-            <td width="10%" class="tableleft">物品</td>
-            <td><input type="text" name="title"/></td>
-        </tr>
-        <tr>
-            <td width="10%" class="tableleft">单据类型</td>
-            <td><input type="text" name="title"/></td>
-            <td width="10%" class="tableleft">创建人</td>
+            <td width="10%" class="tableleft">供应商</td>
             <td><input type="text" name="title"/></td>
         </tr>
         <tr>
-            <td class="tableleft">出入库时间</td>
+            <td class="tableleft">采购日期(x/x/x)</td>
             <td>
-                <input type="radio" name="status" value="1" checked/> 显示  <input type="radio" name="status" value="0"/> 不显示
+            <input type="text" name="title"/>
             </td>
-            <td class="tableleft">统计项</td>
+            <td </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="tableleft">采购单统计项</td>
             <td>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />颜色</label>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />型号</label>
                 <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />数量</label>
+                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />单价</label>
+                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />金额合计</label>
+            </td>
+            <td class="tableleft">编号统计项</td>
+            <td>
+                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />采购管理员工号</label>
+                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />采购单号</label>
+                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />采购统计单编号</label>
             </td>
         </tr>
 
     </table>
 </form>
 <form class="form-inline definewidth m20" action="index.html" method="get">
-
+<div align="center">
     <button type="submit" class="btn btn-primary">检索</button>
+</div>
+
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
-        <td width="10%" class="table-condensed">库存汇总统计</td>
+        <h4 align="center">采购汇总统计</h4>
     </tr>
     <tr>
-        <th>仓库</th>
         <th>物品</th>
-        <th>单据类型</th>
-        <th>出入库时间</th>
-        <th>颜色</th>
-        <th>型号</th>
+        <th>供应商</th>
+        <th>日期</th>
+        <th>单价</th>
         <th>数量</th>
-        <th>创建人</th>
+        <th>金额合计</th>
+        <th>采购单号</th>
+        <th>采购统计单编号</th>
+        <th>采购管理员工号</th>
     </tr>
     </thead>
 	     <tr>
-            <td>1号仓库</td>
             <td>dell电脑</td>
-            <td>采购入库单</td>
-             <td>2020/1/14</td>
-             <td>黑色</td>
-             <td>Inspiron5577</td>
+            <td>华迪公司</td>
+            <td>2020/1/14</td>
+            <td>1</td>
              <td>1</td>
-             <td>yeye</td>
+             <td>1</td>
+             <td>1</td>
+             <td>1</td>
+             <td>1<a href="edit.html">查看</a></td>
         </tr>
     <tr>
-        <td>2号仓库</td>
         <td>dell电脑</td>
-        <td>采购入库单</td>
+        <td>华迪公司</td>
         <td>2020/1/14</td>
-        <td>黑色</td>
-        <td>Inspiron5577</td>
         <td>1</td>
-        <td>yeye</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>2<a href="edit2.html">查看</a></td>
     </tr>
     <tr>
-        <td>3号仓库</td>
-        <td>sony微单</td>
-        <td>商品出库单</td>
+        <td>dell电脑</td>
+        <td>华迪公司</td>
         <td>2020/1/14</td>
-        <td>黑色</td>
-        <td>a6400</td>
         <td>1</td>
-        <td>yeye</td>
+        <td>1</td>
+        <td>1</td>
+        <td>3</td>
+        <td>1</td>
+        <td>3<a href="edit3.html">查看</a></td>
     </tr>
 </table>
 <form class="form-inline definewidth m20" action="index.html" method="get">
-
+    <div align="center">
     <button type="submit" class="btn btn-primary">导出</button>
+        </div>
 </form>
 		</body>
 		</html>
