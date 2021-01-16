@@ -43,7 +43,7 @@
 <form class="form-inline definewidth m20" action="manager.jsp" method="get">
     用户名：
     <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary">查询</button>
+    <button type="submit" class="btn btn-primary" id="select">查询</button>
     <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10" >
@@ -90,4 +90,13 @@
 
     });
 
+    $(function () {
+
+        $('#select').click(function(){
+
+            window.location.href="<%=request.getContextPath()%>/wareMnger/addPage";
+        });
+
+
+    });
 </script>

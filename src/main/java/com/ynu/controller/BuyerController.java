@@ -105,7 +105,7 @@ public class BuyerController {
      * @return
      */
     @RequestMapping("/getBuyerList")
-    public String addBuyerById(){
+    public String getBuyerList(){
             List<Buyer> buyerList=buyerService.getBuyerList();
             if (buyerList!=null){
                 //成功
