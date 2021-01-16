@@ -34,7 +34,7 @@ public class NavigateController {
      */
     @RequestMapping("/buyStatis")
     public String gotoBuyStatis(){
-        return "/WEB-INF/User/index.jsp";
+        return "/WEB-INF/Purchase/Purchase_statistics_inquiry.jsp";
     }
 
     /*
@@ -59,7 +59,7 @@ public class NavigateController {
      */
     @RequestMapping("/goodsMng")
     public String gotoGoodsMng(){
-        return "/WEB-INF/Repertory/commodity_manage.jsp";
+        return "redirect:/goods/getList";
     }
 
     /*
@@ -91,7 +91,7 @@ public class NavigateController {
      */
     @RequestMapping("/wareStatis")
     public String gotoWareStatis(){
-        return "/WEB-INF/role/index.jsp";
+        return "/WEB-INF/Repertory/Inventory_statistics_query.jsp";
     }
     /*
     超级管理员
