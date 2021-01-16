@@ -41,28 +41,24 @@ public class OrderController {
     /**
      * 增加订单基本信息
      * @param order 订单信息
-     * @param buyer 采购员
-     * @param supportor 供应商
+     * @param model
      * @return
      */
     @RequestMapping("/addOrder")
     public String addOrderInfo(MyOrder order,//订单
-                               Buyer buyer,//采购员
-                               Supportor supportor,//供应商
                                Model model){
 
-        /*先添加采购员--buyer
+        /*先添加采购员--buyer--
           再添加供应商--supportor
           添加订单表--buy_list
           添加采购商品表--gds_tobuy
          */
-        boolean isAddBuyer=buyerService.addBuyerById(buyer);
-        boolean isAddSupportor=supportorService.addSupportor(supportor);
+
         boolean isAddOrder=orderService.addOrder(order);
         /*
         检查是否添加成功
          */
-        if(isAddBuyer && isAddSupportor && isAddOrder ){
+        if(isAddOrder ){
             //创建订单成功
             //返回当前订单中已有的商品
             List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(order.getBl_id());

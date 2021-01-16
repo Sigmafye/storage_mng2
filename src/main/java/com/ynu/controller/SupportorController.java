@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.jws.WebParam;
 import java.util.List;
@@ -62,6 +63,37 @@ public class SupportorController {
         }
     }
 
+    /**
+     * 增加供应商
+     */
+    @RequestMapping("/addSupportor")
+    public String addSupportor(@RequestParam Supportor supportor){
+        boolean isAdd=supportorService.addSupportor(supportor);
+        if (isAdd){
+            //添加成功
+            return "success";
+        }else {
+            //添加失败
+            return "failure";
+        }
+    }
+
+    /**
+     * 根据供应商编号删除供应商
+     * @param s_id
+     * @return
+     */
+    @RequestMapping("/deleteSupportorById/{s_id}")
+    public String deleteSupportorById(@PathVariable int s_id){
+        boolean isDelete=supportorService.deleteSupportor(s_id);
+        if (isDelete){
+            //删除成功
+            return "success";
+        }else{
+            //删除失败
+            return "failure";
+        }
+    }
 
 
 

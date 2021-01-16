@@ -45,6 +45,12 @@ public interface BuyerMapper {
      */
     public List<Integer> getBuyerIdList();
 
+    /**
+     * 返回采购员列表
+     * @return
+     */
+    public List<Buyer> getBuyerList();
+
 
     /**
      * 根据采购员编号查找对应的订单

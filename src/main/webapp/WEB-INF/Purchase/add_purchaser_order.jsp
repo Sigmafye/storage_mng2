@@ -59,6 +59,10 @@
                 供应商：
                 <input type="text" name="suppotor" id="suppotor"class="abc input-default" placeholder="" value="">
             </th>
+
+
+        </tr>
+        <tr>
             <th>
                 收货仓库：
                 <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">
@@ -68,9 +72,6 @@
                     <option value="D-04">D-04</option>
                 </select>
             </th>
-
-        </tr>
-        <tr>
             <th>
                 到货时间：
                 <input type="text" name="a_time" id="a_time" class="abc input-default" placeholder="" value="">
@@ -79,6 +80,10 @@
                 联系人:
                 <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" placeholder="" value="">
             </th>
+
+
+        </tr>
+        <tr>
             <th>
                 联系方式：
                 <input type="text" name="re_methods" id="re_methods"class="abc input-default" placeholder="" value="">
@@ -87,17 +92,13 @@
                 经手人编号：
                 <input type="text" name="p_id" id="p_id"class="abc input-default" placeholder="" value="">
             </th>
-
-        </tr>
-        <tr>
             <th>
                 经手人：
                 <input type="text" name="processor" id="processor"class="abc input-default" placeholder="" value="">
             </th>
         </tr>
         </tbody>
-        <tbody>
-        <tr>
+
     </table>
     <div align="center">
         <input type="submit" class="btn btn-primary" value="提交采购单" >
@@ -151,6 +152,7 @@
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
+        </c:forEach>
         </tbody>
     </table>
     <div class="inline pull-right page">

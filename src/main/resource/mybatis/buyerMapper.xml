@@ -43,4 +43,10 @@
     <select id="isValidBuyer" parameterType="Buyer" resultType="Buyer">
         select * from buyer where u_name=#{u_name} and u_password=#{u_password}
     </select>
+
+<!--    返回所有采购员信息-->
+    <select id="getBuyerList" resultType="Buyer">
+        select * from buyer
+    </select>
+
 </mapper>

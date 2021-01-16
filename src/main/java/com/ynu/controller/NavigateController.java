@@ -1,6 +1,8 @@
 package com.ynu.controller;
 
 import com.ynu.pojo.MyOrder;
+import com.ynu.pojo.OrderGoods;
+import com.ynu.service.OrderGoodsService;
 import com.ynu.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,9 @@ public class NavigateController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private OrderGoodsService orderGoodsService;
 
 
     /*
@@ -106,7 +111,10 @@ public class NavigateController {
     跳转添加采购单
      */
     @RequestMapping("/addPurchaseOrder")
-    public String gotoAddPurchaseOrder(){
+    public String gotoAddPurchaseOrder(Model model){
+        List<OrderGoods> orderGoodsList=orderGoodsService.getOrderGoodsList();
+        System.out.println(orderGoodsList);
+        model.addAttribute("goodsList",orderGoodsList);
         return "/WEB-INF/Purchase/add_purchaser_order.jsp";
     }
 

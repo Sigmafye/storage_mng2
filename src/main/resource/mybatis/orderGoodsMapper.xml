@@ -13,7 +13,7 @@
         </insert>
 
 <!--    根据订单编号查找相应订单商品-->
-        <select id="getGoodsList" parameterType="java.lang.Integer">
+        <select id="getGoodsList" parameterType="java.lang.Integer" resultType="OrderGoods">
             select * from gds_tobuy where bl_id=#{bl_id}
         </select>
 
@@ -22,5 +22,12 @@
     <delete id="deleteOrderGoods" parameterType="java.lang.Integer">
         delete from gds_tobuy where bl_id=#{bl_id}
     </delete>
+
+
+<!--    返回当前订单商品表中的所有商品-->
+
+    <select id="getOrderGoodsList" resultType="OrderGoods">
+        select * from gds_tobuy
+    </select>
 
 </mapper>
