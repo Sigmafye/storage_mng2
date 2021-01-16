@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: DELL
-  Date: 2021/1/15
-  Time: 17:18
+  User: Administrator
+  Date: 2021/1/16
+  Time: 上午 9:38
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -19,7 +19,6 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
-
     <style type="text/css">
         body {
             padding-bottom: 40px;
@@ -41,50 +40,61 @@
     </style>
 </head>
 <body>
-<form action="index.html" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="" />
-    <table class="table table-bordered table-hover ">
-        <tr>
-            <td width="10%" class="tableleft">采购商品编号</td>
-            <td><input type="text" name="grouptitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">订单编号</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购商品名称</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购商品分类</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购数量</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购单价</td>
-            <td ><input type="text" name="moduletitle" value=""/></td>
-        </tr>
-
-        <tr>
-            <td class="tableleft"></td>
-            <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;
-                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
-            </td>
-        </tr>
-    </table>
+<form class="form-inline definewidth m20" action="index.jsp" method="get">
+    用户名称：
+    <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>
 </form>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+    <tr>
+        <th>用户id</th>
+        <th>用户名称</th>
+        <th>真实姓名</th>
+        <th>最后登录时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>2</td>
+        <td>admin</td>
+        <td>管理员</td>
+        <td></td>
+        <td>
+            <button type="submit" class="btn btn-warning"><a href="edit_user.jsp">修改</a></button>&nbsp;
+            <button type="submit" class="btn btn-danger">删除</button>&nbsp;
+        </td>
+    </tr>
+</table>
 </body>
 </html>
 <script>
     $(function () {
-        $('#backid').click(function(){
-            window.location.href="commodity_manage.jsp";
+
+
+        $('#addnew').click(function(){
+
+            window.location.href="add_user.jsp";
         });
 
+
     });
+
+    function del(id)
+    {
+
+
+        if(confirm("确定要删除吗？"))
+        {
+
+            var url = "index.jsp";
+
+            window.location.href=url;
+
+        }
+
+
+
+
+    }
 </script>
