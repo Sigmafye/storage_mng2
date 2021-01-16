@@ -39,7 +39,7 @@
 <script type="text/javascript" src="../resources/assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{ id: '1', menu: [{ text: '采购管理',homePage: '12',
+        var config = [{ id: '1',homePage:'12', menu: [{ text: '采购管理',
                 items: [{ id: '12', text: '采购单管理', href: 'Purchase/purchaser_order_manage.html' },
                     { id: '3', text: '采购统计查询', href: 'Role/index.html' }] }] },
             { id: '7', homePage: '10', menu: [{ text: '库存管理',
@@ -48,7 +48,7 @@
                     { id: '12', text: '入库管理', href: 'wareManagement/import.html' },
                     { id: '13', text: '出库管理', href: 'wareManagement/export.html' },
                     { id: '14', text: '库存统计查询', href: 'Role/index.html' }] }]},
-            {id:'2',homePage: '21',menu: [{text:'角色管理',items: [{id:'21',text:'管理用户',href: 'User/index.html'}]}]}];
+            {id:'2',homePage: '21',menu: [{text:'角色管理',items: [{id:'21',text:'管理用户',href: 'User/index.html'},{id:'22',text:'采购员',href:'User/buyer.html'},{id:'23',text:'仓库管理员',href:'User/manager.html'}]}]}];
 
         new PageUtil.MainPage({
             modulesConfig : config
