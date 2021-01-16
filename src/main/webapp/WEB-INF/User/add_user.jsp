@@ -1,19 +1,24 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2021/1/16
+  Time: 上午 9:36
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/Css/style.css" />
-    <script type="text/javascript" src="../../resources/Js/jquery.js"></script>
-    <script type="text/javascript" src="../../resources/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../../resources/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../../resources/Js/ckform.js"></script>
-    <script type="text/javascript" src="../../resources/Js/common.js"></script>
-
-
-
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
     <style type="text/css">
         body {
             padding-bottom: 40px;
@@ -35,7 +40,7 @@
     </style>
 </head>
 <body>
-<form action="index.html" method="post" class="definewidth m20">
+<form action="add_user.html" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
             <td width="10%" class="tableleft">姓名</td>
@@ -66,7 +71,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="buyer.html";
+            window.location.href="index.jsp";
         });
 
     });

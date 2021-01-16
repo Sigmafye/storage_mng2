@@ -74,7 +74,7 @@
             <td>李二牛</td>
             <td>
                 <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
-                <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
+                <button id="delete" type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
         <tr>

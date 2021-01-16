@@ -14,7 +14,7 @@ public class NavigateController {
 
     @RequestMapping("/buyStatis")
     public String gotoBuyStatis(){
-        return "/WEB-INF/Role/index.jsp";
+        return "/WEB-INF/User/index.jsp";
     }
 
     @RequestMapping("editProduct")
