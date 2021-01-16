@@ -82,7 +82,7 @@
         </tbody>
     </table>
 </div>
-<button type="submit" class="btn"><a href="add_purchaser_order.jsp">添加采购单</a></button>&nbsp;
+<button type="submit" class="btn"><a href="<%=request.getContextPath()%>/goto/addPurchaseOrder">添加采购单</a></button>&nbsp;
 <div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
     <span class='current'>1</span>
