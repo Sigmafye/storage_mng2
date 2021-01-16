@@ -142,6 +142,7 @@
          {
 
          var url = "index.html";
+            var url = "";
 
          window.location.href=url;
 

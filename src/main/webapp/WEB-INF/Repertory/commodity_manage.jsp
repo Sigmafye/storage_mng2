@@ -135,7 +135,7 @@
         if(confirm("确定要删除吗？"))
         {
 
-            var url = "index.html";
+            var url = "";
 
             window.location.href=url;
 

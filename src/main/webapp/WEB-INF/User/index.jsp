@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
-  User: DELL
+  User: Administrator
   Date: 2021/1/16
-  Time: 9:49
+  Time: 上午 9:38
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title></title>
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
-<%--    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>--%>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
@@ -39,7 +40,7 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="index.html" method="get">
+<form class="form-inline definewidth m20" action="index.jsp" method="get">
     用户名称：
     <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>
@@ -60,7 +61,7 @@
         <td>管理员</td>
         <td></td>
         <td>
-            <button type="submit" class="btn btn-warning"><a href="edit_user.html">修改</a></button>&nbsp;
+            <button type="submit" class="btn btn-warning"><a href="edit_user.jsp">修改</a></button>&nbsp;
             <button type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
@@ -73,7 +74,7 @@
 
         $('#addnew').click(function(){
 
-            window.location.href="add_user.html";
+            window.location.href="add_user.jsp";
         });
 
 
@@ -86,7 +87,7 @@
         if(confirm("确定要删除吗？"))
         {
 
-            var url = "index.html";
+            var url = "index.jsp";
 
             window.location.href=url;
 

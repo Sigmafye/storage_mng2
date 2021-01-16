@@ -59,7 +59,7 @@
 
 <div class="container">
 
-    <form class="form-signin" method="post" action="/WEB-INF/index.jsp">
+    <form class="form-signin" method="post" action="<%=request.getContextPath()%>/account/login">
         <h2 class="form-signin-heading">登录系统</h2>
         <div class="radio">
             <label>
@@ -76,7 +76,7 @@
         <div class="radio">
             <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios3"
-                       value="option2">超级管理员
+                       value="option3">超级管理员
             </label>
         </div>
             <input type="text" name="username" class="input-block-level" placeholder="账号">
@@ -88,7 +88,9 @@
             </td>
         </tr>
     </form>
-    ${result}
+    <div align="center">
+        ${result}
+    </div>
 </div>
 
 <script type="text/javascript">

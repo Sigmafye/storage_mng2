@@ -104,7 +104,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="commodity_manage.html";
+            window.location.href="commodity_manage.jsp";
         });
 
     });

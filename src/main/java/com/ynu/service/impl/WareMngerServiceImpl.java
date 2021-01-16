@@ -15,6 +15,7 @@ public class WareMngerServiceImpl implements WareMngerService {
     WareMngerMapper wareMngerMapper;
 
     public WareMnger validate(WareMnger wareMnger) {
+
         return wareMngerMapper.validate(wareMnger);
     }
 
