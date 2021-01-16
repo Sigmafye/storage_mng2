@@ -99,12 +99,39 @@ public class BuyerController {
         }
     }
 
+    /**
+     * 返回所有采购员
+     * @param
+     * @return
+     */
+    @RequestMapping("/getBuyerList")
+    public String addBuyerById(){
+            List<Buyer> buyerList=buyerService.getBuyerList();
+            if (buyerList!=null){
+                //成功
+                return "success";
+            }else{
+                //失败
+                return "failure";
+            }
+    }
 
 
-
-
-
-
-
+    /**
+     * 添加采购员
+     * @param buyer
+     * @return
+     */
+    @RequestMapping("/addBuyer")
+    public String addBuyer(@RequestParam Buyer buyer){
+        boolean isAdd=buyerService.addBuyerById(buyer);
+        if (isAdd){
+            //添加成功
+            return "success";
+        }else {
+            //删除失败
+            return "failure";
+        }
+    }
 
 }
