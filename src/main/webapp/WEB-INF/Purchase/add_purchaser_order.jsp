@@ -178,26 +178,25 @@
 </div>
 
 <div align="center">
-    <button type="submit" class="btn btn-primary" id="">保存</button>
-    <button type="submit" class="btn btn-success" id="">提交审核</button>
+    <button type="submit" class="btn btn-primary" id="save">保存</button>
+    <button type="submit" class="btn btn-success" id="submit">提交审核</button>
 </div>
 </body>
+            </html>
 <script>
     $(function () {
-
         $('#addnew').click(function(){
             window.location.href="add_commodity.html";
         });
     });
-
     function del(id)
     {
         if(confirm("确定要删除吗？"))
         {
+
             var url = "";
             window.location.href=url;
         }
-
     }
 </script>
 </html>

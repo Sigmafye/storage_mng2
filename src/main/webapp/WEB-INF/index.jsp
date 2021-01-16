@@ -113,8 +113,18 @@
                         items: [
                             {
                                 id:'31',
-                                text:'管理用户',
-                                href: '<%=request.getContextPath()%>/goto/roleMng'
+                                text:'超级管理员',
+                                href: '<%=request.getContextPath()%>/goto/userMng'
+                            },
+                            {
+                                id:'32',
+                                text:'采购员',
+                                href:'<%=request.getContextPath()%>/goto/buyer'
+                            },
+                            {
+                                id:'33',
+                                text:'仓库管理员',
+                                href:'<%=request.getContextPath()%>/goto/manager'
                             }
                             ]
                     }
