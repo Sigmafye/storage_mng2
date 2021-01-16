@@ -64,7 +64,7 @@ public class NavigateController {
      */
     @RequestMapping("/goodsMng")
     public String gotoGoodsMng(){
-        return "/WEB-INF/Repertory/commodity_manage.jsp";
+        return "redirect:/goods/getList";
     }
 
     /*

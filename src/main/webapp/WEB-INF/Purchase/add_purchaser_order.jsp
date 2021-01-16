@@ -49,11 +49,21 @@
         <tr>
             <th>
                 供应商编号：
-                <input type="text" name="s_id" id="s_id"class="abc input-default" placeholder="" value="">
+<%--                <input type="text" name="s_id" id="s_id" class="abc input-default" placeholder="" value="">--%>
+                <select type="text" name="ware" id="supportor" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="supportor" items="${supportorList}">
+                        <option value ="${supportor.s_name}">A-01</option>
+                    </c:forEach>
+                </select>
             </th>
             <th>
                 采购员编号：
-                <input type="text" name="u_id" id="u_id"class="abc input-default" placeholder="" value="">
+<%--                <input type="text" name="u_id" id="u_id"class="abc input-default" placeholder="" value="">--%>
+                <select type="text" name="ware" id="buyer" class="abc input-default" placeholder="" value="">
+                    <c:forEach var="buyer" items="${buyerIdList}">
+                        <option value ="${buyer.u_id}">A-01</option>
+                    </c:forEach>
+                </select>
             </th>
             <th>
                 供应商：
@@ -190,3 +200,4 @@
         }
     }
 </script>
+</html>
