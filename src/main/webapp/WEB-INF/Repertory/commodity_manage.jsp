@@ -82,7 +82,7 @@
         <td>${goods.gs_ware}</td>
         <td>${goods.gs_shelf}</td>
         <td>
-            <button type="submit" class="btn btn-warning"><a href="editcommodity.jsp">修改</a></button>&nbsp;
+            <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goods/update/${goods.gs_id}">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
