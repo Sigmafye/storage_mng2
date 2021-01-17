@@ -7,7 +7,7 @@
 <mapper namespace="com.ynu.mapper.BuyerMapper">
 <!--    插入采购员-->
     <insert id="addBuyerById" parameterType="Buyer">
-        insert into buyer values (#{u_id},#{u_name},#{u_sex},#{u_age})
+        insert into buyer(u_name,u_sex,u_age,u_password) values (#{u_name},#{u_sex},#{u_age},#{u_password})
     </insert>
 
 <!--    删除采购员-->
@@ -16,13 +16,13 @@
     </delete>
 
 <!--    查找采购员-->
-    <select id="getBuyerInfo" parameterType="java.lang.Integer">
+    <select id="getBuyerInfo" parameterType="java.lang.Integer" resultType="Buyer">
         select * from buyer where u_id=#{u_id}
     </select>
 
 <!--    更新采购员-->
     <update id="updateBuyerInfo" parameterType="Buyer">
-        update buyer set u_name=#{u_name},u_sex=#{u_sex},u_age=#{u_age} where u_id=#{u_id}
+        update buyer set u_name=#{u_name},u_sex=#{u_sex},u_age=#{u_age},u_password=#{u_password} where u_id=#{u_id}
     </update>
 
 
