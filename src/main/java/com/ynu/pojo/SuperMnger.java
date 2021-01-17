@@ -1,5 +1,8 @@
 package com.ynu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SuperMnger {
 
     private int su_id;  //超级管理员

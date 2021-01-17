@@ -24,7 +24,8 @@
         <h1>仓库管理系统</h1>
     </div>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="login.html" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">${username}</span><a
+            href="<%=request.getContextPath()%>/account/logout" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">
@@ -47,7 +48,6 @@
 <script>
     BUI.use('common/main',function(){
         var config = [
-
             {
                 id:'2',
                 homePage:'21',

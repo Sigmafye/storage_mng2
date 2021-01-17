@@ -21,67 +21,65 @@ public class ProductController {
 
     /**
      * 添加产品
-     * @param product
-     * @param model
+     *
      * @return
      */
-    @RequestMapping("/add")
-    public String add(Product product, Model model){
-//        WareMnger wareMnger = new WareMnger();
-        if (productService.add(product)){
-            model.addAttribute("result", "插入成功");
-            return "";
-        }
-        else {
-            model.addAttribute("result", "插入失败");
-            return "";
-        }
+    @RequestMapping("/addPage")
+    public String addPage() {
+        return "/WEB-INF/Repertory/addproduct.jsp";
+    }
+
+    @RequestMapping("/addDone")
+    public String addDone(Product product, Model model) {
+        System.out.println(product);
+        productService.add(product);
+//        model.addAttribute("product", product);
+        return "redirect:/product/getList";
     }
 
     /**
      * 删除产品
+     *
      * @param id
      * @param model
      * @return
      */
     @RequestMapping("/delete/{id}")
-    public String delete(@PathVariable int id, Model model){
-        if (productService.delete(id)){
-            model.addAttribute("result", "删除成功");
-            return "";
-        }
-        else {
-            model.addAttribute("result", "删除失败");
-            return "";
-        }
+    public String delete(@PathVariable int id, Model model) {
+        productService.delete(id);
+        return "redirect:/product/getList";
 
     }
 
     /**
      * 更新产品
-     * @param product
+     *
+     * @param id
      * @param model
      * @return
      */
-    @RequestMapping("/update")
-    public String delete(Product product, Model model){
-        if (productService.update(product)){
-            model.addAttribute("result", "更新成功");
-            return "";
-        }
-        else {
-            model.addAttribute("result", "更新失败");
-            return "";
-        }
+    @RequestMapping("/updatePage/{id}")
+    public String updatePage(@PathVariable("id") int id, Model model) {
+        model.addAttribute("product", productService.search(new Product(id)));
+        return "/WEB-INF/Repertory/editproduct.jsp";
+
+    }
+
+    @RequestMapping("/updateDone")
+    public String updateDone(Product product) {
+        productService.update(product);
+        return "redirect:/product/getList";
+
     }
 
     /**
      * 获得产品列表
+     *
      * @param model
      * @return
      */
     @RequestMapping("/getList")
-    public String getList(Model model){
+    public String getList(Model model) {
         List<Product> productList = productService.getProductList();
         model.addAttribute("productList", productList);
         return "/WEB-INF/Repertory/product_manage.jsp";

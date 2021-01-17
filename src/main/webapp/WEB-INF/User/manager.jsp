@@ -86,9 +86,9 @@
 <script>
     $(function () {
 
-        $('#addnew').click(function(){
+        $('#addnew').click(function () {
 
-            window.location.href="<%=request.getContextPath()%>/wareMnger/addPage";
+            window.location.href = "<%=request.getContextPath()%>/wareMnger/addPage";
         });
 
 
@@ -96,9 +96,9 @@
 
     $(function () {
 
-        $('#select').click(function(){
+        $('#select').click(function () {
 
-            window.location.href="<%=request.getContextPath()%>/wareMnger/addPage";
+            window.location.href = "<%=request.getContextPath()%>/wareMnger/addPage";
         });
 
 

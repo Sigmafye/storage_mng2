@@ -41,50 +41,42 @@
 </head>
 <body>
 <h4>更新商品信息</h4>
-<form action="<%=request.getContextPath()%>/goods/doUpdate" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="" />
+<form action="<%=request.getContextPath()%>/orderGoods/updateGoods" class="definewidth m20">
     <table class="table table-bordered table-hover ">
         <tr>
             <td width="10%" class="tableleft">采购商品编号</td>
-            <td><input type="text" name="gs_id" value="${ordergoods.g_id}"  readonly/></td>
+            <td><input type="text" name="g_id" value="${ordergoods.g_id}"  readonly/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">订单编号</td>
-            <td><input type="text" name="gs_id" value="${ordergoods.bl_id}"  readonly/></td>
+            <td><input type="text" name="bl_id" value="${ordergoods.bl_id}"  readonly/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">采购商品名称</td>
-            <td><input type="text" name="ex_id" value="${ordergoods.g_name}"/></td>
+            <td><input type="text" name="g_name" value="${ordergoods.g_name}"/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">采购商品分类</td>
-            <td><input type="text" name="w_id" value="${ordergoods.g_clacc}" /></td>
+            <td><input type="text" name="g_clacc" value="${ordergoods.g_clacc}" /></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">采购数量</td>
-            <td><input type="text" name="im_id" value="${ordergoods.g_num}" /></td>
+            <td><input type="text" name="g_num" value="${ordergoods.g_num}" /></td>
         </tr>
         <tr>
             <td class="tableleft">采购单价</td>
-            <td ><input type="text" name="gs_name" value="${ordergoods.g_price}"/></td>
+            <td ><input type="text" name="g_price" value="${ordergoods.g_price}"/></td>
         </tr>
 
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
-                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary">保存</button> &nbsp;&nbsp;
+                <button type="button" onclick="window.history.go(-1)" class="btn btn-success" >返回列表</button>
             </td>
         </tr>
     </table>
 </form>
+${result}
 </body>
 </html>
-<script>
-    $(function () {
-        $('#backid').click(function(){
-            window.history.go(-1);
-        });
-
-    });
-</script>

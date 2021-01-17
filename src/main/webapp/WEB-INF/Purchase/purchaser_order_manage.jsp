@@ -42,7 +42,18 @@
 </head>
 <body>
 <h4 align="center">采购单详情</h4>
-
+<form class="form-inline definewidth m20" action="" method="get">
+    关键字：
+    <input type="text" name="rolename" id="rolename" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;&nbsp;
+    供应商：
+    <select type="text" name="s_id" id="supportor" class="abc input-default" >
+        <c:forEach var="supportor" items="${supportorList}">
+            <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>
+        </c:forEach>
+    </select>
+    <button type="submit" class="btn btn-primary" id="#">查询</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn"><a href="<%=request.getContextPath()%>/goto/addPurchaseOrder">添加采购单</a></button>
+</form>
 <div>
     <table class="table table-bordered table-hover definewidth m10" >
         <thead>
@@ -84,8 +95,8 @@
     </table>
     ${result}
 </div>
-<button type="submit" class="btn"><a href="<%=request.getContextPath()%>/goto/addPurchaseOrder">添加采购单</a></button>&nbsp;
-<div class="inline pull-right page">
+<%--<button type="submit" class="btn"><a href="<%=request.getContextPath()%>/goto/addPurchaseOrder">添加采购单</a></button>&nbsp;--%>
+<%--<div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
     <span class='current'>1</span>
     <a href='#'>2</a>
@@ -94,7 +105,7 @@
     <a href='#'>5</a>
     <a href='#' >下5页</a>
     <a href='#' >最后一页</a>
-</div>
+</div>--%>
 
 </body>
 </html>

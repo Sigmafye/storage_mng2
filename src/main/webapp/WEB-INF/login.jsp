@@ -10,9 +10,10 @@
 <head>
     <title>后台管理系统</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
@@ -27,8 +28,8 @@
         }
 
         .form-signin {
-            max-width: 300px;
-            padding: 19px 29px 29px;
+            max-width: 350px;
+            padding: 19px 19px 19px;
             margin: 0 auto 20px;
             background-color: #ffffff;
             border: 1px solid #e5e5e5;
@@ -60,33 +61,39 @@
 <div class="container">
 
     <form class="form-signin" method="post" action="<%=request.getContextPath()%>/account/login">
-        <h2 class="form-signin-heading">登录系统</h2>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1"
-                       value="option1" checked>库存管理员
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2"
-                       value="option2">采购管理员
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios3"
-                       value="option3">超级管理员
-            </label>
-        </div>
-            <input type="text" name="username" class="input-block-level" placeholder="账号">
+        <h2 class="form-signin-heading" align="center">登录系统</h2>
+
+        <input type="text" name="username" class="input-block-level" placeholder="账号">
         <input type="password" name="password" class="input-block-level" placeholder="密码">
-        <tr class="accordion-group">
-            <td>
-                <button class="btn btn-large btn-primary" type="submit"  onclick="doLogin()">登录</button>
-<%--                <button class="btn btn-large btn-primary" type="submit"  onclick="doRegister()">注册</button>--%>
-            </td>
-        </tr>
+
+        <div class="table">
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1"
+                               value="option1" checked>库存管理员
+                    </td>
+                    <td>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2"
+                               value="option2">采购管理员
+                    </td>
+                    <td>
+                        <input type="radio" name="optionsRadios" id="optionsRadios3"
+                               value="option3">超级管理员
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <table class="radio" align="center">
+            <tr class="accordion-group ">
+                <td>
+                    <button class="btn btn-large btn-primary" type="submit" onclick="doLogin()">登录</button>
+                    <%--                <button class="btn btn-large btn-primary" type="submit"  onclick="doRegister()">注册</button>--%>
+                </td>
+            </tr>
+        </table>
     </form>
     <div align="center">
         ${result}
@@ -94,14 +101,14 @@
 </div>
 
 <script type="text/javascript">
-    function  doLogin() {  //登录验证
+    function doLogin() {  //登录验证
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        window.open("<%=request.getContextPath()%>/account/validate?"+"username="+username+"&password="+password,"_self")
+        window.open("<%=request.getContextPath()%>/account/validate?" + "username=" + username + "&password=" + password, "_self")
     }
 
     function doRegister() {  //注册账号
-        window.open("<%=request.getContextPath()%>/account/registerPage","_self");
+        window.open("<%=request.getContextPath()%>/account/registerPage", "_self");
     }
 </script>
 </body>
