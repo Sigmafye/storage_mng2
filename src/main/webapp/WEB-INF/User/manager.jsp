@@ -60,8 +60,8 @@
     </tr>
     </thead>
 
-    <c:forEach var="mnger" items="${wareMngerList}">
-        <tr>
+    <c:forEach var="mnger" items="${}">
+        <tr>wareMngerList
             <td>${mnger.m_id}</td>
             <td>${mnger.m_name}</td>
             <td>${mnger.m_password}</td>

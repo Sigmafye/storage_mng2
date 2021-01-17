@@ -31,11 +31,6 @@ public class SuperMngerController {
     @RequestMapping("/getList")
     public String getList(Model model){
         List<SuperMnger> superMngerList = superMngerService.getSuperList();
-        for (SuperMnger su :
-                superMngerList) {
-            System.out.println(su);
-        }
-        System.out.println("ooohgfghgkjjgfghf");
         model.addAttribute("superList", superMngerList);
         return "/WEB-INF/User/index.jsp";
     }
