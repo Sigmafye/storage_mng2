@@ -95,7 +95,6 @@
 
 <script type="text/javascript">
     function  doLogin() {  //登录验证
-        alert("ok");
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         window.open("<%=request.getContextPath()%>/account/validate?"+"username="+username+"&password="+password,"_self")

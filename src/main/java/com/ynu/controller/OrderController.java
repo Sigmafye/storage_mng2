@@ -40,37 +40,36 @@ public class OrderController {
 
     /**
      * 增加订单基本信息
-     * @param order 订单信息
-     * @param buyer 采购员
-     * @param supportor 供应商
+     *
+     * @param
+     * @param model
      * @return
      */
     @RequestMapping("/addOrder")
-    public String addOrderInfo(MyOrder order,//订单
-                               Buyer buyer,//采购员
-                               Supportor supportor,//供应商
-                               Model model){
+    public String addOrderInfo(MyOrder order,
+                               Model model) {
 
-        /*先添加采购员--buyer
+        /*先添加采购员--buyer--
           再添加供应商--supportor
           添加订单表--buy_list
           添加采购商品表--gds_tobuy
          */
-        boolean isAddBuyer=buyerService.addBuyerById(buyer);
-        boolean isAddSupportor=supportorService.addSupportor(supportor);
-        boolean isAddOrder=orderService.addOrder(order);
+        System.out.println("OrderController:" + order);
+        boolean isAddOrder = orderService.addOrder(order);
         /*
         检查是否添加成功
          */
-        if(isAddBuyer && isAddSupportor && isAddOrder ){
+
+        if (isAddOrder) {
             //创建订单成功
             //返回当前订单中已有的商品
-            List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(order.getBl_id());
-            model.addAttribute("orderGoodsList",orderGoodsList);
-
-            return "success";
-
-        }else{
+//            List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(order.getBl_id());
+//            model.addAttribute("orderGoodsList",orderGoodsList);
+            List<MyOrder> orderList = orderService.getOrderList();
+            model.addAttribute("orderList", orderList);
+            //返回
+            return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
+        } else {
             //创建订单失败
             return "fuilure";
         }
@@ -79,28 +78,23 @@ public class OrderController {
 
     /**
      * 根据订单编号向订单中添加商品
+     *
      * @param bl_id
      * @return
      */
     @RequestMapping("/addOrderGoods/{bl_id}")
     public String addOrderGoods(@PathVariable int bl_id,//订单编号不能为空
-                                OrderGoods orderGoods){//商品类
+                                Model model) {//商品类
 
-        MyOrder myOrder=orderService.getOrderById(bl_id);
-        if(myOrder==null){
+        //根据订单编号查找对应订单信息
+        MyOrder myOrder = orderService.getOrderById(bl_id);
+        if (myOrder == null) {
             //无该订单信息，需要先添加订单信息。
             return "failure";
-        }else{
+        } else {
             //存在该订单
-            orderGoods.setBl_id(bl_id);//向对应订单中添加商品
-            boolean isAddGoods=orderGoodsService.addGoodsById(orderGoods);
-            if(isAddGoods ){
-                //创建订单成功
-                return "success";
-            }else{
-                //创建订单失败
-                return "fuilure";
-            }
+            model.addAttribute("myOrder", myOrder);
+            return "/WEB-INF/Purchase/add_purchaser_order.jsp";
         }
     }
 
@@ -109,24 +103,25 @@ public class OrderController {
      * 根据订单编号删除订单，
      * 先删除订单中的商品
      * 再删除订单信息
+     *
      * @return
      */
     @RequestMapping("/deleteOrder/{bl_id}")
-    public String deleteOrderById(@PathVariable int bl_id){
-        boolean isDeleteGoods=orderGoodsService.deleteOrderGoods(bl_id);
-        if (isDeleteGoods){
-            //成功将商品删除
-            boolean isDeleteOrder=orderService.deleteOrderById(bl_id);
-            if (isDeleteOrder){
-                //成功将订单删除
-                return "success";
-            }else {
-                //订单删除失败
-                return "false";
-            }
-        }else {
-            //商品删除失败
-            return "false";
+    public String deleteOrderById(@PathVariable int bl_id,
+                                  Model model) {
+        System.out.println(bl_id);
+        boolean isDeleteOrder = orderService.deleteOrderById(bl_id);
+        if(isDeleteOrder) {
+            //成功将订单删除
+            List<MyOrder> orderList = orderService.getOrderList();
+            model.addAttribute("orderList", orderList);
+            //返回
+            return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
+        } else {
+            //订单删除失败
+            model.addAttribute("result", "订单删除失败");
+            //返回
+            return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
         }
     }
 
@@ -135,25 +130,26 @@ public class OrderController {
     /**
      * 根据订单编号查找订单信息
      * 根据订单编号查找订单中的商品信息
+     *
      * @param bl_id
      * @param model
      * @return
      */
     @RequestMapping("/getOrder/{bl_id}")
     public String getOrderById(@PathVariable int bl_id,
-                           Model model){
+                               Model model) {
         //查找订单信息
-        MyOrder myOrder=orderService.getOrderById(bl_id);
+        MyOrder myOrder = orderService.getOrderById(bl_id);
         //查找对应订单中的商品信息
-        List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(bl_id);
-        if (myOrder!=null&&orderGoodsList!=null){
+        List<OrderGoods> orderGoodsList = orderGoodsService.getGoodsList(bl_id);
+        if (myOrder != null && orderGoodsList != null) {
             //如果查找成功
             //        向页面返回订单信息
-            model.addAttribute("myOrder",myOrder);
+            model.addAttribute("myOrder", myOrder);
             //        向页面返回订单商品信息
-            model.addAttribute("orderGoodsList",orderGoodsList);
+            model.addAttribute("orderGoodsList", orderGoodsList);
             return "success";
-        }else{
+        } else {
             return "false";
         }
     }
@@ -161,28 +157,30 @@ public class OrderController {
 
     /**
      * 根据订单编号更新订单信息
+     *
      * @param order
-     * @param buyer
-     * @param supportor
+     *
      * @param model
      * @return
      */
     @RequestMapping("/updateOrder")
     public String updateOrder(MyOrder order,//订单
-                              Buyer buyer,//采购员
-                              Supportor supportor,//供应商
-                              Model model){
+                              Model model) {
         /*
         按顺序更新
          */
-        boolean isUpdateBuyer=buyerService.updateBuyerInfo(buyer);
-        boolean isUpdateSupportor=supportorService.updateSupportor(supportor);
-        boolean isUpdateOrder=orderService.updateOrderById(order);
+        boolean isUpdateOrder = orderService.updateOrderById(order);
 
-        if(isUpdateBuyer && isUpdateSupportor &&isUpdateOrder){
-            return "success";
-        }else{
-            return "failure";
+        if (isUpdateOrder) {
+            List<MyOrder> orderList = orderService.getOrderList();
+            model.addAttribute("orderList", orderList);
+            //返回
+            return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
+        } else {
+            //订单删除失败
+            model.addAttribute("result", "订单更新失败");
+            //返回
+            return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
         }
 
     }
@@ -190,26 +188,25 @@ public class OrderController {
 
     /**
      * 返回订单列表--orderList
+     *
      * @param model
      * @return orderList
      */
     @RequestMapping("/orderList")
-    public String getOrderList(Model model){
+    public String getOrderList(Model model) {
 
 
-        List<MyOrder> orderList=orderService.getOrderList();
+        List<MyOrder> orderList = orderService.getOrderList();
 
-        if (orderList!=null){
+        if (orderList != null) {
             //订单不为空
-            model.addAttribute("orderList",orderList);
+            model.addAttribute("orderList", orderList);
             return "notNull";
-        }else{
+        } else {
             //订单为空
             return "null";
         }
     }
-
-
 
 
 }

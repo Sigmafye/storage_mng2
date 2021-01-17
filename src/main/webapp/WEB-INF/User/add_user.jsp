@@ -5,7 +5,7 @@
   Time: 上午 9:36
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -40,28 +40,28 @@
     </style>
 </head>
 <body>
-<form action="add_user.html" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>/super/doAdd" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
-            <td width="10%" class="tableleft">姓名</td>
-            <td><input type="text" name="username"/></td>
+            <td width="10%" class="tableleft">用户名</td>
+            <td><input type="text" name="su_name" ></td>
         </tr>
         <tr>
-            <td class="tableleft">性别</td>
-            <td><input type="password" name="password"/></td>
+            <td class="tableleft">密码</td>
+            <td><input type="text" name="su_password"></td>
         </tr>
         <tr>
             <td class="tableleft">年龄</td>
-            <td><input type="text" name="realname"/></td>
+            <td><input type="text" name="su_age"></td>
         </tr>
         <tr>
-            <td class="tableleft">角色</td>
-            <td>{$role_checkbox}</td>
+            <td class="tableleft">地址</td>
+            <td><input type="text" name="su_addr"></td>
         </tr>
-        <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -71,7 +71,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="index.jsp";
+            window.history.go(-1);
         });
 
     });

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ynu.mapper.SuperMngerMapper">
+
+    <!--id对应方法名，入参对应属性名-->
+    <select id="getSuperList" resultType="Super">
+        select * from super_mnger
+    </select>
+
+    <select id="search" parameterType="java.lang.Integer" resultType="Super">
+        select * from super_mnger where su_id = #{su_id}
+    </select>
+
+    <select id="validate" resultType="Super">
+        select * from super_mnger where su_name = #{su_name} and su_password = #{su_password}
+    </select>
+
+    <insert id="add" parameterType="Super">
+        insert into super_mnger (su_name, su_password, su_age, su_addr)
+        values (#{su_name}, #{su_password}, #{su_age}, #{su_addr})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from super_mnger where su_id = #{su_id}
+    </delete>
+
+    <update id="update" parameterType="Product">
+        update super_mnger set su_name = #{su_name}, su_password = #{su_password}, su_age = #{su_age}, su_addr = #{su_addr}
+        where  su_id = #{su_id}
+    </update>
+
+</mapper>

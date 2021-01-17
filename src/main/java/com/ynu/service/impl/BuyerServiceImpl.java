@@ -61,6 +61,11 @@ public class BuyerServiceImpl implements BuyerService {
 
     }
 
+    public List<Buyer> getBuyerList() {
+        List<Buyer> buyerList=buyerMapper.getBuyerList();
+        return buyerList;
+    }
+
     public List<MyOrder> getBuyerOrderList(int u_id) {
         List<MyOrder> buyerOrderList=buyerMapper.getBuyerOrderList(u_id);
         return buyerOrderList;

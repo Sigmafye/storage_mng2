@@ -74,13 +74,15 @@
             <td>${order.p_id}</td>
             <td>${order.processor}</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser_order.jsp">修改</a></button>&nbsp;
-                <button id="" type="submit" class="btn btn-danger">删除</button>&nbsp;
+                <button id="update"  class="btn btn-warning"><a href="<%=request.getContextPath()%>/goto/updateOrder/${order.bl_id}">修改</a></button>&nbsp;
+                <button id="delete"  class="btn btn-danger"><a href="<%=request.getContextPath()%>/order/deleteOrder/${order.bl_id}">删除</a></button>&nbsp;
+                <button id="GoodsMng"  class="btn btn-danger"><a href="<%=request.getContextPath()%>/goto/addOrderGoods/${order.bl_id}">商品管理</a></button>&nbsp;
             </td>
         </tr>
         </c:forEach>
         </tbody>
     </table>
+    ${result}
 </div>
 <button type="submit" class="btn"><a href="<%=request.getContextPath()%>/goto/addPurchaseOrder">添加采购单</a></button>&nbsp;
 <div class="inline pull-right page">

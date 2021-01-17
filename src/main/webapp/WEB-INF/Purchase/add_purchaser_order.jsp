@@ -43,75 +43,75 @@
 <body>
 <h3>采购开单</h3>
 <h4 align="center">基本信息</h4>
-<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>order/addOrder" method="post">
+<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/order/addOrder" method="post">
     <table>
         <tbody>
         <tr>
             <th>
                 供应商编号：
-<%--                <input type="text" name="s_id" id="s_id" class="abc input-default" placeholder="" value="">--%>
-                <select type="text" name="ware" id="supportor" class="abc input-default" placeholder="" value="">
-                    <c:forEach var="supportor" items="${supportorList}">
-                        <option value ="${supportor.s_name}">A-01</option>
-                    </c:forEach>
-                </select>
+                <input type="text" name="s_id" id="s_id" class="abc input-default" value="${order.s_id}">
+<%--                <select type="text" name="s_id" id="supportor" class="abc input-default" placeholder="" value="">--%>
+<%--                    <c:forEach var="supportor" items="${supportorList}">--%>
+<%--                        <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>--%>
+<%--                    </c:forEach>--%>
+<%--                </select>--%>
             </th>
             <th>
                 采购员编号：
-<%--                <input type="text" name="u_id" id="u_id"class="abc input-default" placeholder="" value="">--%>
-                <select type="text" name="ware" id="buyer" class="abc input-default" placeholder="" value="">
-                    <c:forEach var="buyer" items="${buyerIdList}">
-                        <option value ="${buyer.u_id}">A-01</option>
-                    </c:forEach>
-                </select>
+                <input type="text" name="u_id" id="u_id"class="abc input-default" value="${order.u_id}">
+<%--                <select type="text" name="u_id" id="buyer" class="abc input-default" placeholder="" value="">--%>
+<%--                    <c:forEach var="buyer" items="${buyerList}">--%>
+<%--                        <option value ="${buyer.u_id}">${buyer.u_id},${buyer.u_name}</option>--%>
+<%--                    </c:forEach>--%>
+<%--                </select>--%>
             </th>
             <th>
                 供应商：
-                <input type="text" name="suppotor" id="suppotor"class="abc input-default" placeholder="" value="">
+                <input type="text" name="supportor" id="supportor"class="abc input-default" value="${order.supportor}">
             </th>
-            <th>
-                收货仓库：
-                <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">
-                    <option value ="A-01">A-01</option>
-                    <option value ="B-02">B-02</option>
-                    <option value="C-03">C-03</option>
-                    <option value="D-04">D-04</option>
-                </select>
-            </th>
+
 
         </tr>
         <tr>
             <th>
+                收货仓库：
+                <input type="text" name="ware" id="ware"class="abc input-default" value="${order.ware}">
+<%--                <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">--%>
+<%--                    <option value ="A-01">A-01</option>--%>
+<%--                    <option value ="B-02">B-02</option>--%>
+<%--                    <option value="C-03">C-03</option>--%>
+<%--                    <option value="D-04">D-04</option>--%>
+<%--                </select>--%>
+            </th>
+            <th>
                 到货时间：
-                <input type="text" name="a_time" id="a_time" class="abc input-default" placeholder="" value="">
+                <input type="text" name="a_time" id="a_time" class="abc input-default" value="${order.a_time}">
             </th>
             <th>
                 联系人:
-                <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" placeholder="" value="">
+                <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" value="${order.relate_peo}">
             </th>
-            <th>
-                联系方式：
-                <input type="text" name="re_methods" id="re_methods"class="abc input-default" placeholder="" value="">
-            </th>
-            <th>
-                经手人编号：
-                <input type="text" name="p_id" id="p_id"class="abc input-default" placeholder="" value="">
-            </th>
+
 
         </tr>
         <tr>
             <th>
+                联系方式：
+                <input type="text" name="re_methods" id="re_methods"class="abc input-default" value="${order.re_methods}">
+            </th>
+            <th>
+                经手人编号：
+                <input type="text" name="p_id" id="p_id"class="abc input-default" value="${order.p_id}">
+            </th>
+            <th>
                 经手人：
-                <input type="text" name="processor" id="processor"class="abc input-default" placeholder="" value="">
+                <input type="text" name="processor" id="processor"class="abc input-default" value="${order.processor}">
             </th>
         </tr>
         </tbody>
-        <tbody>
-        <tr>
+
     </table>
-    <div align="center">
-        <input type="submit" class="btn btn-primary" value="提交采购单" >
-    </div>
+
 
 </form>
 <!--<ul class="nav nav-list">
@@ -119,22 +119,22 @@
 </ul>-->
 <h5 class="page-header"></h5>
 <div>
-    <button type="submit" class="btn" id="addnew"><a href="add_commodity.jsp">添加商品</a></button>&nbsp;&nbsp;
+    <button type="submit" class="btn" id="addnew"><a href="<%=request.getContextPath()%>/goto/addGoods/${order.bl_id}">添加商品</a></button>&nbsp;&nbsp;
     <button type="button" class="btn" id=""><a href="add_commodity.jsp">批量导入</a></button>
-    <form class="form-inline definewidth m20" action="index.html" method="get">
-        分类：
-        <select>
-            <option value ="all">所有</option>
-            <option value ="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-        </select>
-        商品编号：
-        <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="请输入编码">
-        商品名称：
-        <input type="text" name="commodityname" id="commodityname"class="abc input-default" placeholder="" value="请输入关键字">
-        <button type="submit" class="btn btn-primary" id="#">搜索</button>
-    </form>
+<%--    <form class="form-inline definewidth m20" action="index.html" method="get">--%>
+<%--        分类：--%>
+<%--        <select>--%>
+<%--            <option value ="all">所有</option>--%>
+<%--            <option value ="saab">Saab</option>--%>
+<%--            <option value="opel">Opel</option>--%>
+<%--            <option value="audi">Audi</option>--%>
+<%--        </select>--%>
+<%--        商品编号：--%>
+<%--        <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="请输入编码">--%>
+<%--        商品名称：--%>
+<%--        <input type="text" name="commodityname" id="commodityname"class="abc input-default" placeholder="" value="请输入关键字">--%>
+<%--        <button type="submit" class="btn btn-primary" id="#">搜索</button>--%>
+<%--    </form>--%>
     <table class="table table-bordered table-hover definewidth m10" >
         <thead>
         <tr>
@@ -157,7 +157,7 @@
             <td>${ordergoods.g_num}</td>
             <td>${ordergoods.g_price}</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.jsp">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goto/updateGoods">修改</a></button>&nbsp;
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>

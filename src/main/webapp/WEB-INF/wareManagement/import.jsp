@@ -23,6 +23,7 @@
         body {
             padding-bottom: 40px;
         }
+
         .sidebar-nav {
             padding: 9px 0;
         }
@@ -41,56 +42,83 @@
 </head>
 <body>
 <form class="form-inline definewidth m20" action="import.jsp" method="get">
-    编号：
-    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入编号" value="">&nbsp;&nbsp;
+    关键字：
+    <input type="text" name="goodsname" id="goodname" class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;
     <select>
         <option>-请选择-</option>
-        <option>按编号排序</option>
-        <option>按状态排序</option>
+        <%--        <option>按编号排序</option>--%>
+        <%--        <option>按状态排序</option>--%>
     </select>
-    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增</button>
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-success" id="addnew">新增</button>
 </form>
-<table class="table table-bordered table-hover definewidth m10" >
+<table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
-        <th>入库编号</th>
-        <th>产品编号</th>
-        <th>管理员编号</th>
-        <th>货物名称</th>
-        <th>数量</th>
-        <th>入库时间</th>
+        <th>入库单编号</th>
+        <th>货物编号</th>
+        <th>客户编号</th>
+        <th>入库数量</th>
+        <th>入库时间/th>
+        <th>负责人</th>
         <th>备注</th>
         <th>操作</th>
 
+
     </tr>
     </thead>
+<tbody>
+<c:forEach var="import" items="${IRList}">
     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>001</td>
-        <td>dell笔记本</td>
-        <td>23</td>
-        <td>2020-01-01</td>
-        <td>出库</td>
-        <td>
+    <td><input type="checkbox"></td>
+    <td>${import.im_id}</td>
+    <td>${import.m_id}</td>
+    <td>${import.c_id}</td>
+    <td>${import.im_quantity}</td>
+    <td>${import.im_time}</td>
+    <td>${import.im_principal}</td>
+    <td>${import.im_remarks}</td>
+    <td>
             <button type="submit" class="btn btn-warning"><a href="edit_list.jsp">修改</a></button>&nbsp;
             <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
         </td>
     </tr>
+</c:forEach>
+</tbody>
+    <tbody>
+    <c:forEach var="import" items="${EXList}">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>${EX.ex_id}</td>
+            <td>${product.w_id}</td>
+            <td>${product.p_warehouse}</td>
+            <td>${product.im_id}</td>
+            <td>${product.ex_id}</td>
+            <td>${product.p_name}</td>
+            <td>${product.p_price}</td>
+            <td>${product.p_quantity}</td>
+            <td>${product.p_type}</td>
+            <td>${product.p_shelf_number}</td>
+            <td>
+                <button type="submit" class="btn btn-warning"><a href="edit_list.jsp">修改</a></button>&nbsp;
+                <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
 </table>
-<div class="inline pull-right page" >
-    10122 条记录 1/507 页  <a href='#'>下一页</a>     <span class='current'>1</span><a href='#'>2</a><a href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a>  <a href='#' >下5页</a> <a href='#' >最后一页</a>    </div>
+<div class="inline pull-right page">
+    10122 条记录 1/507 页 <a href='#'>下一页</a> <span class='current'>1</span><a href='#'>2</a><a
+        href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a> <a href='#'>下5页</a> <a
+        href='#'>最后一页</a></div>
 </body>
 </html>
 <script>
     $(function () {
 
-        $('#addnew').click(function(){
-
-            window.location.href="addGoods_import.jsp";
+        $('#addnew').click(function () {
+            window.location.href = "addGoods_import.jsp";
         });
-
-
     });
-
 </script>

@@ -1,10 +1,17 @@
 package com.ynu.controller;
 
+import com.ynu.pojo.Buyer;
 import com.ynu.pojo.MyOrder;
+import com.ynu.pojo.OrderGoods;
+import com.ynu.pojo.Supportor;
+import com.ynu.service.BuyerService;
+import com.ynu.service.OrderGoodsService;
 import com.ynu.service.OrderService;
+import com.ynu.service.SupportorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -16,6 +23,15 @@ public class NavigateController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private OrderGoodsService orderGoodsService;
+
+    @Autowired
+    private SupportorService supportorService;
+
+    @Autowired
+    private BuyerService buyerService;
 
 
     /*
@@ -34,7 +50,7 @@ public class NavigateController {
      */
     @RequestMapping("/buyStatis")
     public String gotoBuyStatis(){
-        return "/WEB-INF/User/index.jsp";
+        return "/WEB-INF/Purchase/Purchase_statistics_inquiry.jsp";
     }
 
     /*
@@ -46,11 +62,14 @@ public class NavigateController {
     }
 
     /*
-    添加商品
+    添加订货商品
      */
-    @RequestMapping("/addGoods")
-    public String gotoAddGoods(){
-        return "/WEB-INF/Purchaser/add_purchaser_order.jsp";
+    @RequestMapping("/addGoods/{bl_id}")
+    public String gotoAddGoods(@PathVariable int bl_id,
+                               Model model){
+
+        model.addAttribute("bl_id",bl_id);
+        return "/WEB-INF/Purchase/add_commodity.jsp";
     }
 
     /**
@@ -91,14 +110,14 @@ public class NavigateController {
      */
     @RequestMapping("/wareStatis")
     public String gotoWareStatis(){
-        return "/WEB-INF/role/index.jsp";
+        return "/WEB-INF/Repertory/Inventory_statistics_query.jsp";
     }
     /*
     超级管理员
      */
     @RequestMapping("/userMng")
     public String gotouserMng(){
-        return "/WEB-INF/User/index.jsp";
+        return "redirect:/super/getList";
     }
 
 
@@ -106,23 +125,82 @@ public class NavigateController {
     跳转添加采购单
      */
     @RequestMapping("/addPurchaseOrder")
-    public String gotoAddPurchaseOrder(){
-        return "/WEB-INF/Purchase/add_purchaser_order.jsp";
+    public String gotoAddPurchaseOrder(Model model){
+
+        //供应商列表
+        List<Supportor> supportorList=supportorService.getSupportorList();
+        //System.out.println(supportorList);
+        model.addAttribute("supportorList",supportorList);
+
+        //采购员
+        List<Buyer> buyerList=buyerService.getBuyerList();
+        //System.out.println(buyerList);
+        model.addAttribute("buyerList",buyerList);
+        return "/WEB-INF/Purchase/edit_purchaser_order.jsp";
     }
+
+    /*
+    跳转更新采购单
+     */
+    @RequestMapping("/updateOrder/{bl_id}")
+    public String updateOrder(@PathVariable int bl_id,
+                              Model model){
+
+        //供应商列表
+        List<Supportor> supportorList=supportorService.getSupportorList();
+        //System.out.println(supportorList);
+        model.addAttribute("supportorList",supportorList);
+
+        //采购员
+        List<Buyer> buyerList=buyerService.getBuyerList();
+        //System.out.println(buyerList);
+        model.addAttribute("buyerList",buyerList);
+
+        //对应订单
+        MyOrder order =orderService.getOrderById(bl_id);
+        model.addAttribute("order",order);
+        return "/WEB-INF/Purchase/edit_purchaser.jsp";
+    }
+    /*
+    跳转查看订单商品
+     */
+    @RequestMapping("/addOrderGoods/{bl_id}")
+    public String addOrderGoods(@PathVariable int bl_id,//订单编号不能为空
+                                Model model) {//商品类
+
+        //根据订单编号查找对应订单信息
+        System.out.println("navidate :"+bl_id);
+        MyOrder myOrder = orderService.getOrderById(bl_id);
+
+        List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(bl_id);
+        System.out.println(orderGoodsList);
+        if (myOrder == null) {
+            //无该订单信息，需要先添加订单信息。
+            return "failure";
+        } else {
+            //存在该订单
+            model.addAttribute("order", myOrder);
+            model.addAttribute("goodsList",orderGoodsList);
+            return "/WEB-INF/Purchase/add_purchaser_order.jsp";
+        }
+    }
+
+
+
 
     /*
     采购员
      */
     @RequestMapping("/buyer")
     public String gotobuyer(){
-        return "/WEB-INF/User/buyer.jsp";
+        return "redirect:/buyer/getBuyerList";
     }
     /*
     仓库管理员
      */
     @RequestMapping("/manager")
     public String gotomanager(){
-        return "/WEB-INF/User/manager.jsp";
+        return "redirect:/wareMnger/getMngerList";
     }
 
 

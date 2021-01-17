@@ -33,7 +33,17 @@ public class WareMngerController {
     }
 
     /**
-     * 添加仓储管理员
+     * 跳转到添加仓储管理员页面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/addPage")
+    public String add(Model model){
+        return "/WEB-INF/User/add_manager.jsp";
+    }
+
+    /**
+     * 添加仓储管理员页面
      * @param wareMnger
      * @param model
      * @return
@@ -41,13 +51,14 @@ public class WareMngerController {
     @RequestMapping("/add")
     public String add(WareMnger wareMnger, Model model){
 //        WareMnger wareMnger = new WareMnger();
+        System.out.println(wareMnger);
         if (wareMngerService.add(wareMnger)){
             model.addAttribute("result", "插入成功");
-            return "";
+            return "redirect:/wareMnger/getMngerList";
         }
         else {
             model.addAttribute("result", "插入失败");
-            return "";
+            return "redirect:/wareMnger/getMngerList";
         }
     }
 
@@ -59,7 +70,20 @@ public class WareMngerController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable int id){
         wareMngerService.delete(id);
-        return "";
+        return "redirect:/wareMnger/getMngerList";
+    }
+
+    /**
+     * 更新仓库管理员
+     * @param id
+     * @param model
+     * @return
+     */
+    @RequestMapping("/update/{id}")
+    public String update(@PathVariable("id") int id, Model model){
+        WareMnger wareMnger = wareMngerService.search(new WareMnger((id)));
+        model.addAttribute("mnger", wareMnger);
+        return "/WEB-INF/User/edit_manager.jsp";
     }
 
     /**
@@ -68,15 +92,15 @@ public class WareMngerController {
      * @param model
      * @return
      */
-    @RequestMapping("/update")
-    public String delete(WareMnger wareMnger, Model model){
+    @RequestMapping("/doUpdate")
+    public String doUpdate(WareMnger wareMnger, Model model){
         if (wareMngerService.update(wareMnger)){
             model.addAttribute("result", "更新成功");
-            return "";
+            return "redirect:/wareMnger/getMngerList";
         }
         else {
             model.addAttribute("result", "更新失败");
-            return "";
+            return "redirect:/wareMnger/getMngerList";
         }
     }
 
@@ -89,6 +113,6 @@ public class WareMngerController {
     public String getMngerList(Model model){
         List<WareMnger> wareMngerList = wareMngerService.getWareMngerList();
         model.addAttribute("wareMngerList", wareMngerList);
-        return "";
+        return "/WEB-INF/User/manager.jsp";
     }
 }
