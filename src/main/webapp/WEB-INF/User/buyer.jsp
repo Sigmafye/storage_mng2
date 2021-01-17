@@ -42,12 +42,16 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="" method="get">
-    关键字：
-    <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
-    <button type="button" class="btn btn-success" id="addnew">新增</button>
-</form>
+<h4 align="center">采购员信息</h4>
+<div align="center">
+    <form class="form-inline definewidth m20" action="" method="get">
+        关键字：
+        <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-success" id="addnew">新增</button>
+    </form>
+</div>
+
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
@@ -74,10 +78,10 @@
         </tr>
     </c:forEach>
 </table>
-<div class="inline pull-right page">
-    10122 条记录 1/507 页 <a href='#'>下一页</a> <span class='current'>1</span><a href='#'>2</a><a
-        href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a> <a href='#'>下5页</a> <a
-        href='#'>最后一页</a></div>
+<%--<div class="inline pull-right page">--%>
+<%--    10122 条记录 1/507 页 <a href='#'>下一页</a> <span class='current'>1</span><a href='#'>2</a><a--%>
+<%--        href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a> <a href='#'>下5页</a> <a--%>
+<%--        href='#'>最后一页</a></div>--%>
 </body>
 </html>
 <script>

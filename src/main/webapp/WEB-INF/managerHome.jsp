@@ -47,27 +47,7 @@
 <script>
     BUI.use('common/main',function(){
         var config = [
-            <%--{--%>
-            <%--    id:'1',--%>
-            <%--    homePage:'11',--%>
-            <%--    menu:[--%>
-            <%--        {--%>
-            <%--            text:'采购管理',--%>
-            <%--            items:[--%>
-            <%--                {--%>
-            <%--                    id:'11',--%>
-            <%--                    text:'采购单管理',--%>
-            <%--                    href:'<%=request.getContextPath()%>/goto/purchaseMng'--%>
-            <%--                },--%>
-            <%--                {--%>
-            <%--                    id:'12',--%>
-            <%--                    text:'采购统计查询',--%>
-            <%--                    href:'<%=request.getContextPath()%>/goto/buyStatis'--%>
-            <%--                }--%>
-            <%--            ]--%>
-            <%--        }--%>
-            <%--    ]--%>
-            <%--},--%>
+
             {
                 id:'2',
                 homePage:'21',
@@ -103,32 +83,7 @@
                         ]
                     }
                 ]
-            <%--},--%>
-            <%--{--%>
-            <%--    id:'3',--%>
-            <%--    homePage: '31',--%>
-            <%--    menu: [--%>
-            <%--        {--%>
-            <%--            text:'角色管理',--%>
-            <%--            items: [--%>
-            <%--                {--%>
-            <%--                    id:'31',--%>
-            <%--                    text:'超级管理员',--%>
-            <%--                    href: '<%=request.getContextPath()%>/goto/userMng'--%>
-            <%--                },--%>
-            <%--                {--%>
-            <%--                    id:'32',--%>
-            <%--                    text:'采购员',--%>
-            <%--                    href:'<%=request.getContextPath()%>/goto/buyer'--%>
-            <%--                },--%>
-            <%--                {--%>
-            <%--                    id:'33',--%>
-            <%--                    text:'仓库管理员',--%>
-            <%--                    href:'<%=request.getContextPath()%>/goto/manager'--%>
-            <%--                }--%>
-            <%--            ]--%>
-            <%--        }--%>
-            <%--    ]--%>
+
             }
         ];
 
