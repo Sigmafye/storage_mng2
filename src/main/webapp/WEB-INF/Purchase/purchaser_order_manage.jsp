@@ -95,8 +95,8 @@
     </table>
     ${result}
 </div>
-
-<div class="inline pull-right page">
+<%--<button type="submit" class="btn"><a href="<%=request.getContextPath()%>/goto/addPurchaseOrder">添加采购单</a></button>&nbsp;--%>
+<%--<div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
     <span class='current'>1</span>
     <a href='#'>2</a>
@@ -105,7 +105,7 @@
     <a href='#'>5</a>
     <a href='#' >下5页</a>
     <a href='#' >最后一页</a>
-</div>
+</div>--%>
 
 </body>
 </html>

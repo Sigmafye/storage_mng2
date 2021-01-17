@@ -4,9 +4,11 @@ package com.ynu.controller;
 
 import com.ynu.pojo.Buyer;
 import com.ynu.pojo.MyOrder;
+import com.ynu.pojo.SuperMnger;
 import com.ynu.pojo.WareMnger;
 import com.ynu.service.BuyerService;
 import com.ynu.service.OrderService;
+import com.ynu.service.SuperMngerService;
 import com.ynu.service.WareMngerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -34,6 +37,12 @@ public class AccountController {
 
     @Autowired
     private Buyer buyer;
+
+    @Autowired
+    private SuperMnger superMnger;
+
+    @Autowired
+    private SuperMngerService superMngerService;
 
 
     /**
@@ -60,7 +69,8 @@ public class AccountController {
             //身份验证
             if(wareMngerService.validate(wareMnger)!=null) {
                 //验证通过
-                return "redirect:/account/wareMnger";//转到仓库管理员函数
+                model.addAttribute("username", username);
+                return "/WEB-INF/managerHome.jsp";//转到仓库管理员函数
             }else {
                 //验证失败
                 model.addAttribute("result","用户名或密码错误");
@@ -75,27 +85,34 @@ public class AccountController {
             //身份验证
             if(buyerService.isValidBuyer(buyer)) {
                 //验证通过
-                return "redirect:/account/buyerMnger";//转到采购管理员函数
+                model.addAttribute("username", username);
+                return "/WEB-INF/buyerHome.jsp";//转到采购管理员函数
             }else{
                 //验证失败
                 model.addAttribute("result","用户名或密码错误");
                 return "/WEB-INF/login.jsp";
             }
-
         }else if(optionsRadios.equals("option3")){
             //超级管理员
             System.out.println("超级管理员");
-
-            if(username.equals("zzz")&&password.equals("123")){
-                return "redirect:/account/superMnger";//转到超级管理员验证函数
+            if(superMngerService.validate(new SuperMnger(username, password)) != null){
+                model.addAttribute("username", username);
+                return "/WEB-INF/index.jsp";
             }else{
                 model.addAttribute("result","用户名或密码错误");
                 return "/WEB-INF/login.jsp";
             }
         }else{
             //非法用户
-            return "false";
+            model.addAttribute("result","用户名或密码错误");
+            return "/WEB-INF/login.jsp";
         }
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "/WEB-INF/login.jsp";
     }
 
     /**
@@ -104,9 +121,6 @@ public class AccountController {
      */
     @RequestMapping("/wareMnger")
     public String wareMnger(){
-
-
-
         System.out.println("wareMnger,success");
         return "/WEB-INF/index.jsp";
     }
@@ -135,8 +149,4 @@ public class AccountController {
         System.out.println("superMnger,success");
         return "pass";
     }
-
-
-
-
 }
