@@ -105,7 +105,7 @@
             <td class="tableleft"></td>
             <td>
                 <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
-                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="button" onclick="window.history.go(-1)" class="btn btn-success" >返回列表</button>
             </td>
         </tr>
     </table>

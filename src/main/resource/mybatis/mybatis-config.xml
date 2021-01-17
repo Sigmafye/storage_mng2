@@ -31,7 +31,7 @@
         <mapper resource="mybatis/wareHouseMapper.xml"/>
         <mapper resource="mybatis/exMapper.xml" />
         <mapper resource="mybatis/irMapper.xml" />
-        <mapper resource="mybatis/superMngerMapper"/>
+        <mapper resource="mybatis/superMngerMapper.xml"/>
     </mappers>
 
 </configuration>

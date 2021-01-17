@@ -62,11 +62,14 @@ public class NavigateController {
     }
 
     /*
-    添加商品
+    添加订货商品
      */
-    @RequestMapping("/addGoods")
-    public String gotoAddGoods(){
-        return "/WEB-INF/Purchaser/add_purchaser_order.jsp";
+    @RequestMapping("/addGoods/{bl_id}")
+    public String gotoAddGoods(@PathVariable int bl_id,
+                               Model model){
+
+        model.addAttribute("bl_id",bl_id);
+        return "/WEB-INF/Purchase/add_commodity.jsp";
     }
 
     /**
@@ -159,7 +162,7 @@ public class NavigateController {
         return "/WEB-INF/Purchase/edit_purchaser.jsp";
     }
     /*
-    跳转添加商品
+    跳转查看订单商品
      */
     @RequestMapping("/addOrderGoods/{bl_id}")
     public String addOrderGoods(@PathVariable int bl_id,//订单编号不能为空
@@ -168,15 +171,22 @@ public class NavigateController {
         //根据订单编号查找对应订单信息
         System.out.println("navidate :"+bl_id);
         MyOrder myOrder = orderService.getOrderById(bl_id);
+
+        List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(bl_id);
+        System.out.println(orderGoodsList);
         if (myOrder == null) {
             //无该订单信息，需要先添加订单信息。
             return "failure";
         } else {
             //存在该订单
             model.addAttribute("order", myOrder);
+            model.addAttribute("goodsList",orderGoodsList);
             return "/WEB-INF/Purchase/add_purchaser_order.jsp";
         }
     }
+
+
+
 
     /*
     采购员

@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-<h4>添加商品</h4>
+<h4>更新商品</h4>
 分类：
 <select>
     <option value ="volvo">Volvo</option>
@@ -50,9 +50,9 @@
     <option value="audi">Audi</option>
 </select>
 编号：
-<input type="text" name="g_id" id="g_id"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+<input type="text" name="g_id" id="g_id"class="abc input-default"  value="">&nbsp;&nbsp;
 商品名称：
-<input type="text" name="g_name" id="g_name"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+<input type="text" name="g_name" id="g_name"class="abc input-default"  value="">&nbsp;&nbsp;
 <button type="submit" class="btn btn-primary" id="#">搜索</button>
 
 <table class="table table-bordered table-hover definewidth m10" >

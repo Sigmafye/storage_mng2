@@ -43,7 +43,7 @@
 <body>
 <h3>采购开单</h3>
 <h4 align="center">基本信息</h4>
-<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>order/addOrder" method="post">
+<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/order/addOrder" method="post">
     <table>
         <tbody>
         <tr>
@@ -111,9 +111,7 @@
         </tbody>
 
     </table>
-    <div align="center">
-        <input type="submit" class="btn btn-primary" value="提交采购单" >
-    </div>
+
 
 </form>
 <!--<ul class="nav nav-list">
@@ -121,7 +119,7 @@
 </ul>-->
 <h5 class="page-header"></h5>
 <div>
-    <button type="submit" class="btn" id="addnew"><a href="add_commodity.jsp">添加商品</a></button>&nbsp;&nbsp;
+    <button type="submit" class="btn" id="addnew"><a href="<%=request.getContextPath()%>/goto/addGoods/${order.bl_id}">添加商品</a></button>&nbsp;&nbsp;
     <button type="button" class="btn" id=""><a href="add_commodity.jsp">批量导入</a></button>
 <%--    <form class="form-inline definewidth m20" action="index.html" method="get">--%>
 <%--        分类：--%>
@@ -159,7 +157,7 @@
             <td>${ordergoods.g_num}</td>
             <td>${ordergoods.g_price}</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="edit_purchaser.jsp">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goto/updateGoods">修改</a></button>&nbsp;
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>
