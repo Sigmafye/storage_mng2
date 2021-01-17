@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>goods/doUpdate" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>/goods/doUpdate" method="post" class="definewidth m20">
     <input type="hidden" name="id" value="" />
     <table class="table table-bordered table-hover ">
         <tr>
@@ -49,7 +49,7 @@
         </tr>
         <tr>
             <td width="10%" class="tableleft">出库编号</td>
-            <td><input type="text" name="ex_id" value="${goods.ex_id}" readonly/></td>
+            <td><input type="text" name="ex_id" value="${goods.ex_id}"/></td>
         </tr>
         <tr>
             <td width="10%" class="tableleft">仓库编号</td>
@@ -57,7 +57,7 @@
         </tr>
         <tr>
             <td width="10%" class="tableleft">入库编号</td>
-            <td><input type="text" name="im_id" value="${goods.im_id}" readonly/></td>
+            <td><input type="text" name="im_id" value="${goods.im_id}" /></td>
         </tr>
         <tr>
             <td class="tableleft">商品名称</td>
@@ -97,7 +97,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="commodity_manage.jsp";
+            window.history.go(-1);
         });
 
     });

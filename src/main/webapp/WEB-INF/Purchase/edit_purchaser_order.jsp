@@ -46,50 +46,43 @@
     <table class="table table-bordered table-hover ">
         <tr>
             <td width="10%" class="tableleft">订单编号</td>
-            <td><input type="text" name="bl_id" value="" readonly/></td>
+            <td><input type="text" name="bl_id" value="${order.bl_id}" readonly/></td>
         </tr>
         <tr>
             <td class="tableleft">供应商编号</td>
-            <td ><input type="text" name="s_id" value=""/></td>
+            <td ><input type="text" name="s_id" value="${order.s_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">采购员编号</td>
-            <td ><input type="text" name="u_id" value=""/></td>
+            <td ><input type="text" name="u_id" value="${order.u_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">供应商</td>
-            <td ><input type="text" name="suppotor" value=""/></td>
+            <td ><input type="text" name="suppotor" value="${order.supportor}"/></td>
         </tr>
         <tr>
             <td class="tableleft">收货仓库</td>
-            <td >
-                <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">
-                    <option value ="A-01">A-01</option>
-                    <option value ="B-02">B-02</option>
-                    <option value="C-03">C-03</option>
-                    <option value="D-04">D-04</option>
-                </select>
-            </td>
+            <td ><input type="text" name="ware" value="${order.ware}"/></td>
         </tr>
         <tr>
             <td class="tableleft">到货时间</td>
-            <td ><input type="text" name="a_time" value=""/></td>
+            <td ><input type="text" name="a_time" value="${order.a_time}"/></td>
         </tr>
         <tr>
             <td class="tableleft">联系人</td>
-            <td ><input type="text" name="relate_peo" value=""/></td>
+            <td ><input type="text" name="relate_peo" value="${order.relate_peo}"/></td>
         </tr>
         <tr>
             <td class="tableleft">联系方式</td>
-            <td ><input type="text" name="re_methods" value=""/></td>
+            <td ><input type="text" name="re_methods" value="${order.re_methods}"/></td>
         </tr>
         <tr>
             <td class="tableleft">经手人编号</td>
-            <td ><input type="text" name="p_id" value=""/></td>
+            <td ><input type="text" name="p_id" value="${order.p_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">经手人</td>
-            <td ><input type="text" name="processor" value=""/></td>
+            <td ><input type="text" name="processor" value="${order.processor}"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

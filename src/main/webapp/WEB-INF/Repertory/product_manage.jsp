@@ -88,8 +88,8 @@
         <td>${product.p_type}</td>
         <td>${product.p_shelf_number}</td>
         <td>
-            <button type="submit" class="btn btn-warning"><a href="editproduct.jsp">修改</a></button>&nbsp;
-            <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
+            <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/product/update${product.p_idd}">修改</a></button>&nbsp;
+            <button id="del" type="submit" class="btn btn-danger"><a href="<%=request.getContextPath()%>/product/update${product.p_idd}">删除</a></button>&nbsp;
         </td>
     </tr>
      </c:forEach>

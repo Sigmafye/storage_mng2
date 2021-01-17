@@ -64,14 +64,9 @@ public class GoodsController {
     @RequestMapping("/update/{gs_id}")
     public String update(@PathVariable("gs_id") int id, Model model){
         Goods goods = goodsService.search(new Goods(id));
-        if (goods != null){
-            model.addAttribute("goods", goods);
-            return "/WEB-INF/Repertory/editcommodity.jsp";
-        }
-        else {
-            model.addAttribute("result", "查找失败");
-            return "";
-        }
+        model.addAttribute("goods", goods);
+        return "/WEB-INF/Repertory/editcommodity.jsp";
+
     }
 
     /**
@@ -81,15 +76,11 @@ public class GoodsController {
      * @return
      */
     @RequestMapping("/doUpdate")
-    public String doUpdate(Goods goods, Model model){
-        if (goodsService.update(goods)){
-            model.addAttribute("result", "更新成功");
-            return "";
-        }
-        else {
-            model.addAttribute("result", "更新失败");
-            return "";
-        }
+    public String doUpdate(Goods goods){
+        System.out.println(goods);
+        goodsService.update(goods);
+        return "redirect:/goods/getList";
+
     }
 
     /**
