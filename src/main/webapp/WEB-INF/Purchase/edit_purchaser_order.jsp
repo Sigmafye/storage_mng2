@@ -46,45 +46,6 @@
     <table class="table table-bordered table-hover ">
 
         <tr>
-
-            <td width="10%" class="tableleft">订单编号</td>
-            <td><input type="text" name="bl_id" value="${order.bl_id}" readonly/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">供应商编号</td>
-            <td ><input type="text" name="s_id" value="${order.s_id}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">采购员编号</td>
-            <td ><input type="text" name="u_id" value="${order.u_id}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">供应商</td>
-            <td ><input type="text" name="suppotor" value="${order.supportor}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">收货仓库</td>
-            <td ><input type="text" name="ware" value="${order.ware}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">到货时间</td>
-            <td ><input type="text" name="a_time" value="${order.a_time}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">联系人</td>
-            <td ><input type="text" name="relate_peo" value="${order.relate_peo}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">联系方式</td>
-            <td ><input type="text" name="re_methods" value="${order.re_methods}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">经手人编号</td>
-            <td ><input type="text" name="p_id" value="${order.p_id}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">经手人</td>
-            <td ><input type="text" name="processor" value="${order.processor}"/></td>
                 <td>供应商编号：</td>
                 <td><select type="text" name="s_id" id="supportor" class="abc input-default" >
                     <c:forEach var="supportor" items="${supportorList}">

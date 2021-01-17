@@ -1,6 +1,7 @@
 package com.ynu.service;
 
 import com.ynu.pojo.OrderGoods;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -34,5 +35,30 @@ public interface OrderGoodsService {
      * @param orderId
      * @return
      */
-    public boolean deleteOrderGoods(int orderId);
+    public boolean deleteOrderGoodsById(int orderId);
+
+    /**
+     * 根据商品编号和订单编号确定唯一一个订单商品
+     * @param g_id
+     * @param bl_id
+     * @return
+     */
+    public OrderGoods getOrderGoodsByGidBlId(int g_id,int bl_id);
+
+
+    /**
+     * 更新订单商品信息
+     * @param orderGoods
+     * @return
+     */
+    public boolean updateOrderGoods(OrderGoods orderGoods);
+
+    /**
+     * 删除特定订单商品
+     * @param g_id
+     * @param bl_id
+     * @return
+     */
+    public boolean deleteOrderGoods(@Param("g_id") int g_id,
+                                    @Param("bl_id") int bl_id);
 }
