@@ -31,4 +31,8 @@
         where  su_id = #{su_id}
     </update>
 
+    <select id="searchByName" parameterType="java.lang.String" resultType="Super">
+        select * from super_mnger where su_name=#{su_name}
+    </select>
+
 </mapper>

@@ -43,12 +43,11 @@
 <div align="center">
     <h4>商品库存管理</h4>
 </div>
-<form class="form-inline definewidth m20" action="" method="get">
+<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/goods/goodsSearch" method="get">
     关键字：
     <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;&nbsp;
     商品类别：
-    <select type="text" name="s_id" id="supportor" class="abc input-default" >
-        <option value ="all">所有类别</option>
+    <select type="text" name="goodsClass" id="supportor" class="abc input-default" >
         <c:forEach var="goods" items="${goodsClassSet}">
             <option value ="${goods}">${goods}</option>
         </c:forEach>

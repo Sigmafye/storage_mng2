@@ -82,4 +82,8 @@ public class BuyerServiceImpl implements BuyerService {
         }
 
     }
+
+    public List<Buyer> searchByName(String u_name) {
+        return buyerMapper.searchByName(u_name);
+    }
 }

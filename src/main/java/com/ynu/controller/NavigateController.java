@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -44,6 +45,8 @@ public class NavigateController {
      */
     @RequestMapping("/purchaseMng")
     public String gotoPurchaseMng(Model model){
+
+
         List<MyOrder> orderList=orderService.getOrderList();
         model.addAttribute("orderList",orderList);
         System.out.println(orderList);

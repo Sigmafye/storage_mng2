@@ -17,4 +17,6 @@ public interface GoodsMapper {
     public boolean delete(int gs_id);
 
     public boolean update(Goods goods);
+
+    public List<Goods> goodsSearch(String gs_class);
 }

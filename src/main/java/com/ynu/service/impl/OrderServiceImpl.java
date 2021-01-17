@@ -56,4 +56,11 @@ public class OrderServiceImpl implements OrderService {
             return false;
         }
     }
+
+
+    public List<MyOrder> getOrderListBySupportorId(int s_id) {
+
+        List<MyOrder> orderList=orderMapper.getOrderListBySupportorId(s_id);
+        return orderList;
+    }
 }

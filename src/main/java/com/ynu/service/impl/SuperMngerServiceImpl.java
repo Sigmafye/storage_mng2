@@ -37,4 +37,9 @@ public class SuperMngerServiceImpl implements SuperMngerService {
     public boolean update(SuperMnger superMnger) {
         return superMngerMapper.update(superMnger);
     }
+
+    public List<SuperMnger> searchByName(String name) {
+
+        return superMngerMapper.searchByName(name);
+    }
 }

@@ -36,4 +36,7 @@
         where  m_id = #{m_id}
     </update>
 
+    <select id="searchByName" parameterType="java.lang.String" resultType="WareMnger">
+        select * from ware_mnger where m_name=#{m_name}
+    </select>
 </mapper>

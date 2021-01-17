@@ -144,4 +144,13 @@ public class BuyerController {
     }
 
 
+    @RequestMapping("/searchByName")
+    public String searchByName(@RequestParam String buyername,
+                               Model model){
+        List<Buyer> buyerList=buyerService.searchByName(buyername);
+        model.addAttribute("buyerList",buyerList);
+        return "/WEB-INF/User/buyer.jsp";
+    }
+
+
 }

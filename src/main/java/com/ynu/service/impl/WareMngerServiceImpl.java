@@ -65,4 +65,8 @@ public class WareMngerServiceImpl implements WareMngerService {
     public boolean update(WareMnger wareMnger) {
         return wareMngerMapper.update(wareMnger);
     }
+
+    public List<WareMnger> searchByName(String m_name) {
+        return wareMngerMapper.searchByName(m_name);
+    }
 }

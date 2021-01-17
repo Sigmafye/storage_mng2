@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.jws.WebParam;
 import java.util.List;
 
 @Controller
@@ -53,6 +55,15 @@ public class SuperMngerController {
     public String delete(@PathVariable("id") int id){
         superMngerService.delete(id);
         return "redirect:/super/getList";
+    }
+
+
+    @RequestMapping("/userSearch")
+    public String userSearch(@RequestParam String username,
+                             Model model){
+        List<SuperMnger> superMngerList=superMngerService.searchByName(username);
+        model.addAttribute("superList",superMngerList);
+        return "/WEB-INF/User/index.jsp";
     }
 
 }
