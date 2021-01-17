@@ -15,8 +15,8 @@
         insert into export_list value(#{ex_id},#{m_id},#{c_id},#{ex_quantity},#{ex_time},#{ex_principal},#{ex_remarks})
     </insert>
 
-    <update id="updateEX" parameterType="java.lang.Integer">
-        update export_list set ex_id=#{ex_id},m_id=#{m_id},c_id=#{c_id},ex_quantity=#{ex_quantity},ex_time=#{ex_time},ex_principal=#{ex_peincipal},ex_remarks=#{ex_remarks}where im_id=#{im_id}
+    <update id="updateEX" parameterType="Export">
+        update export_list set m_id=#{m_id},c_id=#{c_id},ex_quantity=#{ex_quantity},ex_time=#{ex_time},ex_principal=#{ex_principal},ex_remarks=#{ex_remarks} where ex_id=#{ex_id}
     </update>
 
     <delete id="deleteEX" parameterType="java.lang.Integer">

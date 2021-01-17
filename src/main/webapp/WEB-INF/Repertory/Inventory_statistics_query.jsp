@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: xxdn
@@ -35,52 +36,18 @@
                 padding-right: 5px;
             }
         }
-
-
     </style>
 </head>
+
 <body>
-<form action="index.html" method="post" class="definewidth m20">
-    <table class="table table-bordered table-hover definewidth m10">
-        <tr>
-            <h4 align="center">基本信息</h4>
-        </tr>
-        <tr>
-            <td width="10%" class="tableleft">仓库</td>
-            <td><input type="text" name="title"/></td>
-            <td width="10%" class="tableleft">物品</td>
-            <td><input type="text" name="title"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">物品类型筛选</td>
-            <td>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />产品</label>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />商品</label>
-            </td>
-            <td width="10%" class="tableleft">仓库管理员编号</td>
-            <td><input type="text" name="title"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">出入库时间(x/x/x)</td>
-            <td>
-                <input type="text" name="title"/>
-            </td>
-            <td class="tableleft">统计项</td>
-            <td>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />颜色</label>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />型号</label>
-                <label class='checkbox inline'><input type='checkbox' name='node[]' value='' />数量</label>
-            </td>
-        </tr>
-
-    </table>
+<h4 align="center">检索信息</h4>
+<form align="center" class="form-inline definewidth m20" action="<%=request.getContextPath()%>/import/repertorySearch" method="get">
+    检索物品名称：
+    <input type="text" name="r_name" id="r_name" class="abc input-default">
+    <button type="submit" class="btn btn-primary" id="startSearch">开始检索</button>
 </form>
-<form class="form-inline definewidth m20" action="index.html" method="get">
 
-    <div align="center">
-        <button type="submit" class="btn btn-primary">检索</button>
-    </div>
-</form>
+
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
@@ -88,52 +55,32 @@
     </tr>
 
     <tr>
-        <th>仓库</th>
-        <th>物品</th>
-        <th>物品类型</th>
-        <th>出入库时间</th>
-        <th>颜色</th>
-        <th>型号</th>
+        <th>物品编号</th>
+        <th>名称</th>
+        <th>类型</th>
+        <th>价格</th>
         <th>数量</th>
-        <th>仓库管理员编号</th>
+        <th>所在仓库</th>
+        <th>所在货架</th>
     </tr>
     </thead>
-    <tr>
-        <td>1号仓库</td>
-        <td>dell电脑</td>
-        <td>产品</td>
-        <td>2020/1/14</td>
-        <td>黑色</td>
-        <td>Inspiron5577</td>
-        <td>1</td>
-        <td>1<a href="edit.html">查看</a></td>
-    </tr>
-    <tr>
-        <td>2号仓库</td>
-        <td>dell电脑</td>
-        <td>产品</td>
-        <td>2020/1/14</td>
-        <td>黑色</td>
-        <td>Inspiron5577</td>
-        <td>1</td>
-        <td>1<a href="edit.html">查看</a></td>
-    </tr>
-    <tr>
-        <td>3号仓库</td>
-        <td>sony微单</td>
-        <td>商品</td>
-        <td>2020/1/14</td>
-        <td>黑色</td>
-        <td>a6400</td>
-        <td>1</td>
-        <td>1<a href="edit.html">查看</a></td>
-    </tr>
-</table>
-<form class="form-inline definewidth m20" action="index.html" method="get">
 
-    <div align="center">
-        <button type="submit" class="btn btn-primary">导出</button>
-    </div>
-</form>
+    <tbody>
+
+    <c:forEach var="ReperoryList" items="${repertoryList}">
+        <tr>
+            <td>${ReperoryList.r_id}</td>
+            <td>${ReperoryList.r_name}</td>
+            <td>${ReperoryList.r_type}</td>
+            <td>${ReperoryList.r_price}</td>
+            <td>${ReperoryList.r_quantity}</td>
+            <td>${ReperoryList.r_warehouse}</td>
+            <td>${ReperoryList.r_shelf}</td>
+
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
 </body>
 </html>

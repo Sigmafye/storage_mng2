@@ -41,40 +41,41 @@
     </style>
 </head>
 <body>
-<form action="edit_list.jsp" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>/import/updateIR" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover m10">
         <tr>
             <td class="tableleft">入库编号</td>
-            <td><input type="text" name="im_id"/></td>
+            <td><input type="text" name="im_id" value="${importList.im_id}" readonly/></td>
         </tr>
         <tr>
             <td class="tableleft">货物编号</td>
-            <td><input type="text" name="m_id"/></td>
+            <td><input type="text" name="m_id" value="${importList.m_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">客户编号</td>
-            <td><input type="text" name="c_id"/></td>
+            <td><input type="text" name="c_id" value="${importList.c_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">入库数量</td>
-            <td><input type="text" name="im_quantity"/></td>
+            <td><input type="text" name="im_quantity" value="${importList.im_quantity}"/></td>
         </tr>
         <tr>
             <td class="tableleft">入库时间</td>
-            <td><input type="text" name="im_time"/></td>
+            <td><input type="text" name="im_time" value="${importList.im_time}"/></td>
         </tr>
         <tr>
             <td class="tableleft">负责人</td>
-            <td><input type="text" name="im_principal"/></td>
+            <td><input type="text" name="im_principal" value="${importList.im_principal}"/></td>
         </tr>
         <tr>
             <td class="tableleft">备注</td>
-            <td><input type="text" name="im_remarks"/></td>
+            <td><input type="text" name="im_remarks" value="${importList.im_remarks}"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">提交</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">提交</button> &nbsp;
+                &nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -84,7 +85,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="export.jsp";
+            window.history.go(-1);
         });
 
     });

@@ -22,17 +22,17 @@ public interface EXMapper {
      * 插入出库单记录
      * @param export
      */
-    public void insertEX(Export export);
+    public boolean insertEX(Export export);
 
     /**
      * 更新出库单记录
      * @param export
      */
-    public void updateEX(Export export);
+    public boolean updateEX(Export export);
 
     /**
      * 根据入=出库单编号删除出库单记录
      * @param ex_id
      */
-    public void deleteEX(int ex_id);
+    public boolean deleteEX(int ex_id);
 }

@@ -90,7 +90,7 @@ public class NavigateController {
      */
     @RequestMapping("/importMng")
     public String gotoImportMng(){
-        return "/WEB-INF/wareManagement/import.jsp";
+        return "redirect:/import/getIR";
     }
 
     /*
@@ -98,9 +98,32 @@ public class NavigateController {
      */
     @RequestMapping("/exportMng")
     public String gotoExportMng(){
-        return "/WEB-INF/wareManagement/export.jsp";
+        return "redirect:/export/getExportAll";
     }
 
+    /*
+    增添入库记录
+     */
+    @RequestMapping("/addImport")
+    public String addImport(){
+        return "/WEB-INF/wareManagement/addGoods_export.jsp";
+    }
+
+    /*
+   修改入库记录
+    */
+    @RequestMapping("/updateImport")
+    public String updateImport(){
+        return "/WEB-INF/wareManagement/edit_list.jsp";
+    }
+
+    /*
+   增添出库记录
+    */
+    @RequestMapping("/addExport")
+    public String updateExport(){
+        return "/WEB-INF/wareManagement/addGoods_import.jsp";
+    }
     /*
     库存统计查询
      */

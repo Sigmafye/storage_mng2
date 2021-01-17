@@ -2,6 +2,7 @@ package com.ynu.service.impl;
 
 import com.ynu.mapper.IRMapper;
 import com.ynu.pojo.ImportRecord;
+import com.ynu.pojo.Repertory;
 import com.ynu.service.ImportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,8 +41,9 @@ public class IRServiceImpl implements ImportService{
      * 更新入库单记录
      * @param importRecord
      */
-    public void updateIR(ImportRecord importRecord) {
+    public boolean updateIR(ImportRecord importRecord) {
         irMapper.updateIR(importRecord);
+        return true;
     }
 
 
@@ -49,6 +51,22 @@ public class IRServiceImpl implements ImportService{
      * 根据入库单编号删除入库单记录
      * @param im_id
      */
-    public void deleteIR(int im_id) { irMapper.deleteIR(im_id); }
+    public boolean deleteIR(int im_id) { irMapper.deleteIR(im_id); return true;}
 
+    public List<Repertory> getRepertoryList(Repertory repertory){
+        return irMapper.getRepertoryList(repertory);
+    }
+
+
+    @Override
+    public List<Repertory> getProductsRepertoryList() {
+        System.out.println("yes");
+        return irMapper.getProductsRepertoryList();
+    }
+
+
+    @Override
+    public List<Repertory> getGoodsRepertoryList() {
+        return irMapper.getGoodsRepertoryList();
+    }
 }

@@ -1,19 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2021/1/16
-  Time: 上午 9:33
+  Date: 2021/1/17
+  Time: 14:34
   To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+--%><%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title></title>
@@ -27,6 +19,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/ckform.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/common.js"></script>
     <style type="text/css">
+
         body {
             padding-bottom: 40px;
         }
@@ -47,40 +40,41 @@
     </style>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>/export/addExport" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>/export/updateExport" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover m10">
         <tr>
             <td class="tableleft">出库编号</td>
-            <td><input type="text" name="ex_id"/></td>
+            <td><input type="text" name="ex_id" value="${exportList.ex_id}" readonly/></td>
         </tr>
         <tr>
             <td class="tableleft">货物编号</td>
-            <td><input type="text" name="m_id"/></td>
+            <td><input type="text" name="m_id" value="${exportList.m_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">客户编号</td>
-            <td><input type="text" name="c_id"/></td>
+            <td><input type="text" name="c_id" value="${exportList.c_id}"/></td>
         </tr>
         <tr>
             <td class="tableleft">出库数量</td>
-            <td><input type="text" name="ex_quantity"/></td>
+            <td><input type="text" name="ex_quantity" value="${exportList.ex_quantity}"/></td>
         </tr>
         <tr>
             <td class="tableleft">出库时间</td>
-            <td><input type="text" name="ex_time"/></td>
+            <td><input type="text" name="ex_time" value="${exportList.ex_time}"/></td>
         </tr>
         <tr>
             <td class="tableleft">负责人</td>
-            <td><input type="text" name="ex_principal"/></td>
+            <td><input type="text" name="ex_principal" value="${exportList.ex_principal}"/></td>
         </tr>
         <tr>
             <td class="tableleft">备注</td>
-            <td><input type="text" name="ex_remarks"/></td>
+            <td><input type="text" name="ex_remarks" value="${exportList.ex_remarks}"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">提交</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">提交</button> &nbsp;
+                &nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -90,7 +84,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-              window.history.go(-1);
+            window.history.go(-1);
         });
 
     });

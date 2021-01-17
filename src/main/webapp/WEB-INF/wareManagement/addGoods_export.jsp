@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-<form action="addGoods_export.jsp" method="post" class="definewidth m20">
+<form action="<%=request.getContextPath()%>/import/addIR" method="post" class="definewidth m20">
     <table class="table table-bordered table-hover m10">
         <tr>
             <td class="tableleft">入库编号</td>
@@ -83,7 +83,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="export.jsp";
+           window.history.go(-1);
         });
 
     });

@@ -31,16 +31,18 @@ public class EXServiceImpl implements ExService {
      * 插入入库单记录
      * @param export
      */
-    public void insertEX(Export export) {
+    public boolean insertEX(Export export) {
         exMapper.insertEX(export);
+        return true;
     }
 
     /**
      * 更新出库单记录
      * @param export
      */
-    public void updateEX(Export export) {
+    public boolean updateEX(Export export) {
         exMapper.updateEX(export);
+        return true;
     }
 
 
@@ -48,7 +50,7 @@ public class EXServiceImpl implements ExService {
      * 根据出库单编号删除出库单记录
      * @param ex_id
      */
-    public void deleteEX(int ex_id) { exMapper.deleteEX(ex_id); }
+    public boolean deleteEX(int ex_id) { exMapper.deleteEX(ex_id); return true;}
 
 
 
