@@ -2,10 +2,10 @@
   Created by IntelliJ IDEA.
   User: DELL
   Date: 2021/1/15
-  Time: 15:48
+  Time: 17:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -40,49 +40,35 @@
     </style>
 </head>
 <body>
+<h4>更新商品信息</h4>
 <form action="<%=request.getContextPath()%>/goods/doUpdate" method="post" class="definewidth m20">
     <input type="hidden" name="id" value="" />
     <table class="table table-bordered table-hover ">
         <tr>
-            <td width="10%" class="tableleft">商品编号</td>
-            <td><input type="text" name="gs_id" value="${goods.gs_id}"  readonly/></td>
+            <td width="10%" class="tableleft">采购商品编号</td>
+            <td><input type="text" name="gs_id" value="${ordergoods.g_id}"  readonly/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">出库编号</td>
-            <td><input type="text" name="ex_id" value="${goods.ex_id}"/></td>
+            <td width="10%" class="tableleft">订单编号</td>
+            <td><input type="text" name="gs_id" value="${ordergoods.bl_id}"  readonly/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">仓库编号</td>
-            <td><input type="text" name="w_id" value="${goods.w_id}" /></td>
+            <td width="10%" class="tableleft">采购商品名称</td>
+            <td><input type="text" name="ex_id" value="${ordergoods.g_name}"/></td>
         </tr>
         <tr>
-            <td width="10%" class="tableleft">入库编号</td>
-            <td><input type="text" name="im_id" value="${goods.im_id}" /></td>
+            <td width="10%" class="tableleft">采购商品分类</td>
+            <td><input type="text" name="w_id" value="${ordergoods.g_clacc}" /></td>
         </tr>
         <tr>
-            <td class="tableleft">商品名称</td>
-            <td ><input type="text" name="gs_name" value="${goods.gs_name}"/></td>
+            <td width="10%" class="tableleft">采购数量</td>
+            <td><input type="text" name="im_id" value="${ordergoods.g_num}" /></td>
         </tr>
         <tr>
-            <td class="tableleft">价格</td>
-            <td ><input type="text" name="gs_price" value="${goods.gs_price}"/></td>
+            <td class="tableleft">采购单价</td>
+            <td ><input type="text" name="gs_name" value="${ordergoods.g_price}"/></td>
         </tr>
-        <tr>
-            <td class="tableleft">商品分类</td>
-            <td ><input type="text" name="gs_class" value="${goods.gs_class}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">数量</td>
-            <td ><input type="text" name="gs_num" value="${goods.gs_num}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">所在仓库</td>
-            <td ><input type="text" name="gs_ware" value="${goods.gs_ware}"/></td>
-        </tr>
-        <tr>
-            <td class="tableleft">商品货架</td>
-            <td ><input type="text" name="gs_shelf" value="${goods.gs_shelf}"/></td>
-        </tr>
+
         <tr>
             <td class="tableleft"></td>
             <td>

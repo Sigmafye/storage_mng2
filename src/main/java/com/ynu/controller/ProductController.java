@@ -84,7 +84,7 @@ public class ProductController {
     public String getList(Model model){
         List<Product> productList = productService.getProductList();
         model.addAttribute("productList", productList);
-        return "";
+        return "/WEB-INF/Repertory/product_manage.jsp";
     }
 
 }
