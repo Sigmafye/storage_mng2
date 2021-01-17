@@ -117,7 +117,7 @@ public class NavigateController {
      */
     @RequestMapping("/userMng")
     public String gotouserMng(){
-        return "/WEB-INF/User/index.jsp";
+        return "redirect:/super/getList";
     }
 
 
@@ -193,7 +193,7 @@ public class NavigateController {
      */
     @RequestMapping("/buyer")
     public String gotobuyer(){
-        return "/WEB-INF/User/buyer.jsp";
+        return "redirect:/buyer/getBuyerList";
     }
     /*
     仓库管理员

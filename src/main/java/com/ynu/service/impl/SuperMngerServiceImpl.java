@@ -4,9 +4,11 @@ import com.ynu.mapper.SuperMngerMapper;
 import com.ynu.pojo.SuperMnger;
 import com.ynu.service.SuperMngerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SuperMngerServiceImpl implements SuperMngerService {
 
     @Autowired
