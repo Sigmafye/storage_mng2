@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -206,6 +207,38 @@ public class OrderController {
             //订单为空
             return "null";
         }
+    }
+
+
+    @RequestMapping("/orderStaticSearch")
+    public String orderStaticSearch(@RequestParam int bl_id,
+                              Model model){
+
+        //订单商品
+        List<OrderGoods> orderGoodsList =orderGoodsService.getGoodsList(bl_id);
+        //订单
+        MyOrder order=orderService.getOrderById(bl_id);
+
+        //订单总条数
+        List<MyOrder> orderList=orderService.getOrderList();
+        int totalOrderNum=orderList.size();
+        System.out.println(totalOrderNum);
+
+
+
+        //订单总金额
+        Iterator<OrderGoods> listIterable=orderGoodsList.iterator();
+        double totalMoney=0;
+        while (listIterable.hasNext()){
+            OrderGoods orderGoods=listIterable.next();
+            totalMoney+=orderGoods.getG_num()*orderGoods.getG_price();
+        }
+
+        model.addAttribute("totalMoney",totalMoney);
+        model.addAttribute("totalOrderNum",totalOrderNum);
+        model.addAttribute("order",order);
+        model.addAttribute("goodsList",orderGoodsList);
+        return "/WEB-INF/Purchase/Purchase_statistics_inquiry.jsp";
     }
 
 

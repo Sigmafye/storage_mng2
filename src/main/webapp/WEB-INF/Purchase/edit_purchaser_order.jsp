@@ -65,7 +65,7 @@
         </tr>
         <tr>
             <td class="tableleft">供应商</td>
-            <td ><input type="text" name="supportor" /></td>
+            <td ><input type="text" name="supportor" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">收货仓库</td>
@@ -80,23 +80,23 @@
         </tr>
         <tr>
             <td class="tableleft">到货时间</td>
-            <td ><input type="text" name="a_time" /></td>
+            <td ><input type="text" name="a_time" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">联系人</td>
-            <td ><input type="text" name="relate_peo" /></td>
+            <td ><input type="text" name="relate_peo" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">联系方式</td>
-            <td ><input type="text" name="re_methods" /></td>
+            <td ><input type="text" name="re_methods" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">经手人编号</td>
-            <td ><input type="text" name="p_id" /></td>
+            <td ><input type="text" name="p_id" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">经手人</td>
-            <td ><input type="text" name="processor" /></td>
+            <td ><input type="text" name="processor" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

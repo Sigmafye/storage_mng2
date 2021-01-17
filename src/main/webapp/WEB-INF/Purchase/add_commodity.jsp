@@ -42,18 +42,6 @@
 </head>
 <body>
 <h4>添加商品</h4>
-分类：
-<select>
-    <option value ="volvo">Volvo</option>
-    <option value ="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-</select>
-编号：
-<input type="text" name="g_id" id="g_id"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
-商品名称：
-<input type="text" name="g_name" id="g_name"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
-<button type="submit" class="btn btn-primary" id="#">搜索</button>
 
 
 <form action="<%=request.getContextPath()%>/orderGoods/addOrderGoods/${bl_id}" class="definewidth m20">
@@ -61,19 +49,19 @@
     <table class="table table-bordered table-hover ">
         <tr>
             <td class="tableleft">商品名称</td>
-            <td ><input type="text" name="g_name" /></td>
+            <td ><input type="text" name="g_name" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">商品分类</td>
-            <td ><input type="text" name="g_clacc" /></td>
+            <td ><input type="text" name="g_clacc" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">采购数量</td>
-            <td ><input type="text" name="g_num" /></td>
+            <td ><input type="text" name="g_num" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">采购价格</td>
-            <td ><input type="text" name="g_price" /></td>
+            <td ><input type="text" name="g_price" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
