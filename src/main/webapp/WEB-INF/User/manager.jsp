@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="manager.jsp" method="get">
+<form class="form-inline definewidth m20" action="" method="get">
     用户名：
     <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary" id="select">查询</button>
