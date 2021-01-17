@@ -74,10 +74,10 @@
         </tr>
     </c:forEach>
 </table>
-<div class="inline pull-right page">
+<%--<div class="inline pull-right page">
     10122 条记录 1/507 页 <a href='#'>下一页</a> <span class='current'>1</span><a href='#'>2</a><a
         href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a> <a href='#'>下5页</a> <a
-        href='#'>最后一页</a></div>
+        href='#'>最后一页</a></div>--%>
 </body>
 </html>
 <script>

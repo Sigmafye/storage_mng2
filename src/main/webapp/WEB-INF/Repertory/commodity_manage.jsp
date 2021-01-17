@@ -43,7 +43,7 @@
 <div align="center">
     <h4>商品库存管理</h4>
 </div>
-<form class="form-inline definewidth m20" action="index.html" method="get">
+<form class="form-inline definewidth m20" action="" method="get">
     关键字：
     <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;&nbsp;
     类别：
@@ -89,7 +89,7 @@
     </tbody>
 
 </table>
-<div class="inline pull-right page">
+<%--<div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
     <span class='current'>1</span>
     <a href='#'>2</a>
@@ -98,7 +98,7 @@
     <a href='#'>5</a>
     <a href='#' >下5页</a>
     <a href='#' >最后一页</a>
-</div>
+</div>--%>
 <script  src="../../resources/Js/jquery-3.2.1.min.js"></script>
 <script>
     $('thead input').change(function (){
