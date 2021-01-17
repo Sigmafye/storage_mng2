@@ -19,4 +19,6 @@ public interface WareMngerService {
     public boolean delete(int id);
 
     public boolean update(WareMnger wareMnger);
+
+    public List<WareMnger> searchByName(String m_name);
 }

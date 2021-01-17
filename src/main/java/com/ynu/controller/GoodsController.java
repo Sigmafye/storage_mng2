@@ -4,11 +4,15 @@ import com.ynu.pojo.Goods;
 import com.ynu.pojo.Product;
 import com.ynu.pojo.Supportor;
 import com.ynu.service.GoodsService;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -21,6 +25,10 @@ public class GoodsController {
 
     @Autowired
     GoodsService goodsService;
+
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
+
 
     /**
      * 添加商品
@@ -108,5 +116,25 @@ public class GoodsController {
         model.addAttribute("goodsClassSet",goodsSet);
         model.addAttribute("goodsList", goodsList);
         return "/WEB-INF/Repertory/commodity_manage.jsp";
+    }
+
+
+    @RequestMapping("/goodsSearch")
+    public String goodsSearch(@RequestParam String goodsClass,
+                              Model model){
+        List<Goods> goodsList = goodsService.getGoodsList();
+        List<Goods> goodsList2= goodsService.goodsSearch(goodsClass);
+
+        Iterator<Goods> goodsIterator=goodsList.listIterator();
+        //放入set集合
+        Set<String> goodsSet =new HashSet<String>();
+        while (goodsIterator.hasNext()){
+            goodsSet.add(goodsIterator.next().getGs_class());
+        }
+        model.addAttribute("goodsClassSet",goodsSet);
+        model.addAttribute("goodsList", goodsList2);
+        return "/WEB-INF/Repertory/commodity_manage.jsp";
+
+
     }
 }

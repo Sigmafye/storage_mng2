@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -113,6 +114,15 @@ public class WareMngerController {
     public String getMngerList(Model model){
         List<WareMnger> wareMngerList = wareMngerService.getWareMngerList();
         model.addAttribute("wareMngerList", wareMngerList);
+        return "/WEB-INF/User/manager.jsp";
+    }
+
+    @RequestMapping("/searchByName")
+    public String searchByName(@RequestParam String warename,
+                               Model model){
+
+        List<WareMnger> wareMngerList=wareMngerService.searchByName(warename);
+        model.addAttribute("wareMngerList",wareMngerList);
         return "/WEB-INF/User/manager.jsp";
     }
 }

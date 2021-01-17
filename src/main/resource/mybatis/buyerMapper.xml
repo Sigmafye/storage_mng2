@@ -49,4 +49,9 @@
         select * from buyer
     </select>
 
+<!--    根据采购员姓名查找-->
+    <select id="searchByName" parameterType="java.lang.String" resultType="Buyer">
+        select * from buyer where u_name=#{u_name}
+    </select>
+
 </mapper>

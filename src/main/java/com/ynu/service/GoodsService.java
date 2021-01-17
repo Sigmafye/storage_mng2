@@ -1,6 +1,7 @@
 package com.ynu.service;
 
 import com.ynu.pojo.Goods;
+import org.w3c.dom.ls.LSException;
 
 import java.util.List;
 
@@ -18,4 +19,5 @@ public interface GoodsService {
 
     public boolean update(Goods goods);
 
+    public List<Goods> goodsSearch(String gs_class);
 }

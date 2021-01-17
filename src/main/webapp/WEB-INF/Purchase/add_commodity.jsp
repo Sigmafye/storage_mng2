@@ -73,43 +73,5 @@
     </table>
 </form>
 ${result}
-<%--<table class="table table-bordered table-hover definewidth m10" >--%>
-<%--    <thead>--%>
-<%--    <tr>--%>
-<%--        <th>采购商品编号</th>--%>
-<%--        <th>采购商品名称</th>--%>
-<%--        <th>采购商品分类</th>--%>
-<%--        <th>采购数量</th>--%>
-<%--        <th>采购单价</th>--%>
-<%--        <th>操作</th>--%>
-<%--    </tr>--%>
-<%--    </thead>--%>
-<%--    <tbody>--%>
-<%--    <c:forEach var="ordergoods" items="${goodsList}">--%>
-<%--        <tr>--%>
-<%--            <td>${ordergoods.g_name}</td>--%>
-<%--            <td>${ordergoods.g_clacc}</td>--%>
-<%--            <td>${ordergoods.g_num}</td>--%>
-<%--            <td>${ordergoods.g_price}</td>--%>
-<%--            <td>--%>
-<%--                <button type="submit" class="btn btn-warning"><a--%>
-<%--                        href="<%=request.getContextPath()%>/goto/updateGoods/${ordergoods.g_id}/${bl_id}">添加</a>--%>
-<%--                </button>&nbsp;--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
-<%--    </tbody>--%>
-<%--</table>--%>
-<%--<button type="submit" class="btn btn"><a href="add_purchaser_order.jsp">返回采购单界面</a></button>&nbsp;--%>
-<%--<div class="inline pull-right page">--%>
-<%--    10122 条记录 1/507 页  <a href='#'>下一页</a>--%>
-<%--    <span class='current'>1</span>--%>
-<%--    <a href='#'>2</a>--%>
-<%--    <a href='#'>3</a>--%>
-<%--    <a href='#'>4</a>--%>
-<%--    <a href='#'>5</a>--%>
-<%--    <a href='#' >下5页</a>--%>
-<%--    <a href='#' >最后一页</a>--%>
-<%--</div>--%>
 </body>
 </html>
