@@ -144,7 +144,7 @@ public class NavigateController {
      */
     @RequestMapping("/buyer")
     public String gotobuyer(){
-        return "/WEB-INF/User/buyer.jsp";
+        return "redirect:/buyer/getBuyerList";
     }
     /*
     仓库管理员
