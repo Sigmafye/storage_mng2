@@ -46,7 +46,7 @@
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
             <td width="10%" class="tableleft">用户名</td>
-            <td><input type="text" name="u_name"></td>
+            <td><input type="text" name="u_name" required="required"></td>
         </tr>
         <tr>
             <td class="tableleft">性别</td>
@@ -62,7 +62,7 @@
         </tr>
         <tr>
             <td class="tableleft">密码</td>
-            <td><input type="text" name="u_password"></td>
+            <td><input type="text" name="u_password" required="required"></td>
         </tr>
         <tr>
             <td class="tableleft"></td>

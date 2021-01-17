@@ -44,7 +44,7 @@
 </head>
 <body>
 
-<form action="<%=request.getContextPath()%>goods/add" method="post">
+<form action="<%=request.getContextPath()%>/goods/addDone" method="post">
     <table class="table table-bordered table-hover definewidth m10">
         <%--编号自动生成--%>
         <%--        <tr>
@@ -101,7 +101,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="commodity_manage.jsp";
+            window.history.go(-1);
         });
 
     });
