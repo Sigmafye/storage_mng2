@@ -66,7 +66,7 @@
         <input type="text" name="username" class="input-block-level" placeholder="账号">
         <input type="password" name="password" class="input-block-level" placeholder="密码">
 
-        <div class="table">
+        <div class="table" align="center">
             <table>
                 <tbody>
                 <tr>
