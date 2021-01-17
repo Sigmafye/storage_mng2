@@ -157,7 +157,7 @@
             <td>${ordergoods.g_num}</td>
             <td>${ordergoods.g_price}</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goto/updateGoods">修改</a></button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goto/updateGoods/${ordergoods.g_id}/${ordergoods.bl_id}">修改</a></button>&nbsp;
                 <button type="submit" class="btn btn-danger">删除</button>&nbsp;
             </td>
         </tr>

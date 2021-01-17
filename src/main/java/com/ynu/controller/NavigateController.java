@@ -9,10 +9,12 @@ import com.ynu.service.OrderGoodsService;
 import com.ynu.service.OrderService;
 import com.ynu.service.SupportorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -70,6 +72,20 @@ public class NavigateController {
 
         model.addAttribute("bl_id",bl_id);
         return "/WEB-INF/Purchase/add_commodity.jsp";
+    }
+
+
+    /*
+    更新订货商品
+     */
+    @RequestMapping("/updateGoods/{g_id}/{bl_id}")
+    public String updateGoods(@PathVariable int g_id,
+                              @PathVariable int bl_id,
+                              Model model){
+
+        OrderGoods orderGoods=orderGoodsService.getOrderGoodsByGidBlId(g_id,bl_id);
+        model.addAttribute("orderGoods",orderGoods);
+        return "/WEB-INF/Purchase/updateGoods.jsp";
     }
 
     /**

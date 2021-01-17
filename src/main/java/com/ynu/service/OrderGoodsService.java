@@ -35,4 +35,20 @@ public interface OrderGoodsService {
      * @return
      */
     public boolean deleteOrderGoods(int orderId);
+
+    /**
+     * 根据商品编号和订单编号确定唯一一个订单商品
+     * @param g_id
+     * @param bl_id
+     * @return
+     */
+    public OrderGoods getOrderGoodsByGidBlId(int g_id,int bl_id);
+
+
+    /**
+     * 更新订单商品信息
+     * @param orderGoods
+     * @return
+     */
+    public boolean updateOrderGoods(OrderGoods orderGoods);
 }
