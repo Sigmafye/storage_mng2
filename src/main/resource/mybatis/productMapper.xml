@@ -4,6 +4,7 @@
 
 <mapper namespace="com.ynu.mapper.ProductMapper">
 
+
     <!--id对应方法名，入参对应属性名-->
     <select id="getProductList" resultType="Product">
         select * from product
@@ -34,4 +35,8 @@
         where  p_idd = #{p_idd}
     </update>
 
+
+    <select id="searchByName" parameterType="java.lang.String" resultType="Product">
+        select * from product where p_type=#{p_type}
+    </select>
 </mapper>

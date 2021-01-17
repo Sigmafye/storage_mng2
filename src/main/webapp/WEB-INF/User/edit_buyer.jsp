@@ -5,7 +5,7 @@
   Time: 上午 9:38
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -40,29 +40,34 @@
     </style>
 </head>
 <body>
-<form action="edit_buyer.jsp" method="post" class="definewidth m20">
-    <input type="hidden" name="id" value="{$user.id}" />
+<form action="<%=request.getContextPath()%>/buyer/updateDone" method="post" class="definewidth m20">
+<%--    <input type="hidden" name="id" value="{$user.id}" />--%>
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
             <td width="10%" class="tableleft">用户名</td>
-            <td><input type="text" name="username" ></td>
+            <td><input type="text" name="u_id" value="${buyer.u_id}" readonly></td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">用户名</td>
+            <td><input type="text" name="u_name" value="${buyer.u_name}"></td>
         </tr>
         <tr>
             <td class="tableleft">性别</td>
-            <td><input type="password" name="sex"/></td>
+            <td><input type="text" name="u_sex"value="${buyer.u_sex}"></td>
         </tr>
         <tr>
             <td class="tableleft">年龄</td>
-            <td><input type="text" name="age" ></td>
+            <td><input type="text" name="u_age" value="${buyer.u_age}"></td>
         </tr>
         <tr>
             <td class="tableleft">密码</td>
-            <td><input type="text" name="password"></td>
+            <td><input type="text" name="u_password"value="${buyer.u_password}"></td>
         </tr>
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button>				 &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button>				 &nbsp;
+                &nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>
@@ -72,7 +77,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="buyer.jsp";
+            window.history.go(-1);
         });
 
     });

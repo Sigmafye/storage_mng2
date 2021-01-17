@@ -4,9 +4,11 @@ import com.ynu.mapper.SuperMngerMapper;
 import com.ynu.pojo.SuperMnger;
 import com.ynu.service.SuperMngerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SuperMngerServiceImpl implements SuperMngerService {
 
     @Autowired
@@ -34,5 +36,10 @@ public class SuperMngerServiceImpl implements SuperMngerService {
 
     public boolean update(SuperMnger superMnger) {
         return superMngerMapper.update(superMnger);
+    }
+
+    public List<SuperMnger> searchByName(String name) {
+
+        return superMngerMapper.searchByName(name);
     }
 }

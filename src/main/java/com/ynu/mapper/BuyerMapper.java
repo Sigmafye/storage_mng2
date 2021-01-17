@@ -66,4 +66,11 @@ public interface BuyerMapper {
      */
     public Buyer isValidBuyer(Buyer buyer);
 
+    /**
+     * 根据采购员姓名返回采购员实体
+     * @param u_name
+     * @return
+     */
+    public List<Buyer> searchByName(String u_name);
+
 }

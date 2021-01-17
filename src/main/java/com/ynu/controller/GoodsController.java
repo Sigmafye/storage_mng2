@@ -2,14 +2,22 @@ package com.ynu.controller;
 
 import com.ynu.pojo.Goods;
 import com.ynu.pojo.Product;
+import com.ynu.pojo.Supportor;
 import com.ynu.service.GoodsService;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/goods")
@@ -18,23 +26,30 @@ public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
+
+
     /**
      * 添加商品
-     * @param goods
-     * @param model
      * @return
      */
-    @RequestMapping("/add")
-    public String add(Goods goods, Model model){
-//        WareMnger wareMnger = new WareMnger();
-        if (goodsService.add(goods)){
-            model.addAttribute("result", "插入成功");
-            return "";
-        }
-        else {
-            model.addAttribute("result", "插入失败");
-            return "";
-        }
+    @RequestMapping("/addPage")
+    public String addPage(){
+        return "/WEB-INF/Repertory/addcommodity.jsp";
+    }
+
+
+    /**
+     * 添加商品页面
+     * @return
+     */
+    @RequestMapping("/addDone")
+    public String addDone(Goods goods, Model model){
+        System.out.println(goods);
+        System.out.println(goodsService.add(goods));
+        return "redirect:/goods/getList";
+
     }
 
     /**
@@ -47,7 +62,7 @@ public class GoodsController {
     public String delete(@PathVariable int id, Model model){
         if (goodsService.delete(id)){
             model.addAttribute("result", "删除成功");
-            return "";
+            return "redirect:/goods/getList";
         }
         else {
             model.addAttribute("result", "删除失败");
@@ -64,32 +79,23 @@ public class GoodsController {
     @RequestMapping("/update/{gs_id}")
     public String update(@PathVariable("gs_id") int id, Model model){
         Goods goods = goodsService.search(new Goods(id));
-        if (goods != null){
-            model.addAttribute("goods", goods);
-            return "/WEB-INF/Repertory/editcommodity.jsp";
-        }
-        else {
-            model.addAttribute("result", "查找失败");
-            return "";
-        }
+        model.addAttribute("goods", goods);
+        return "/WEB-INF/Repertory/editcommodity.jsp";
+
     }
 
     /**
      * 更新商品页面
      * @param goods
-     * @param model
+     *
      * @return
      */
     @RequestMapping("/doUpdate")
-    public String doUpdate(Goods goods, Model model){
-        if (goodsService.update(goods)){
-            model.addAttribute("result", "更新成功");
-            return "";
-        }
-        else {
-            model.addAttribute("result", "更新失败");
-            return "";
-        }
+    public String doUpdate(Goods goods){
+        System.out.println(goods);
+        goodsService.update(goods);
+        return "redirect:/goods/getList";
+
     }
 
     /**
@@ -100,7 +106,35 @@ public class GoodsController {
     @RequestMapping("/getList")
     public String getList(Model model){
         List<Goods> goodsList = goodsService.getGoodsList();
+
+        Iterator<Goods> goodsIterator=goodsList.listIterator();
+        //放入set集合
+        Set<String> goodsSet =new HashSet<String>();
+        while (goodsIterator.hasNext()){
+            goodsSet.add(goodsIterator.next().getGs_class());
+        }
+        model.addAttribute("goodsClassSet",goodsSet);
         model.addAttribute("goodsList", goodsList);
         return "/WEB-INF/Repertory/commodity_manage.jsp";
+    }
+
+
+    @RequestMapping("/goodsSearch")
+    public String goodsSearch(@RequestParam String goodsClass,
+                              Model model){
+        List<Goods> goodsList = goodsService.getGoodsList();
+        List<Goods> goodsList2= goodsService.goodsSearch(goodsClass);
+
+        Iterator<Goods> goodsIterator=goodsList.listIterator();
+        //放入set集合
+        Set<String> goodsSet =new HashSet<String>();
+        while (goodsIterator.hasNext()){
+            goodsSet.add(goodsIterator.next().getGs_class());
+        }
+        model.addAttribute("goodsClassSet",goodsSet);
+        model.addAttribute("goodsList", goodsList2);
+        return "/WEB-INF/Repertory/commodity_manage.jsp";
+
+
     }
 }

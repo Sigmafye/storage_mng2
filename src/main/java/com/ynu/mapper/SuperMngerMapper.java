@@ -18,4 +18,6 @@ public interface SuperMngerMapper {
 
     public boolean update(SuperMnger superMnger);
 
+    public List<SuperMnger> searchByName(String name);
+
 }

@@ -18,4 +18,6 @@ public interface SuperMngerService {
 
     public boolean update(SuperMnger superMnger);
 
+    public List<SuperMnger> searchByName(String name);
+
 }

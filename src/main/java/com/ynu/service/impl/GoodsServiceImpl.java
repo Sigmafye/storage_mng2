@@ -64,4 +64,15 @@ public class GoodsServiceImpl implements GoodsService {
     public boolean update(Goods goods) {
         return goodsMapper.update(goods);
     }
+
+
+    /**
+     * 根据商品类别查找
+     * @param gs_class
+     * @return
+     */
+    public List<Goods> goodsSearch(String gs_class) {
+
+        return goodsMapper.goodsSearch(gs_class);
+    }
 }

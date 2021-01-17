@@ -44,15 +44,15 @@
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
             <td width="10%" class="tableleft">用户名</td>
-            <td><input type="text" name="m_name"></td>
+            <td><input type="text" name="m_name" required="required"></td>
         </tr>
         <tr>
             <td class="tableleft">密码</td>
-            <td><input type="text" name="m_password"/></td>
+            <td><input type="text" name="m_password" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">电话</td>
-            <td><input type="text" name="m_tel" ></td>
+            <td><input type="text" name="m_tel"></td>
         </tr>
         <tr>
             <td class="tableleft">地址</td>
@@ -65,7 +65,8 @@
         <tr>
             <td class="tableleft"></td>
             <td>
-                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+                <button type="submit" class="btn btn-primary" type="button">保存</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
             </td>
         </tr>
     </table>

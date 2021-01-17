@@ -1,9 +1,12 @@
 package com.ynu.pojo;
 
 
+import org.springframework.stereotype.Component;
+
 /**
  * 订单信息实体
  */
+@Component
 public class MyOrder {
 
 

@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<% %>
 <html>
 <head>
     <title></title>
@@ -44,11 +43,15 @@
 <div align="center">
     <h4>商品库存管理</h4>
 </div>
-<form class="form-inline definewidth m20" action="index.html" method="get">
+<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/goods/goodsSearch" method="get">
     关键字：
     <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;&nbsp;
-    类别：
-    <select></select>
+    商品类别：
+    <select type="text" name="goodsClass" id="supportor" class="abc input-default" >
+        <c:forEach var="goods" items="${goodsClassSet}">
+            <option value ="${goods}">${goods}</option>
+        </c:forEach>
+    </select>
     <button type="submit" class="btn btn-primary" id="#">查询</button>&nbsp;&nbsp;&nbsp;&nbsp;
     <button type="button" class="btn btn-success" id="addnew">新增商品信息</button>
 </form>
@@ -83,14 +86,14 @@
         <td>${goods.gs_shelf}</td>
         <td>
             <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goods/update/${goods.gs_id}">修改</a></button>&nbsp;
-            <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
+            <button id="del" type="submit" class="btn btn-danger"><a href="<%=request.getContextPath()%>/goods/delete/${goods.gs_id}">删除</a></button>&nbsp;
         </td>
     </tr>
     </c:forEach>
     </tbody>
 
 </table>
-<div class="inline pull-right page">
+<%--<div class="inline pull-right page">
     10122 条记录 1/507 页  <a href='#'>下一页</a>
     <span class='current'>1</span>
     <a href='#'>2</a>
@@ -99,7 +102,7 @@
     <a href='#'>5</a>
     <a href='#' >下5页</a>
     <a href='#' >最后一页</a>
-</div>
+</div>--%>
 <script  src="../../resources/Js/jquery-3.2.1.min.js"></script>
 <script>
     $('thead input').change(function (){
@@ -122,7 +125,7 @@
 
         $('#addnew').click(function(){
 
-            window.location.href="addcommodity.jsp";
+            window.location.href="<%=request.getContextPath()%>/goods/addPage";
         });
 
 

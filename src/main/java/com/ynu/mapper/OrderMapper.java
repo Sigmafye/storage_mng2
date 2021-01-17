@@ -46,5 +46,12 @@ public interface OrderMapper {
     public int updateOrderById(MyOrder order);
 
 
+    /**
+     * 根据供应商id返回相应订单
+     * @param s_id
+     * @return
+     */
+    public List<MyOrder> getOrderListBySupportorId(int s_id);
+
 
 }

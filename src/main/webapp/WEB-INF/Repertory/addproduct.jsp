@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>product/add" method="post">
+<form action="<%=request.getContextPath()%>/product/addDone" method="post">
     <table class="table table-bordered table-hover definewidth m10">
         <%--编号自动生成--%>
         <%--        <tr>
@@ -98,7 +98,7 @@
 <script>
     $(function () {
         $('#backid').click(function(){
-            window.location.href="product_manage.jsp";
+            window.history.go(-1);
         });
 
     });

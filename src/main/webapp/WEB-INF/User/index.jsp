@@ -5,7 +5,7 @@
   Time: 上午 9:38
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -40,11 +40,15 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="index.jsp" method="get">
-    用户名：
-    <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>
-</form>
+
+<h4 align="center">超级管理员信息</h4>
+<div align="center">
+    <form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/super/userSearch" method="get">
+        用户名：
+        <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>
+    </form>
+</div>
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
@@ -56,39 +60,20 @@
         <th>操作</th>
     </tr>
     </thead>
-    <tr>
-        <td>1</td>
-        <td>徐铁</td>
-        <td>111</td>
-        <td>20</td>
-        <td>呈贡</td>
-        <td>
-            <button type="submit" class="btn btn-warning"><a href="edit_user.jsp">修改</a></button>&nbsp;
-            <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>吴家祥</td>
-        <td>222</td>
-        <td>21</td>
-        <td>呈贡</td>
-        <td>
-            <button type="submit" class="btn btn-warning"><a href="edit_user.jsp">修改</a></button>&nbsp;
-            <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>马浩然</td>
-        <td>333</td>
-        <td>22</td>
-        <td>呈贡</td>
-        <td>
-            <button type="submit" class="btn btn-warning"><a href="edit_user.jsp">修改</a></button>&nbsp;
-            <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-        </td>
-    </tr>
+
+    <c:forEach var="supermng" items="${superList}">
+        <tr>
+            <td>${supermng.su_id}</td>
+            <td>${supermng.su_name}</td>
+            <td>${supermng.su_password}</td>
+            <td>${supermng.su_age}</td>
+            <td>${supermng.su_addr}</td>
+            <td>
+                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/super/updatePage/${supermng.su_id}">修改</a></button>&nbsp;
+                <button id="del" type="submit" class="btn btn-danger"><a href="<%=request.getContextPath()%>/super/delete/${supermng.su_id}">删除</a></button>&nbsp;
+            </td>
+        </tr>
+    </c:forEach>
 </table>
 </body>
 </html>
@@ -98,7 +83,7 @@
 
         $('#addnew').click(function(){
 
-            window.location.href="add_user.jsp";
+            window.location.href="<%=request.getContextPath()%>/super/addPage";
         });
 
 

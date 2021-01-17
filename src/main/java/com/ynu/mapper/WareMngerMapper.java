@@ -19,4 +19,7 @@ public interface WareMngerMapper {
     public boolean delete(int m_id);
 
     public boolean update(WareMnger wareMnger);
+
+
+    public List<WareMnger> searchByName(String m_name);
 }

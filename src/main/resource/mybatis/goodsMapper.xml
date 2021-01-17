@@ -34,4 +34,9 @@
         where  gs_id = #{gs_id}
     </update>
 
+<!--    根据商品类别查找-->
+
+    <select id="goodsSearch" parameterType="java.lang.String" resultType="Goods">
+        select * from  goods where gs_class=#{gs_class}
+    </select>
 </mapper>

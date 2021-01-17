@@ -41,4 +41,8 @@ public class ProductServiceImpl implements ProductService {
     public boolean update(Product product) {
         return productMapper.update(product);
     }
+
+    public List<Product> searchByName(String p_name) {
+        return productMapper.searchByName(p_name);
+    }
 }

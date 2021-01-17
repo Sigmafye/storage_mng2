@@ -1,5 +1,8 @@
 package com.ynu.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SuperMnger {
 
     private int su_id;  //超级管理员
@@ -18,6 +21,13 @@ public class SuperMnger {
     public SuperMnger(String su_name, String su_password) {
         this.su_name = su_name;
         this.su_password = su_password;
+    }
+
+    public SuperMnger(String su_name, String su_password, int su_age, String su_addr) {
+        this.su_name = su_name;
+        this.su_password = su_password;
+        this.su_age = su_age;
+        this.su_addr = su_addr;
     }
 
     public SuperMnger(int su_id, String su_name, String su_password, int su_age, String su_addr) {

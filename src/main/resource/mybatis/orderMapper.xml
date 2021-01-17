@@ -37,4 +37,11 @@
                             re_methods=#{re_methods},p_id=#{p_id},processor=#{processor} where bl_id=#{bl_id}
     </update>
 
+
+<!--    根据供应商id返回订单列表-->
+    <select id="getOrderListBySupportorId" parameterType="java.lang.Iterable" resultType="Myorder">
+        select * from buy_list where s_id=#{s_id}
+    </select>
+
+
 </mapper>

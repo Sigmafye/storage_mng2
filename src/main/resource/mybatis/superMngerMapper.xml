@@ -18,7 +18,7 @@
     </select>
 
     <insert id="add" parameterType="Super">
-        insert into super_mnger (su_name, su_password, su_password, su_age, su_addr)
+        insert into super_mnger (su_name, su_password, su_age, su_addr)
         values (#{su_name}, #{su_password}, #{su_age}, #{su_addr})
     </insert>
 
@@ -30,5 +30,9 @@
         update super_mnger set su_name = #{su_name}, su_password = #{su_password}, su_age = #{su_age}, su_addr = #{su_addr}
         where  su_id = #{su_id}
     </update>
+
+    <select id="searchByName" parameterType="java.lang.String" resultType="Super">
+        select * from super_mnger where su_name=#{su_name}
+    </select>
 
 </mapper>
