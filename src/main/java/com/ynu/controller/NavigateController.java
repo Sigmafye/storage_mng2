@@ -11,6 +11,7 @@ import com.ynu.service.SupportorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -113,7 +114,7 @@ public class NavigateController {
      */
     @RequestMapping("/userMng")
     public String gotouserMng(){
-        return "/WEB-INF/User/index.jsp";
+        return "redirect:/super/getList";
     }
 
 
@@ -122,10 +123,6 @@ public class NavigateController {
      */
     @RequestMapping("/addPurchaseOrder")
     public String gotoAddPurchaseOrder(Model model){
-        //所有商品
-        List<OrderGoods> orderGoodsList=orderGoodsService.getOrderGoodsList();
-        //System.out.println(orderGoodsList);
-        model.addAttribute("goodsList",orderGoodsList);
 
         //供应商列表
         List<Supportor> supportorList=supportorService.getSupportorList();
@@ -137,6 +134,48 @@ public class NavigateController {
         //System.out.println(buyerList);
         model.addAttribute("buyerList",buyerList);
         return "/WEB-INF/Purchase/edit_purchaser_order.jsp";
+    }
+
+    /*
+    跳转更新采购单
+     */
+    @RequestMapping("/updateOrder/{bl_id}")
+    public String updateOrder(@PathVariable int bl_id,
+                              Model model){
+
+        //供应商列表
+        List<Supportor> supportorList=supportorService.getSupportorList();
+        //System.out.println(supportorList);
+        model.addAttribute("supportorList",supportorList);
+
+        //采购员
+        List<Buyer> buyerList=buyerService.getBuyerList();
+        //System.out.println(buyerList);
+        model.addAttribute("buyerList",buyerList);
+
+        //对应订单
+        MyOrder order =orderService.getOrderById(bl_id);
+        model.addAttribute("order",order);
+        return "/WEB-INF/Purchase/edit_purchaser.jsp";
+    }
+    /*
+    跳转添加商品
+     */
+    @RequestMapping("/addOrderGoods/{bl_id}")
+    public String addOrderGoods(@PathVariable int bl_id,//订单编号不能为空
+                                Model model) {//商品类
+
+        //根据订单编号查找对应订单信息
+        System.out.println("navidate :"+bl_id);
+        MyOrder myOrder = orderService.getOrderById(bl_id);
+        if (myOrder == null) {
+            //无该订单信息，需要先添加订单信息。
+            return "failure";
+        } else {
+            //存在该订单
+            model.addAttribute("order", myOrder);
+            return "/WEB-INF/Purchase/add_purchaser_order.jsp";
+        }
     }
 
     /*

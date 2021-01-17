@@ -20,6 +20,13 @@ public class SuperMnger {
         this.su_password = su_password;
     }
 
+    public SuperMnger(String su_name, String su_password, int su_age, String su_addr) {
+        this.su_name = su_name;
+        this.su_password = su_password;
+        this.su_age = su_age;
+        this.su_addr = su_addr;
+    }
+
     public SuperMnger(int su_id, String su_name, String su_password, int su_age, String su_addr) {
         this.su_id = su_id;
         this.su_name = su_name;

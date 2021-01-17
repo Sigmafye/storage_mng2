@@ -18,7 +18,7 @@
     </select>
 
     <insert id="add" parameterType="Super">
-        insert into super_mnger (su_name, su_password, su_password, su_age, su_addr)
+        insert into super_mnger (su_name, su_password, su_age, su_addr)
         values (#{su_name}, #{su_password}, #{su_age}, #{su_addr})
     </insert>
 
