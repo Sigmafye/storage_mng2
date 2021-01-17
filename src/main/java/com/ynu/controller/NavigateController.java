@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/goto")
@@ -44,6 +47,15 @@ public class NavigateController {
         List<MyOrder> orderList=orderService.getOrderList();
         model.addAttribute("orderList",orderList);
         System.out.println(orderList);
+
+        List<Supportor> supportorList=supportorService.getSupportorList();
+        Iterator<Supportor> supportorIterator=supportorList.listIterator();
+        //放入set集合
+        Set<Supportor> supportorSet =new HashSet<Supportor>();
+        while (supportorIterator.hasNext()){
+            supportorSet.add(supportorIterator.next());
+        }
+        model.addAttribute("supportorList",supportorSet);
         return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
     }
 
