@@ -102,7 +102,7 @@ public class NavigateController {
      */
     @RequestMapping("/proMng")
     public String gotoProMng(){
-        return "/WEB-INF/Repertory/product_manage.jsp";
+        return "redirect:/product/getList";
     }
 
     /*
