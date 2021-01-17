@@ -44,14 +44,14 @@
 <div align="center">
     <h4>产品库存管理</h4>
 </div>
-<form class="form-inline definewidth m20" action="" method="get">
+<form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/product/searchByName" method="get">
     关键字：
-    <input type="text" name="rolename" id="rolename" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;&nbsp;
+    <input type="text" name="keyname" id="rolename" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;&nbsp;
     产品类别：
-    <select type="text" name="s_id" id="supportor" class="abc input-default" >
-        <option value ="all">所有类别</option>
-        <c:forEach var="product" items="${productList}">
-            <option value ="${product.p_type}">${product.p_type}</option>
+    <select type="text" name="productname" id="supportor" class="abc input-default" >
+
+        <c:forEach var="product" items="${productClassList}">
+            <option value ="${product}">${product}</option>
         </c:forEach>
     </select>
     <button type="submit" class="btn btn-primary" id="#">查询</button>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -60,7 +60,6 @@
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
-        <th><input type="checkbox">全选</th>
         <th>产品编号</th>
         <th>仓库编号</th>
         <th>所在仓库</th>
@@ -77,7 +76,6 @@
     <tbody>
     <c:forEach var="product" items="${productList}">
         <tr>
-            <td><input type="checkbox"></td>
             <td>${product.p_idd}</td>
             <td>${product.w_id}</td>
             <td>${product.p_warehouse}</td>

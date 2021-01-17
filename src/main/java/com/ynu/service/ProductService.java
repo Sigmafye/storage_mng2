@@ -17,4 +17,7 @@ public interface ProductService {
     public boolean delete(int id);
 
     public boolean update(Product goods);
+
+
+    public List<Product> searchByName(String p_name);
 }

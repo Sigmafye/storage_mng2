@@ -17,4 +17,8 @@ public interface ProductMapper {
     public boolean delete(int p_idd);
 
     public boolean update(Product product);
+
+
+    public List<Product> searchByName(String p_name);
+
 }

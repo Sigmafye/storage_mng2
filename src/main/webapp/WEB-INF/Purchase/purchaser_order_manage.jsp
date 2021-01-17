@@ -44,7 +44,7 @@
 <h4 align="center">采购单详情</h4>
 <form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/order/orderSearch" method="get">
     关键字：
-    <input type="text" name="rolename" id="rolename" class="abc input-default"  value="" required="required">&nbsp;&nbsp;&nbsp;
+    <input type="text" name="rolename" id="rolename" class="abc input-default"  value="">&nbsp;&nbsp;&nbsp;
     供应商：
     <select type="text" name="s_id" id="supportor" class="abc input-default" >
         <c:forEach var="supportor" items="${supportorList}">

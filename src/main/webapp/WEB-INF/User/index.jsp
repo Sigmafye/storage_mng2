@@ -43,7 +43,7 @@
 
 <h4 align="center">超级管理员信息</h4>
 <div align="center">
-    <form class="form-inline definewidth m20" action="" method="get">
+    <form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/super/userSearch" method="get">
         用户名：
         <input type="text" name="username" id="username"class="abc input-default" placeholder="请输入" value="">&nbsp;&nbsp;
         <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button" class="btn btn-success" id="addnew">新增用户</button>

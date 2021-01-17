@@ -44,7 +44,7 @@
 <body>
 <h4 align="center">采购员信息</h4>
 <div align="center">
-    <form class="form-inline definewidth m20" action="" method="get">
+    <form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/buyer/searchByName" method="get">
         关键字：
         <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
         <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
