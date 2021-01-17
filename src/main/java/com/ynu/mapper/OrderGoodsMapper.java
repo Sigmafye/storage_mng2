@@ -1,6 +1,7 @@
 package com.ynu.mapper;
 
 import com.ynu.pojo.OrderGoods;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public interface OrderGoodsMapper {
      * @param orderId
      * @return
      */
-    public int deleteOrderGoods(int orderId);
+    public int deleteOrderGoodsById(int orderId);
 
 
     /**
@@ -42,7 +43,8 @@ public interface OrderGoodsMapper {
      * @param bl_id
      * @return
      */
-    public OrderGoods getOrderGoodsByGidBlId(int g_id,int bl_id);
+    public OrderGoods getOrderGoodsByGidBlId(@Param("g_id") int g_id,
+                                             @Param("bl_id") int bl_id);
 
     /**
      * 更新订单商品信息
@@ -51,4 +53,13 @@ public interface OrderGoodsMapper {
      */
     public boolean updateOrderGoods(OrderGoods orderGoods);
 
+
+    /**
+     * 删除特定订单商品
+     * @param g_id
+     * @param bl_id
+     * @return
+     */
+    public boolean deleteOrderGoods(@Param("g_id") int g_id,
+                                    @Param("bl_id") int bl_id);
 }

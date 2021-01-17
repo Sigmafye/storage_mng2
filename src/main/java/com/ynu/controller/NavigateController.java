@@ -69,8 +69,9 @@ public class NavigateController {
     @RequestMapping("/addGoods/{bl_id}")
     public String gotoAddGoods(@PathVariable int bl_id,
                                Model model){
-
+        //List<OrderGoods> orderGoodsList =orderGoodsService.getOrderGoodsList();
         model.addAttribute("bl_id",bl_id);
+        //model.addAttribute("goodsList",orderGoodsList);
         return "/WEB-INF/Purchase/add_commodity.jsp";
     }
 
@@ -83,8 +84,9 @@ public class NavigateController {
                               @PathVariable int bl_id,
                               Model model){
 
+        System.out.println("g_id"+g_id+"bl_id"+bl_id);
         OrderGoods orderGoods=orderGoodsService.getOrderGoodsByGidBlId(g_id,bl_id);
-        model.addAttribute("orderGoods",orderGoods);
+        model.addAttribute("ordergoods",orderGoods);
         return "/WEB-INF/Purchase/updateGoods.jsp";
     }
 
@@ -177,6 +179,7 @@ public class NavigateController {
         model.addAttribute("order",order);
         return "/WEB-INF/Purchase/edit_purchaser.jsp";
     }
+
     /*
     跳转查看订单商品
      */
@@ -188,6 +191,7 @@ public class NavigateController {
         System.out.println("navidate :"+bl_id);
         MyOrder myOrder = orderService.getOrderById(bl_id);
 
+        //商品信息
         List<OrderGoods> orderGoodsList=orderGoodsService.getGoodsList(bl_id);
         System.out.println(orderGoodsList);
         if (myOrder == null) {
@@ -200,7 +204,6 @@ public class NavigateController {
             return "/WEB-INF/Purchase/add_purchaser_order.jsp";
         }
     }
-
 
 
 
@@ -220,4 +223,14 @@ public class NavigateController {
     }
 
 
+
+    /*
+    添加商品完成
+     */
+    @RequestMapping("/successSave")
+    public String successSave(Model model){
+        List<MyOrder> orderList=orderService.getOrderList();
+        model.addAttribute("orderList",orderList);
+        return "/WEB-INF/Purchase/purchaser_order_manage.jsp";
+    }
 }
