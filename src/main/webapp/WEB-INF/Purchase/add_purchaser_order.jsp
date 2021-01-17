@@ -42,14 +42,14 @@
 </head>
 <body>
 <h3>采购开单</h3>
-<h4 align="center">基本信息</h4>
+<h4 align="center">采购单基本信息</h4>
 <form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/order/addOrder" method="post">
     <table>
         <tbody>
         <tr>
             <th>
                 供应商编号：
-                <input type="text" name="s_id" id="s_id" class="abc input-default" value="${order.s_id}">
+                <input type="text" name="s_id" id="s_id" class="abc input-default" value="${order.s_id}" readonly>
 <%--                <select type="text" name="s_id" id="supportor" class="abc input-default" placeholder="" value="">--%>
 <%--                    <c:forEach var="supportor" items="${supportorList}">--%>
 <%--                        <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>--%>
@@ -58,7 +58,7 @@
             </th>
             <th>
                 采购员编号：
-                <input type="text" name="u_id" id="u_id"class="abc input-default" value="${order.u_id}">
+                <input type="text" name="u_id" id="u_id"class="abc input-default" value="${order.u_id}" readonly>
 <%--                <select type="text" name="u_id" id="buyer" class="abc input-default" placeholder="" value="">--%>
 <%--                    <c:forEach var="buyer" items="${buyerList}">--%>
 <%--                        <option value ="${buyer.u_id}">${buyer.u_id},${buyer.u_name}</option>--%>
@@ -67,7 +67,7 @@
             </th>
             <th>
                 供应商：
-                <input type="text" name="supportor" id="supportor"class="abc input-default" value="${order.supportor}">
+                <input type="text" name="supportor" id="supportor"class="abc input-default" value="${order.supportor}" readonly>
             </th>
 
 
@@ -75,7 +75,7 @@
         <tr>
             <th>
                 收货仓库：
-                <input type="text" name="ware" id="ware"class="abc input-default" value="${order.ware}">
+                <input type="text" name="ware" id="ware"class="abc input-default" value="${order.ware}" readonly>
 <%--                <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">--%>
 <%--                    <option value ="A-01">A-01</option>--%>
 <%--                    <option value ="B-02">B-02</option>--%>
@@ -85,11 +85,11 @@
             </th>
             <th>
                 到货时间：
-                <input type="text" name="a_time" id="a_time" class="abc input-default" value="${order.a_time}">
+                <input type="text" name="a_time" id="a_time" class="abc input-default" value="${order.a_time}" readonly>
             </th>
             <th>
                 联系人:
-                <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" value="${order.relate_peo}">
+                <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" value="${order.relate_peo}" readonly>
             </th>
 
 
@@ -97,15 +97,15 @@
         <tr>
             <th>
                 联系方式：
-                <input type="text" name="re_methods" id="re_methods"class="abc input-default" value="${order.re_methods}">
+                <input type="text" name="re_methods" id="re_methods"class="abc input-default" value="${order.re_methods}" readonly>
             </th>
             <th>
                 经手人编号：
-                <input type="text" name="p_id" id="p_id"class="abc input-default" value="${order.p_id}">
+                <input type="text" name="p_id" id="p_id"class="abc input-default" value="${order.p_id}" readonly>
             </th>
             <th>
                 经手人：
-                <input type="text" name="processor" id="processor"class="abc input-default" value="${order.processor}">
+                <input type="text" name="processor" id="processor"class="abc input-default" value="${order.processor}" readonly>
             </th>
         </tr>
         </tbody>
