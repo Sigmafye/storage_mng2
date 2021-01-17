@@ -44,15 +44,15 @@
     <table class="table table-bordered table-hover definewidth m10">
         <tr>
             <td width="10%" class="tableleft">用户名</td>
-            <td><input type="text" name="m_name"></td>
+            <td><input type="text" name="m_name" required="required"></td>
         </tr>
         <tr>
             <td class="tableleft">密码</td>
-            <td><input type="text" name="m_password"/></td>
+            <td><input type="text" name="m_password" required="required"/></td>
         </tr>
         <tr>
             <td class="tableleft">电话</td>
-            <td><input type="text" name="m_tel" ></td>
+            <td><input type="text" name="m_tel"></td>
         </tr>
         <tr>
             <td class="tableleft">地址</td>

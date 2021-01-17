@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="buyer.jsp" method="get">
+<form class="form-inline definewidth m20" action="" method="get">
     关键字：
     <input type="text" name="buyername" id="buyername" class="abc input-default" placeholder="请输入用户名" value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
@@ -68,22 +68,11 @@
             <td>${buyer.u_age}</td>
             <td>${buyer.u_password}</td>
             <td>
-                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>">修改</a></button>&nbsp;
-                <button id="delete" type="submit" class="btn btn-danger">删除</button>&nbsp;
+                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/buyer/updatePage/${buyer.u_id}">修改</a></button>&nbsp;
+                <button id="delete" type="submit" class="btn btn-danger"><a href="<%=request.getContextPath()%>/buyer/deleteBuyer/${buyer.u_id}">删除</a></button>&nbsp;
             </td>
         </tr>
     </c:forEach>
-<%--    <tr>
-        <td>1</td>
-        <td>qqq</td>
-        <td>qw</td>
-        <td>78</td>
-        <td>1233</td>
-        <td>
-            <button type="submit" class="btn btn-warning"><a href="edit_buyer.jsp">修改</a></button>&nbsp;
-            <button id="del" type="submit" class="btn btn-danger">删除</button>&nbsp;
-        </td>
-    </tr>--%>
 </table>
 <div class="inline pull-right page">
     10122 条记录 1/507 页 <a href='#'>下一页</a> <span class='current'>1</span><a href='#'>2</a><a
@@ -96,7 +85,7 @@
 
         $('#addnew').click(function () {
 
-            window.location.href = "add_buyer.jsp";
+            window.location.href = "<%=request.getContextPath()%>/buyer/addPage";
         });
 
 

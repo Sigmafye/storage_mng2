@@ -74,8 +74,8 @@ public class BuyerController {
      */
     @RequestMapping("/deleteBuyer/{u_id}")
     public String deleteBuyerById(@PathVariable int u_id) {
-        buyerService.deleteBuyerById(u_id);
-        return "redirct:/buyer/getBuyerList";
+        System.out.println(buyerService.deleteBuyerById(u_id));
+        return "redirect:/buyer/getBuyerList";
     }
 
 
@@ -117,26 +117,30 @@ public class BuyerController {
      */
     @RequestMapping("/addPage")
     public String addPage() {
-        return "";
+        return "/WEB-INF/User/add_buyer.jsp";
     }
 
     @RequestMapping("/addBuyerDone")
-    public String addBuyerDone(@RequestParam Buyer buyer) {
+    public String addBuyerDone(Buyer buyer) {
+        System.out.println(buyer);
         buyerService.addBuyerById(buyer);
-        return "redirct:/buyer/getBuyerList";
+        return "redirect:/buyer/getBuyerList";
     }
 
 
     @RequestMapping("/updatePage/{id}")
     public String updatePage(@PathVariable("id") int id, Model model){
-        model.addAttribute("buyer", buyerService.getBuyerInfo(id));
-        return "";
+        Buyer buyer = buyerService.getBuyerInfo(id);
+        System.out.println(buyer);
+        model.addAttribute("buyer", buyer);
+        return "/WEB-INF/User/edit_buyer.jsp";
     }
 
     @RequestMapping("/updateDone")
     public String updateDone(Buyer buyer){
+        System.out.println(buyer);
         buyerService.updateBuyerInfo(buyer);
-        return "redirct:/buyer/getBuyerList";
+        return "redirect:/buyer/getBuyerList";
     }
 
 

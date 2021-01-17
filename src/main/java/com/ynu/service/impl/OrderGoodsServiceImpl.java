@@ -34,9 +34,9 @@ public class OrderGoodsServiceImpl implements OrderGoodsService {
     }
 
 
-    public boolean deleteOrderGoods(int orderId) {
+    public boolean deleteOrderGoodsById(int orderId) {
 
-        int isDelete=orderGoodsMapper.deleteOrderGoods(orderId);
+        int isDelete=orderGoodsMapper.deleteOrderGoodsById(orderId);
         if(isDelete>0){
             return true;
         }else{
@@ -48,5 +48,22 @@ public class OrderGoodsServiceImpl implements OrderGoodsService {
     public List<OrderGoods> getOrderGoodsList() {
         List<OrderGoods> orderGoodsList=orderGoodsMapper.getOrderGoodsList();
         return orderGoodsList;
+    }
+
+
+    public OrderGoods getOrderGoodsByGidBlId(int g_id, int bl_id) {
+        OrderGoods orderGoods=orderGoodsMapper.getOrderGoodsByGidBlId(g_id,bl_id);
+        return orderGoods;
+    }
+
+
+    public boolean updateOrderGoods(OrderGoods orderGoods) {
+        return orderGoodsMapper.updateOrderGoods(orderGoods);
+    }
+
+
+    public boolean deleteOrderGoods(int g_id, int bl_id) {
+
+        return orderGoodsMapper.deleteOrderGoods(g_id,bl_id);
     }
 }

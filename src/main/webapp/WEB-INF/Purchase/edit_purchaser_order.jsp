@@ -46,13 +46,13 @@
     <table class="table table-bordered table-hover ">
 
         <tr>
-            <td width="10%">供应商编号：</td>
-            <td><select type="text" name="s_id" id="supportor" class="abc input-default" >
-                <c:forEach var="supportor" items="${supportorList}">
-                    <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>
-                </c:forEach>
-            </select>
-            </td>
+                <td>供应商编号：</td>
+                <td><select type="text" name="s_id" id="supportor" class="abc input-default" >
+                    <c:forEach var="supportor" items="${supportorList}">
+                        <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>
+                    </c:forEach>
+                </select>
+                </td>
         </tr>
         <tr>
                 <td>采购员编号：</td>
@@ -63,7 +63,6 @@
                 </select>
                 </td>
         </tr>
-
         <tr>
             <td class="tableleft">供应商</td>
             <td ><input type="text" name="supportor" /></td>

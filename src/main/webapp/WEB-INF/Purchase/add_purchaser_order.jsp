@@ -5,15 +5,16 @@
   Time: 17:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/Css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Css/style.css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/jquery.sorted.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/Js/bootstrap.js"></script>
@@ -24,6 +25,7 @@
         body {
             padding-bottom: 40px;
         }
+
         .sidebar-nav {
             padding: 9px 0;
         }
@@ -42,70 +44,60 @@
 </head>
 <body>
 <h3>采购开单</h3>
-<h4 align="center">采购单基本信息</h4>
+<h4 align="center">基本信息</h4>
 <form class="form-inline definewidth m20" action="<%=request.getContextPath()%>/order/addOrder" method="post">
     <table>
         <tbody>
         <tr>
             <th>
-                供应商编号：
-                <input type="text" name="s_id" id="s_id" class="abc input-default" value="${order.s_id}" readonly>
-<%--                <select type="text" name="s_id" id="supportor" class="abc input-default" placeholder="" value="">--%>
-<%--                    <c:forEach var="supportor" items="${supportorList}">--%>
-<%--                        <option value ="${supportor.s_id}">${supportor.s_id},${supportor.s_name}</option>--%>
-<%--                    </c:forEach>--%>
-<%--                </select>--%>
+            <td>供应商编号：</td>
+            <td><input type="text" name="s_id" id="s_id" class="abc input-default" value="${order.s_id}" readonly></td>
             </th>
             <th>
-                采购员编号：
-                <input type="text" name="u_id" id="u_id"class="abc input-default" value="${order.u_id}" readonly>
-<%--                <select type="text" name="u_id" id="buyer" class="abc input-default" placeholder="" value="">--%>
-<%--                    <c:forEach var="buyer" items="${buyerList}">--%>
-<%--                        <option value ="${buyer.u_id}">${buyer.u_id},${buyer.u_name}</option>--%>
-<%--                    </c:forEach>--%>
-<%--                </select>--%>
+            <td>采购员编号：</td>
+            <td><input type="text" name="u_id" id="u_id" class="abc input-default" value="${order.u_id}" readonly></td>
             </th>
             <th>
-                供应商：
-                <input type="text" name="supportor" id="supportor"class="abc input-default" value="${order.supportor}" readonly>
+            <td>供应商：</td>
+            <td><input type="text" name="supportor" id="supportor" class="abc input-default" value="${order.supportor}"
+                       readonly></td>
             </th>
 
 
         </tr>
         <tr>
             <th>
-                收货仓库：
-                <input type="text" name="ware" id="ware"class="abc input-default" value="${order.ware}" readonly>
-<%--                <select type="text" name="ware" id="ware"class="abc input-default" placeholder="" value="">--%>
-<%--                    <option value ="A-01">A-01</option>--%>
-<%--                    <option value ="B-02">B-02</option>--%>
-<%--                    <option value="C-03">C-03</option>--%>
-<%--                    <option value="D-04">D-04</option>--%>
-<%--                </select>--%>
+            <td>收货仓库：</td>
+            <td><input type="text" name="ware" id="ware" class="abc input-default" value="${order.ware}" readonly></td>
+
             </th>
             <th>
-                到货时间：
-                <input type="text" name="a_time" id="a_time" class="abc input-default" value="${order.a_time}" readonly>
+            <td>到货时间：</td>
+            <td><input type="text" name="a_time" id="a_time" class="abc input-default" value="${order.a_time}" readonly>
+            </td>
             </th>
             <th>
-                联系人:
-                <input type="text" name="relate_peo" id="relate_peo" class="abc input-default" value="${order.relate_peo}" readonly>
+            <td>联系人:</td>
+            <td><input type="text" name="relate_peo" id="relate_peo" class="abc input-default"
+                       value="${order.relate_peo}" readonly></td>
             </th>
 
 
         </tr>
         <tr>
             <th>
-                联系方式：
-                <input type="text" name="re_methods" id="re_methods"class="abc input-default" value="${order.re_methods}" readonly>
+            <td>联系方式：</td>
+            <td><input type="text" name="re_methods" id="re_methods" class="abc input-default"
+                       value="${order.re_methods}" readonly></td>
             </th>
             <th>
-                经手人编号：
-                <input type="text" name="p_id" id="p_id"class="abc input-default" value="${order.p_id}" readonly>
+            <td>经手人编号：</td>
+            <td><input type="text" name="p_id" id="p_id" class="abc input-default" value="${order.p_id}" readonly></td>
             </th>
             <th>
-                经手人：
-                <input type="text" name="processor" id="processor"class="abc input-default" value="${order.processor}" readonly>
+            <td>经手人：</td>
+            <td><input type="text" name="processor" id="processor" class="abc input-default" value="${order.processor}"
+                       readonly></td>
             </th>
         </tr>
         </tbody>
@@ -119,23 +111,11 @@
 </ul>-->
 <h5 class="page-header"></h5>
 <div>
-    <button type="submit" class="btn" id="addnew"><a href="<%=request.getContextPath()%>/goto/addGoods/${order.bl_id}">添加商品</a></button>&nbsp;&nbsp;
-    <button type="button" class="btn" id=""><a href="add_commodity.jsp">批量导入</a></button>
-<%--    <form class="form-inline definewidth m20" action="index.html" method="get">--%>
-<%--        分类：--%>
-<%--        <select>--%>
-<%--            <option value ="all">所有</option>--%>
-<%--            <option value ="saab">Saab</option>--%>
-<%--            <option value="opel">Opel</option>--%>
-<%--            <option value="audi">Audi</option>--%>
-<%--        </select>--%>
-<%--        商品编号：--%>
-<%--        <input type="text" name="rolename" id="rolename"class="abc input-default" placeholder="" value="请输入编码">--%>
-<%--        商品名称：--%>
-<%--        <input type="text" name="commodityname" id="commodityname"class="abc input-default" placeholder="" value="请输入关键字">--%>
-<%--        <button type="submit" class="btn btn-primary" id="#">搜索</button>--%>
-<%--    </form>--%>
-    <table class="table table-bordered table-hover definewidth m10" >
+    <button type="submit" class="btn" id="addnew"><a href="<%=request.getContextPath()%>/goto/addGoods/${order.bl_id}">添加商品</a>
+    </button>&nbsp;&nbsp;
+    <button type="button" class="btn" id=""><a href="">批量导入</a></button>
+
+    <table class="table table-bordered table-hover definewidth m10">
         <thead>
         <tr>
             <th>采购商品编号</th>
@@ -149,54 +129,56 @@
         </thead>
         <tbody>
         <c:forEach var="ordergoods" items="${goodsList}">
-        <tr>
-            <td>${ordergoods.g_id}</td>
-            <td>${ordergoods.bl_id}</td>
-            <td>${ordergoods.g_name}</td>
-            <td>${ordergoods.g_clacc}</td>
-            <td>${ordergoods.g_num}</td>
-            <td>${ordergoods.g_price}</td>
-            <td>
-                <button type="submit" class="btn btn-warning"><a href="<%=request.getContextPath()%>/goto/updateGoods">修改</a></button>&nbsp;
-                <button type="submit" class="btn btn-danger">删除</button>&nbsp;
-            </td>
-        </tr>
+            <tr>
+                <td>${ordergoods.g_id}</td>
+                <td>${ordergoods.bl_id}</td>
+                <td>${ordergoods.g_name}</td>
+                <td>${ordergoods.g_clacc}</td>
+                <td>${ordergoods.g_num}</td>
+                <td>${ordergoods.g_price}</td>
+                <td>
+                    <button type="submit" class="btn btn-warning"><a
+                            href="<%=request.getContextPath()%>/goto/updateGoods/${ordergoods.g_id}/${ordergoods.bl_id}">修改</a>
+                    </button>&nbsp;
+                    <button type="submit" class="btn btn-danger"><a
+                            href="<%=request.getContextPath()%>/orderGoods/deleteGoods/${ordergoods.g_id}/${ordergoods.bl_id}">删除</a>
+                    </button>&nbsp;
+                </td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
     <div class="inline pull-right page">
-        10122 条记录 1/507 页  <a href='#'>下一页</a>
+        10122 条记录 1/507 页 <a href='#'>下一页</a>
         <span class='current'>1</span>
         <a href='#'>2</a>
         <a href='#'>3</a>
         <a href='#'>4</a>
         <a href='#'>5</a>
-        <a href='#' >下5页</a>
-        <a href='#' >最后一页</a>
+        <a href='#'>下5页</a>
+        <a href='#'>最后一页</a>
     </div>
 
 </div>
 
 <div align="center">
-    <button type="submit" class="btn btn-primary" id="save">保存</button>
-    <button type="submit" class="btn btn-success" id="submit">提交审核</button>
+    <button type="submit" onclick="doSave()" class="btn btn-primary" id="save">保存</button>
+    <button type="submit" onclick="doSubmit()" class="btn btn-success" id="submit">提交审核</button>
 </div>
-</body>
-            </html>
-<script>
-    $(function () {
-        $('#addnew').click(function(){
-            window.location.href="add_commodity.html";
-        });
-    });
-    function del(id)
-    {
-        if(confirm("确定要删除吗？"))
-        {
 
-            var url = "";
-            window.location.href=url;
-        }
+${result}
+
+</body>
+</html>
+<script type="text/javascript">
+    function doSave() {
+        alert("添加成功");
+        window.open("<%=request.getContextPath()%>/goto/successSave", "_self");
+    }
+
+    function doSubmit() {
+        alert("提交成功");
+        window.open("<%=request.getContextPath()%>/goto/successSave", "_self");
     }
 </script>
 </html>
