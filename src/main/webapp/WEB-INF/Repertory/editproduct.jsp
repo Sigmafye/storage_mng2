@@ -50,13 +50,14 @@
         </tr>
         <tr>
             <td width="10%" class="tableleft">仓库编号</td>
-            <td>
+            <td><input type="text" name="w_id" value="${product.w_id}"/></td>
+            <%--<td>
                 <select type="text" name="w_id" id="w_id" class="abc input-default" >
                     <c:forEach var="wareHouseList" items="${wareHouseList}">
                         <option value ="${wareHouseList.w_id}">${wareHouseList.w_id}</option>
                     </c:forEach>
                 </select>
-            </td>
+            </td>--%>
         </tr>
         <tr>
             <td width="10%" class="tableleft">所在仓库</td>
@@ -64,23 +65,25 @@
         </tr>
         <tr>
             <td width="10%" class="tableleft">入库编号</td>
-            <td>
+            <td><input type="text" name="im_id" value="${product.im_id}"/></td>
+            <%--<td>
                 <select type="text" name="im_id" id="im_id" class="abc input-default" >
                     <c:forEach var="IRList" items="${IRList}">
                         <option value ="${IRList.im_id}">${IRList.im_id}</option>
                     </c:forEach>
                 </select>
-            </td>
+            </td>--%>
         </tr>
         <tr>
             <td width="10%" class="tableleft">出库编号</td>
-            <td>
+            <td><input type="text" name="ex_id" value="${product.ex_id}"/></td>
+            <%--<td>
                 <select type="text" name="ex_id" id="ex_id" class="abc input-default" >
                     <c:forEach var="EXList" items="${EXList}">
                         <option value ="${EXList.ex_id}">${EXList.ex_id}</option>
                     </c:forEach>
                 </select>
-            </td>
+            </td>--%>
         </tr>
         <tr>
             <td class="tableleft">产品名称</td>
